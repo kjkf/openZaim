@@ -40,14 +40,14 @@ h2
 h3
 	font-size: $fontSize_h3
 	line-height: $lineHeight_h3
-	+tablet
-		font-size: $fontSize_h3_tablet
+	// +tablet
+	// 	font-size: $fontSize_h3_tablet
 
 h4
 	font-size: $fontSize_h4
 	line-height: $lineHeight_h4
-	+tablet
-		font-size: $fontSize_h4_tablet
+	// +tablet
+		//font-size: $fontSize_h4_tablet
 
 .container
 	+laptop
@@ -59,6 +59,43 @@ h4
 	color: $fontColorMain
 	font-family: $font-Exo2-Bold
 
+.bold
+	font-family: $font-Exo2-Semibold
+	font-weight: 600
+	font-size: 18px
+	line-height: 1.22
+
+.link
+  text-decoration: none
+  text-decoration-line: underline
+  color: $green
+  font-family: $font-Exo2-Semibold
+  font-weight: bold
+  font-size: 18px
+  line-height: 1.6
+
+.link__light
+	font-family: $font-Exo2-Light
+  font-weight: 300
+  font-size: 16px
+  line-height: 1.19
+
+.title__white
+	color: #FFFFFF
+
 .bg-dark
 	background-color: $dark-grey
 	color: $white
+
+.bg-light
+	background-color: $body_bg
+	color: $dark-grey
+
+.paragrfaph
+	display: flex
+	width: 100%
+	text-align: left
+	margin-bottom: 30px
+	line-height: 1.645
+	&:last-child
+		margin-bottom: 0
