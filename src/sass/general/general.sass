@@ -8,7 +8,7 @@ html
 
 body
 	font:
-		//family: $font-Roboto-Regular
+		family: $font-Exo2-Light
 		size: 1rem
 		weight: 400
 	color: $fontColorMain
@@ -18,8 +18,8 @@ body
 	padding: 0
 	height: 100vh
 	//background-color: $body_bg
-	+phone-down
-		font-size: 12px
+	+tablet
+		font-size: $fontSize_body_tablet
 
 h1, h2, h3, h4, p, ul
 	margin: 0px
@@ -29,26 +29,25 @@ h1
 	font-size: $fontSize_h1
 	line-height: $lineHeight_h1
 	font-weight: normal
-	+phone-down
-    	font-size: 26px
-
+	+tablet
+		font-size: $fontSize_h1_tablet
 h2
 	font-size: $fontSize_h2
 	line-height: $lineHeight_h2
-	+phone-down
-		font-size: 20px
+	+tablet
+		font-size: $fontSize_h2_tablet
 
 h3
 	font-size: $fontSize_h3
 	line-height: $lineHeight_h3
-	+phone-down
-		font-size: 16px
+	+tablet
+		font-size: $fontSize_h3_tablet
 
 h4
 	font-size: $fontSize_h4
 	line-height: $lineHeight_h4
-	+phone-down
-		font-size: 16px
+	+tablet
+		font-size: $fontSize_h4_tablet
 
 .container
 	+laptop
@@ -58,3 +57,8 @@ h4
 
 .title
 	color: $fontColorMain
+	font-family: $font-Exo2-Bold
+
+.bg-dark
+	background-color: $dark-grey
+	color: $white
