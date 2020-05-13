@@ -1,0 +1,43 @@
+.reviews
+
+.review__image
+  margin: 0 auto
+  width: 150px
+  height: 150px
+  overflow: hidden
+  border-radius: 50%
+  margin-bottom: 50px
+
+  img
+    height: 100%
+
+.review__info
+  text-align: center
+  padding: 0 54px
+
+  .review-text
+    margin-bottom: 30px
+
+  .review-name
+    margin-bottom: 15px
+    font-weight: bold
+
+.tns-outer
+  position: relative
+.tns-controls button
+  z-index: 10
+  border: none
+  color: transparent
+  position: absolute
+  top: 145px
+  left: 100%
+  background:
+    color: transparent
+    image: url("../images/icons/ic-arrow-green.svg")
+    repeat: no-repeat
+    position: center
+  width: 60px
+  height: 120px
+  &:first-child
+    transform: rotate(180deg)
+    left: -30px
