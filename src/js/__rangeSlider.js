@@ -5,7 +5,7 @@ const INPUT = 'input';
 const MAX_ROTATION = 35;
 const SOFTEN_FACTOR = 3;
 
-/*class RangeInput {
+class RangeInput {
 
     constructor(el) {
         this.el = el;
@@ -78,6 +78,6 @@ const SOFTEN_FACTOR = 3;
         this._lastOffsetLeft = this.sliderThumbEl.offsetLeft;
     }
 
-}*/
+}
 
-new RangeInput(document.querySelector('.range'));
+new RangeInput(document.querySelector('.range.amount'));

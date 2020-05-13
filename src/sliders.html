@@ -6,24 +6,31 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../public/css/normalize.css">
-    <link rel="stylesheet" href="../public/css/styles.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <style>
+        body {
+            padding: 50px 100px;
+        }
+    </style>
 </head>
 <body>
-
-<form oninput="output.value = Math.round(range.valueAsNumber / 1000)">
-    <h2>
-        Range slider
-    </h2>
-    <div class="range">
-        <input name="range" type="range" min="3000" max="500000" step="1000">
-        <div class="range-output">
-            <output class="output" name="output" for="range">
-                50
-            </output>
+<h2>
+    Amount slider
+</h2>
+<div class="range-wrapper">
+    <form oninput="amountOutput.value = Math.round(amountRange.valueAsNumber)">
+        <div class="range amount">
+            <input id="amountRange" name="amountRange" type="range" min="3000" max="500000" step="1000"  value="4000">
+            <div class="range-output">
+                <output class="output" name="amountOutput" for="range1">
+                    210000
+                </output>
+            </div>
         </div>
-    </div>
-</form>
-<script src="../public/main.min.js"></script>
+    </form>
+</div>
+
+<script src="main.min.js"></script>
 </body>
 </html>
