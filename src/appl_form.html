@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.min.css">
     <title>Форма заявления</title>
@@ -13,53 +14,86 @@
 </div>
 <div class="application-form">
     <div class="container">
-        <h3 class="title">Получение 150 000 ₽</h3>
+        <h2 class="title">Получение 150 000 ₽</h2>
         <div class="form-wrapper">
-            <h4 class="form-header">Заявка на получение - 150 000 рублей (шаг 1 из 4) </h4>
+            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг 1 из 4) </h3>
             <div class="form-header--sub">
                 <span class="green-rect"></span>
-                <h6>+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
+                <h6 class="subtitle">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
             </div>
-            <form>
-                <div class="row">
-                    <div class="col">
-                        <span>Сумма</span>
+            <form class="form">
+                <div class="row row--amount">
+                    <div class="col-md-2">
+                        <span class="label">Сумма</span>
                     </div>
                     <div class="col">
-                        <div class="range amount-appl">
-                            <input id="amountRange" type="range" min="3000" max="500000" step="1000" >
-                            <div class="range-output">
-                                <output class="output" for="amountRange">
-                                    210 000 &#8381;
-                                </output>
-                            </div>
-                            <div class="range-minmax">
-                                <div class="min"></div>
-                                <div class="max"></div>
+                        <div class="range-wrapper">
+                            <div class="range amount-appl">
+                                <input id="amountRange" type="range" min="3000" max="500000" step="1000" >
+                                <div class="range-output">
+                                    <output class="output" for="amountRange">
+                                        210 000 &#8381;
+                                    </output>
+                                </div>
+                                <div class="range-minmax">
+                                    <div class="min"></div>
+                                    <div class="max"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <span>Срок</span>
+                <div class="row row--term">
+                    <div class="col-md-2">
+                        <span class="label">Срок</span>
                     </div>
                     <div class="col">
-                        <div class="range year-appl">
-                            <input id="yearRange" type="range" min="3" max="1095" step="1" value="549">
-                            <div class="range-output">
-                                <output class="output" for="yearRange">
-                                    1.5 года
-                                </output>
-                            </div>
-                            <div class="range-minmax">
-                                <div class="min"></div>
-                                <div class="max"></div>
+                        <div class="range-wrapper">
+                            <div class="range year-appl">
+                                <input id="yearRange" type="range" min="3" max="1095" step="1" value="549">
+                                <div class="range-output">
+                                    <output class="output" for="yearRange">
+                                        1.5 года
+                                    </output>
+                                </div>
+                                <div class="range-minmax">
+                                    <div class="min"></div>
+                                    <div class="max"></div>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row row--fio">
+                    <div class="col">
+                        <span class="tmpBlock"></span>
+                    </div>
+                    <div class="col">
+                        <span class="tmpBlock"></span>
+                    </div>
+                </div>
+                <div class="row row--contact">
+                    <div class="col">
+                        <span class="tmpBlock"></span>
+                    </div>
+                    <div class="col">
+                        <span class="tmpBlock"></span>
                     </div>
                 </div>
             </form>
+            <div class="form-footer">
+                <div class="row">
+                    <div class="col-md-9">
+                        <label for="accept" class="accept">
+                            <input type="checkbox" id="accept">
+                            Даю согласие на обработку персональных данных и на получение материалов рекламного характера, а также согласен с публичной офертой и документами.
+                        </label>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <button class="bubbly-button">Далее</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
