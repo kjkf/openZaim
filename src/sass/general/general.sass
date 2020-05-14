@@ -21,7 +21,7 @@ body
 	+tablet
 		font-size: $fontSize_body_tablet
 
-h1, h2, h3, h4, p, ul
+h1, h2, h3, h4, h6, p, ul
 	margin: 0px
 	padding: 0px
 
@@ -50,6 +50,7 @@ h4
 		//font-size: $fontSize_h4_tablet
 
 .container
+	margin: 0 auto
 	+laptop
 		max-width: 1230px
 		padding-left: 30px
@@ -99,5 +100,31 @@ h4
 	line-height: 1.645
 	&:last-child
 		margin-bottom: 0
+<<<<<<< HEAD
 	&__nospace
 		margin-bottom: 0
+=======
+
+.gradient-bg
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)
+	background-size: 400% 400%
+	animation: gradient 15s ease infinite
+
+@keyframes gradient
+	0%
+		background-position: 0% 50%
+
+	50%
+		background-position: 100% 50%
+
+	100%
+		background-position: 0% 50%
+
+.small-text
+	font-family: "Exo2-Medium", Arial, sans-serif
+	font-size: 14px
+	line-height: 17px
+
+.btn
+	background: $green
+>>>>>>> c37853ecb06cd1499b5c33867915a5513e202c77

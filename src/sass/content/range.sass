@@ -1,29 +1,46 @@
 $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275)
-$color-range-output: #383c42
+$color-range-output: #1FC935
 $color-input-placeholder: #c3c4c6
 $height-range-bounds: 22px
-$background-color-range-thumb: #333940
+$background-color-range-thumb: #ffffff
 $radius-range-thumb: 100px
-$height-range-thumb: 24px
-$width-range-thumb: 24px
+$height-range-thumb: 32px
+$width-range-thumb: 32px
 $size-range-thumb-shadow: 25px
 $color-range-thumb-shadow: rgba(#000, .5)
 $shadow-offset-y-range-thumb: 4px
 $shadow-offset-x-range-thumb: 0px
-$border-width-range-thumb: 6px
-$border-color-range-thumb: #fff
+$border-width-range-thumb: 7px
+$border-color-range-thumb: #1FC935
 $width-range-track: 100%
-$height-range-track: 4px
+$height-range-track: 5px
 $radius-range-track: 100px
-$fill-range-track: #e6e6e6
-$fill-range-track-active: #60cd18
+$fill-range-track: #ffffff
+$fill-range-track-active: #1FC935
 
 //Output
 $height-range-output: 60px
 $min-width-range-output: 32px
-$padding-x-range-output: 20px
+$padding-x-range-output-vert: 3px
+$padding-x-range-output: 9px
 $size-range-output-arrow: 10px
-$offset-y-range-output: 4px
+$offset-y-range-output: 0px
+
+.range-wrapper
+  padding-top: 4px
+  font-family: $font-Exo2-Medium
+  font-size: 24px
+  line-height: 29px
+  color: #ffffff
+  width: 100%
+
+.range-minmax
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  .min, .max
+    margin-top: 5px
 
 .range 
   @mixin range-track() 
@@ -42,7 +59,6 @@ $offset-y-range-output: 4px
     border-radius: $radius-range-thumb
     background: $background-color-range-thumb
     cursor: pointer
-
 
   position: relative
 
@@ -133,6 +149,7 @@ $offset-y-range-output: 4px
     touch-action: pan-x
     top: 50%
     transform: translateY(-50%)
+    border-radius: 20px
     will-change: left
 
 
@@ -148,18 +165,14 @@ $offset-y-range-output: 4px
     .output 
       display: block
       position: absolute
-      height: $height-range-output
-      line-height: $height-range-output
+      //height: $height-range-output
       min-width: $min-width-range-output
-      padding: 0 $padding-x-range-output
+      padding: $padding-x-range-output-vert $padding-x-range-output
       top: - ($width-range-thumb / 2) - $offset-y-range-output - $size-range-output-arrow
       transform: translate(-50%, -100%)
       background: $color-range-output
-      color: #fff
-      border-radius: 100px
+      border-radius: 4px
       white-space: nowrap
-      font-weight: bold
-      font-size: 1.2em
       text-align: center
 
       &:before 
@@ -174,30 +187,3 @@ $offset-y-range-output: 4px
         transform: translateX(-50%)
     
   
-
-
-
-//Demo stuff
-body 
-  font-family: Helvetica Neue, Helvetica, Arial
-  font-weight: 300
-
-
-main 
-  display: flex
-  height: 100vh
-  justify-content: center
-  align-items: center
-  color: #333
-
-
-form 
-  max-width: 500px
-  min-width: 320px
-  margin: 150px auto
-
-
-h2 
-  font-weight: 300
-  text-align: center
-  margin-bottom: 30px

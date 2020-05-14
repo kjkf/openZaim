@@ -5,14 +5,17 @@ const INPUT = 'input';
 const MAX_ROTATION = 35;
 const SOFTEN_FACTOR = 3;
 
-/*class RangeInput {
+class RangeInput {
 
-    constructor(el) {
+    constructor(el, type) {
+        console.log(el);
         this.el = el;
 
         this._handleEnd = this._handleEnd.bind(this);
         this._handleStart = this._handleStart.bind(this);
         this._handleInput = this._handleInput.bind(this);
+
+        this.formatDecorator = type === 'currency' ? formatCurrency : formatTerm;
 
         //Call the plugin
         $(this.el.querySelector('input[type=range]')).rangeslider({
@@ -41,7 +44,20 @@ const SOFTEN_FACTOR = 3;
         this._lastOffsetLeft = 0;
         this._lastTimeStamp = 0;
 
+        this.form = el.closest('form');
+        this.outputVal = this.outputEl.querySelector('.output');
+
+        this.minSpan = el.querySelector('.min');
+        this.maxSpan = el.querySelector('.max');
+
+        this.minSpan.innerHTML = this.formatDecorator(this.inputEl.min);
+        this.maxSpan.innerHTML = this.formatDecorator(this.inputEl.max);
+
         this.el.querySelector('.rangeslider').addEventListener(START, this._handleStart);
+
+        this.form.oninput = () => {
+            this.outputVal.innerHTML = this.formatDecorator(Math.round(this.inputEl.valueAsNumber));
+        }
     }
 
     _handleStart (e) {
@@ -78,6 +94,8 @@ const SOFTEN_FACTOR = 3;
         this._lastOffsetLeft = this.sliderThumbEl.offsetLeft;
     }
 
-}*/
-
-new RangeInput(document.querySelector('.range'));
+}
+const rangeAmount = document.querySelector('.range.amount');
+if (rangeAmount) new RangeInput(rangeAmount, 'currency');
+const rangeYear = document.querySelector('.range.year');
+if (rangeYear) new RangeInput(rangeYear, 'term');
