@@ -8,7 +8,7 @@ const SOFTEN_FACTOR = 3;
 class RangeInput {
 
     constructor(el, type) {
-        console.log(el);
+        //console.log(el);
         this.el = el;
 
         this._handleEnd = this._handleEnd.bind(this);
@@ -55,7 +55,10 @@ class RangeInput {
 
         this.el.querySelector('.rangeslider').addEventListener(START, this._handleStart);
 
-        this.form.oninput = () => {
+        /*this.form.oninput = () => {
+            this.outputVal.innerHTML = this.formatDecorator(Math.round(this.inputEl.valueAsNumber));
+        }*/
+        this.inputEl.oninput = () => {
             this.outputVal.innerHTML = this.formatDecorator(Math.round(this.inputEl.valueAsNumber));
         }
     }
@@ -97,5 +100,9 @@ class RangeInput {
 }
 const rangeAmount = document.querySelector('.range.amount');
 if (rangeAmount) new RangeInput(rangeAmount, 'currency');
-const rangeYear = document.querySelector('.range.year');
+
+const rangeAmountAppl = document.querySelector('.range.amount-appl');
+if (rangeAmountAppl) new RangeInput(rangeAmountAppl, 'currency');
+
+const rangeYear = document.querySelector('.range.year-appl');
 if (rangeYear) new RangeInput(rangeYear, 'term');

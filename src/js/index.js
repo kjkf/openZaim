@@ -1,5 +1,4 @@
 
-console.log('Hello, World!!! Hi!!!');
 function formatCurrency(n){
     var s = String(n);
     if (s.length <= 4) return s + ' &#8381;';

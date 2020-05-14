@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <title>Форма заявления</title>
+</head>
+<body>
+<div class="header" style="width: 100%;height: 80px; background: #333333;">
+    <div class="container"></div>
+</div>
+<div class="application-form">
+    <div class="container">
+        <h3 class="title">Получение 150 000 ₽</h3>
+        <div class="form-wrapper">
+            <h4 class="form-header">Заявка на получение - 150 000 рублей (шаг 1 из 4) </h4>
+            <div class="form-header--sub">
+                <span class="green-rect"></span>
+                <h6>+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <span>Сумма</span>
+                    </div>
+                    <div class="col">
+                        <div class="range amount-appl">
+                            <input id="amountRange" type="range" min="3000" max="500000" step="1000" >
+                            <div class="range-output">
+                                <output class="output" for="amountRange">
+                                    210 000 &#8381;
+                                </output>
+                            </div>
+                            <div class="range-minmax">
+                                <div class="min"></div>
+                                <div class="max"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span>Срок</span>
+                    </div>
+                    <div class="col">
+                        <div class="range year-appl">
+                            <input id="yearRange" type="range" min="3" max="1095" step="1" value="549">
+                            <div class="range-output">
+                                <output class="output" for="yearRange">
+                                    1.5 года
+                                </output>
+                            </div>
+                            <div class="range-minmax">
+                                <div class="min"></div>
+                                <div class="max"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="main.min.js"></script>
+</body>
+</html>
