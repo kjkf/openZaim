@@ -95,6 +95,7 @@ class RangeInput {
     }
 
 }
-
-new RangeInput(document.querySelector('.range.amount'), 'currency');
-new RangeInput(document.querySelector('.range.year'), 'term');
+const rangeAmount = document.querySelector('.range.amount');
+if (rangeAmount) new RangeInput(rangeAmount, 'currency');
+const rangeYear = document.querySelector('.range.year');
+if (rangeYear) new RangeInput(rangeYear, 'term');
