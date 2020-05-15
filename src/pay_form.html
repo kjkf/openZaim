@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <title>Оплата</title>
+</head>
+<body>
+<div class="header" style="width: 100%;height: 80px; background: #333333;">
+    <div class="container"></div>
+</div>
+<div class="application-form">
+    <div class="container">
+        <h2 class="title">Получение <span class="amonutVal">150 000</span> ₽</h2>
+
+        <div class="form-wrapper">
+            <h3 class="form-header">С карты спишется 1 рубль для её проверки!</h3>
+
+            <div class="wrapper" id="app">
+                <div class="card-form">
+                    <div class="card-list">
+                        <div class="card-item">
+                            <div class="card-item__side -front">
+                                <div class="card-item__focus" id="focusElement"></div>
+
+                                <div class="card-item__cover">
+                                    <img src="images/content/21.jpeg" class="card-item__bg">
+                                </div>
+
+                                <div class="card-item__wrapper">
+                                    <div class="card-item__top">
+                                        <img src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png" class="card-item__chip">
+                                        <div class="card-item__type">
+                                            <transition name="slide-fade-up">
+                                                <img src="images/icons/visa.png" alt="" class="card-item__typeImg">
+                                            </transition>
+                                        </div>
+                                    </div>
+
+                                    <label for="cardNumber" class="card-item__number" id="cardNumberLabel">
+                                        <span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem -active"> </div></span>
+                                        <span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem -active"> </div></span>
+                                        <span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem -active"> </div></span>
+                                        <span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span><span><div class="card-item__numberItem">#</div></span>
+                                    </label>
+                                    <div class="card-item__content">
+                                        <label for="cardName" class="card-item__info" id="cardNameLabel">
+                                            <div class="card-item__holder">Card Holder</div>
+                                            <transition name="slide-fade-up">
+                                                <div class="card-item__name">Full Name</div>
+                                            </transition>
+                                        </label>
+                                        <div class="card-item__date" id="cardDateLabel">
+                                            <label for="cardMonth" class="card-item__dateTitle">Expires</label>
+                                            <label for="cardMonth" class="card-item__dateItem">
+                                                <transition name="slide-fade-up">
+                                                    <span>MM</span>
+                                                </transition>
+                                            </label>
+                                            /
+                                            <label for="cardYear" class="card-item__dateItem">
+                                                <transition name="slide-fade-up">
+                                                    <span>YY</span>
+                                                </transition>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-item__side -back">
+                                <div class="card-item__cover">
+                                    <img src="images/content/21.jpeg" class="card-item__bg">
+                                </div>
+                                <div class="card-item__band"></div>
+                                <div class="card-item__cvv">
+                                    <div class="card-item__cvvTitle">CVV</div>
+                                    <div class="card-item__cvvBand">
+                                          <span>
+                                            *
+                                          </span>
+                                    </div>
+                                    <div class="card-item__type">
+                                        <img src="images/icons/visa.png" class="card-item__typeImg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-form__inner">
+                        <div class="card-input">
+                            <label for="cardNumber" class="card-input__label">Card Number</label>
+                            <input type="text" id="cardNumber" class="card-input__input" autocomplete="off" data-label="cardNumberLabel">
+                        </div>
+                        <div class="card-input">
+                            <label for="cardName" class="card-input__label">Card Holders</label>
+                            <input type="text" id="cardName" class="card-input__input" autocomplete="off" data-label="cardNameLabel">
+                        </div>
+                        <div class="card-form__row">
+                            <div class="card-form__col">
+                                <div class="card-form__group">
+                                    <label for="cardMonth" class="card-input__label">Expiration Date</label>
+                                    <select class="card-input__input -select" id="cardMonth" data-label="cardDateLabel">
+                                        <option value="" disabled selected>Month</option>
+                                    </select>
+                                    <select class="card-input__input -select" id="cardYear" data-label="cardDateLabel">
+                                        <option value="" disabled selected>Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-form__col -cvv">
+                                <div class="card-input">
+                                    <label for="cardCvv" class="card-input__label">CVV</label>
+                                    <input type="text" class="card-input__input" id="cardCvv" maxlength="4" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="card-form__button">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row cards-types">
+                <div class="col-md-2"><img src="images/icons/ic-visa.svg" alt="Visa"></div>
+                <div class="col-md-2"><img src="images/icons/ic-mastercard.svg" alt="MasterCard"></div>
+            </div>
+            <div class="form-footer">
+                <div class="form__footer-text">
+                    Для того чтобы получить услугу подбора кредитных продуктов, Вам нужно привязать Вашу банковскую карту (VISA, MASTERCARD, MIR) к аккаунту. На карте должен быть не нулевой баланс. Совершая платеж, Вы соглашаетесь с публичной офертой подписки и даете Ваше согласие на обработку персональных данных и получение рекламных материалов. Также Вы подтверждаете, что уведомлены о списании авторизационного платежа в счет стоимости услуги при привязке карты, о списании 399 (трёхсот девяноста девяти) рублей каждые 5 дней использования сервиса, на срок пять месяцев и поручаете оператору применять рекуррентные платежи. Безопасность платежей осуществляется с помощью БАНКА-ЭКВАЙЕРА, функционирующего на основе современных протоколов и технологий, разработанных международными платежными системами VISA International и MasterCard International (3D Secure, USAF). Безопасность передаваемой информации обеспечивается с помощью современных протоколов безопасности в Интернет (SSL/TLS).
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="main.min.js"></script>
+</body>
+</html>

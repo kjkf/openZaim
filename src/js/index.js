@@ -42,14 +42,16 @@ function formatTerm(n) {
 
 $(document).ready( function() {
     const btn_gamburg = document.getElementById('btn_gamburg');
-    const header__menu = document.querySelector('.header__menu');
-    btn_gamburg.addEventListener('click', () => {
-        header__menu.classList.add('active');
-        const btn_close = header__menu.querySelector('#btn_close');
-        btn_close.addEventListener('click', e => {
-            header__menu.classList.remove('active');
+    if (btn_gamburg) {
+        const header__menu = document.querySelector('.header__menu');
+        btn_gamburg.addEventListener('click', () => {
+            header__menu.classList.add('active');
+            const btn_close = header__menu.querySelector('#btn_close');
+            btn_close.addEventListener('click', e => {
+                header__menu.classList.remove('active');
+            });
+            const links = header__menu.querySelectorAll('.menu-item');
+            links.forEach(link => link.addEventListener('click', e => btn_close.click()))
         });
-        const links = header__menu.querySelectorAll('.menu-item');
-        links.forEach(link => link.addEventListener('click', e => btn_close.click()))
-    });
+    }
 });
