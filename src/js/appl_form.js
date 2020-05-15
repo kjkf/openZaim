@@ -5,14 +5,18 @@ if (form) {
     const prevBtn = document.getElementById('prev');
     const footer = document.querySelector('.form-footer');
     const stepNumSpan = document.querySelector('.stepNum');
+    const amountRange = document.getElementById('amountRange');
+    console.log('===', amountRange.value);
     let step = 1;
     nextBtn.addEventListener('click', e => {
+        console.log('---', step);
         if (step >= 4) return;
         step = changeStep(step, 'next');
     });
 
     prevBtn.addEventListener('click', e => {
         if(step <= 1) return;
+        e.preventDefault();
         step = changeStep(step, 'prev');
     });
 
@@ -28,8 +32,10 @@ if (form) {
         if (goalStepBlock) {
 
             if (stepNum === 1) {
-                const checkBox = footerStepOne.querySelector('#accept');
+                const checkBox = footer.querySelector('#accept');
+                console.log(checkBox);
                 const isAccepts = checkBox && checkBox.checked;
+                console.log('isAccepts = ' + isAccepts);
                 if (!isAccepts) {
                     return stepNum;
                 }
@@ -38,15 +44,23 @@ if (form) {
                 footerStepElse.classList.add('d-flex');
             }
 
-            if (goalStep > 2) {
-                footerText.style.display = 'none';
-            } else if (goalStep === 2) {
+            if (goalStep === 2) {
                 footerText.style.display = 'block';
+            } else if (goalStep === 3) {
+                footerText.style.display = 'none';
+            }
+
+            if (goalStep === 4) {
+                footer.style.display = 'none';
             }
 
             if (goalStep === 1) {
                 footerStepOne.style.display = 'block';
                 footerStepElse.classList.remove('d-flex');
+
+                form.style.paddingTop = '86px';
+            } else {
+                form.style.paddingTop = '50px';
             }
 
             currentStepBlock.style.display = 'none';

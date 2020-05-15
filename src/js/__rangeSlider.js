@@ -6,8 +6,11 @@ const MAX_ROTATION = 35;
 const SOFTEN_FACTOR = 3;
 
 class RangeInput {
-
-    constructor(el, type) {
+    /*
+     * el - селектор элемента
+     * type - тип форматирования значения
+     * resultsSelector - селектор элементов, в которые нужно вывести значение */
+    constructor(el, type, resultsSelector) {
         //console.log(el);
         this.el = el;
 
@@ -50,16 +53,22 @@ class RangeInput {
         this.minSpan = el.querySelector('.min');
         this.maxSpan = el.querySelector('.max');
 
-        this.minSpan.innerHTML = this.formatDecorator(this.inputEl.min);
-        this.maxSpan.innerHTML = this.formatDecorator(this.inputEl.max);
+        this.minSpan.innerHTML = this.formatDecorator(this.inputEl.min, ' &#8381;');
+        this.maxSpan.innerHTML = this.formatDecorator(this.inputEl.max, ' &#8381;');
 
         this.el.querySelector('.rangeslider').addEventListener(START, this._handleStart);
 
-        /*this.form.oninput = () => {
-            this.outputVal.innerHTML = this.formatDecorator(Math.round(this.inputEl.valueAsNumber));
-        }*/
+        let resultList = null;
+        if (resultsSelector) {
+            resultList = document.querySelectorAll(resultsSelector);
+        }
+
         this.inputEl.oninput = () => {
-            this.outputVal.innerHTML = this.formatDecorator(Math.round(this.inputEl.valueAsNumber));
+            this.outputVal.innerHTML = this.formatDecorator(Math.round(this.inputEl.valueAsNumber), ' &#8381;');
+
+            if (resultList) {
+                resultList.forEach(res => res.innerHTML = this.formatDecorator(Math.round(this.inputEl.valueAsNumber), ''));
+            }
         }
     }
 
@@ -102,7 +111,7 @@ const rangeAmount = document.querySelector('.range.amount');
 if (rangeAmount) new RangeInput(rangeAmount, 'currency');
 
 const rangeAmountAppl = document.querySelector('.range.amount-appl');
-if (rangeAmountAppl) new RangeInput(rangeAmountAppl, 'currency');
+if (rangeAmountAppl) new RangeInput(rangeAmountAppl, 'currency', '.amonutVal');
 
 const rangeYear = document.querySelector('.range.year-appl');
 if (rangeYear) new RangeInput(rangeYear, 'term');

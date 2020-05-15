@@ -14,13 +14,13 @@
 </div>
 <div class="application-form">
     <div class="container">
-        <h2 class="title">Получение 150 000 ₽</h2>
+        <h2 class="title">Получение <span class="amonutVal">150 000</span> ₽</h2>
 
         <div class="form-wrapper">
-            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг <span class="stepNum">1</span> из 4) </h3>
+            <h3 class="form-header">Заявка на получение - <span class="amonutVal">150 000</span> рублей (шаг <span class="stepNum">1</span> из 4) </h3>
             <div class="form-header--sub">
                 <span class="green-rect"></span>
-                <h6 class="subtitle">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
+                <h6 class="subtitle status">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
             </div>
 
             <form class="form">
@@ -32,10 +32,10 @@
                         <div class="col">
                             <div class="range-wrapper">
                                 <div class="range amount-appl">
-                                    <input id="amountRange" type="range" min="3000" max="500000" step="1000" >
+                                    <input id="amountRange" type="range" min="3000" max="500000" step="1000" value="150000">
                                     <div class="range-output">
                                         <output class="output" for="amountRange">
-                                            210 000 &#8381;
+                                            150 000 &#8381;
                                         </output>
                                     </div>
                                     <div class="range-minmax">
@@ -146,32 +146,84 @@
                 </div>
 
                 <div class="form-group step" data-step-num="4">
-                    <div class="row-wrapper passport-info">
-                        <h4 class="title">4444 Уважаемый заёмщик, укажите свои паспортные данные</h4>
-                        <div class="row row--passport">
-                            <div class="col">
-                                <span class="tmpBlock"></span>
-                            </div>
-                            <div class="col">
-                                <span class="tmpBlock"></span>
-                            </div>
+                    <h4 class="title">Проводим скориннг полученных данных</h4>
+                    <div class="row">
+                        <div class="col-md-4 bold">Фамилия имя отчество</div>
+                        <div class="data-col col-md-4">Иванов Иван Иванович</div>
+                        <div class="col-md-4 bold text--right">Муж <span class="datacheck datacheck--ok"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Дата рождения </div>
+                        <div class="data-col col-md-4">31.12.1990</div>
+                        <div class="col-md-4 bold text--right">29 лет <span class="datacheck datacheck--err"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Электронная почта</div>
+                        <div class="data-col col-md-4">test@mail.ru</div>
+                        <div class="col-md-4 bold text--right">Электронная почта доступна <span class="datacheck datacheck--ok"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Телефон</div>
+                        <div class="col-md-4">
+                            <div class="row"><div class="data-col col">+7 (904) 207-33-33</div></div>
+                            <div class="row"><div class="data-col col">Голосовой звонок</div></div>
+                            <div class="row"><div class="data-col col">SMS</div></div>
+                            <div class="row"><div class="data-col col">MMS</div></div>
+                            <div class="row"><div class="data-col col">Объявления на торговых площадках</div></div>
                         </div>
-                        <div class="row row--passport">
-                            <div class="col">
-                                <span class="tmpBlock"></span>
-                            </div>
-                            <div class="col">
-                                <span class="tmpBlock"></span>
-                            </div>
+                        <div class="col-md-4 bold">
+                            <div class="row text--right"><div class="col">Теле 2 <span class="datacheck datacheck--ok"></span></div></div>
+                            <div class="row text--right"><div class="col">Доступен <span class="datacheck datacheck--ok"></span></div></div>
+                            <div class="row text--right"><div class="col">Доступен <span class="datacheck datacheck--ok"></span></div> </div>
+                            <div class="row text--right"><div class="col">Доступен <span class="datacheck datacheck--ok"></span></div></div>
+                            <div class="row text--right"><div class="col">Найдено <span class="datacheck datacheck--ok"></span></div></div>
                         </div>
                     </div>
-                    <div class="row-wrapper work-info">
-                        <h4 class="title">Место работы</h4>
-                        <div class="row row--work">
-                            <div class="col">
-                                <span class="tmpBlock"></span>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Проверка паспорта</div>
+                        <div class="col-md-4">
+                            <div class="row"><div class="data-col col">8710 422442</div></div>
+                            <div class="row"><div class="data-col col">Дата выдачи 31.12.2010 г. </div></div>
                         </div>
+                        <div class="col-md-4 bold text--right">
+                            <div class="row"><div class="col">Паспорт в списке утереных не найден <span class="datacheck"></span></div></div>
+                            <div class="row"><div class="col">Паспорт действителен <span class="datacheck"></span></div></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Адрес регистрации</div>
+                        <div class="data-col col-md-4">Нижний Новгород, ул.Деловая 24 корп2, кв.58</div>
+                        <div class="col-md-4 bold text--right">Адрес найден <span class="datacheck"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Задолжности в ФССП</div>
+                        <div class="data-col col-md-4"></div>
+                        <div class="col-md-4 bold text--right">Проверенно <span class="datacheck"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Профили в социальных сетях</div>
+                        <div class="data-col col-md-4"></div>
+                        <div class="col-md-4 bold text--right">Проверенно <span class="datacheck"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">IP адрес</div>
+                        <div class="data-col col-md-4"></div>
+                        <div class="col-md-4 bold text--right">23.123.123.123 <span class="datacheck"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Браузер</div>
+                        <div class="data-col col-md-4"></div>
+                        <div class="col-md-4 bold text--right">Яндекс браузер <span class="datacheck"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Опереационная система</div>
+                        <div class="data-col col-md-4"></div>
+                        <div class="col-md-4 bold text--right">Windows 10 <span class="datacheck"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 bold">Устройство</div>
+                        <div class="data-col col-md-4"></div>
+                        <div class="col-md-4 bold text--right">Компьютер <span class="datacheck"></span></div>
                     </div>
                 </div>
 
@@ -179,16 +231,16 @@
             <div class="form-footer">
                 <div class="row">
                     <div class="col-md-9">
-                        <label for="accept" class="form__footer-text"  data-step-num="1">
-                            <input type="checkbox" id="accept">
-                            Даю согласие на обработку персональных данных и на получение материалов рекламного характера, а также согласен с публичной офертой и документами.
+                        <input type="checkbox" id="accept">
+                        <label for="accept" class="form__footer-text check-box"  data-step-num="1">
+                            <i class="box"></i> Даю согласие на обработку персональных данных и на получение материалов рекламного характера, а также согласен с публичной офертой и документами.
                         </label>
 
                         <div class="justify-content-between align-items-center"  data-step-num="2">
                             <div class="col-md-1">
-                                <button id="prev" class="goback">Назад</button>
+                                <a href="#" id="prev" class="goback">Назад</a>
                             </div>
-                            <div class="col-md-6 form__footer-text">
+                            <div class="col-md-7 form__footer-text">
                                 Уважаемый клиент, ещё совсем немного,
                                 Вы прошли почти половину пути!
                             </div>
@@ -201,102 +253,6 @@
                 </div>
             </div>
         </div>
-
-        <!--<div class="form-wrapper step" data-step-num="2">
-            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг 2 из 4) </h3>
-            <div class="form-header&#45;&#45;sub">
-                <span class="green-rect"></span>
-                <h6 class="subtitle">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
-            </div>
-
-            <form class="form">
-
-            </form>
-            <div class="form-footer">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-md-1">
-                        <a href="" class="goback">Назад</a>
-                    </div>
-                    <div class="col-md-6 form__footer-text">
-                        Уважаемый клиент, ещё совсем немного,
-                        Вы прошли почти половину пути!
-                    </div>
-                    <div class="col col-md-3 d-flex justify-content-end ">
-                        <button class="bubbly-button">Далее</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-wrapper step" data-step-num="3">
-            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг 3 из 4) </h3>
-            <div class="form-header&#45;&#45;sub">
-                <span class="green-rect"></span>
-                <h6 class="subtitle">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
-            </div>
-
-            <form class="form">
-
-            </form>
-            <div class="form-footer">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-md-1">
-                        <a href="" class="goback">Назад</a>
-                    </div>
-                    <div class="col col-md-3 d-flex justify-content-end ">
-                        <button class="bubbly-button">Далее</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-wrapper step" data-step-num="4">
-            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг 4 из 4) </h3>
-            <div class="form-header&#45;&#45;sub">
-                <span class="green-rect"></span>
-                <h6 class="subtitle">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
-            </div>
-
-            <form class="form">
-                <div class="row-wrapper passport-info">
-                    <h4 class="title">Уважаемый заёмщик, укажите свои паспортные данные</h4>
-                    <div class="row row&#45;&#45;passport">
-                        <div class="col">
-                            <span class="tmpBlock"></span>
-                        </div>
-                        <div class="col">
-                            <span class="tmpBlock"></span>
-                        </div>
-                    </div>
-                    <div class="row row&#45;&#45;passport">
-                        <div class="col">
-                            <span class="tmpBlock"></span>
-                        </div>
-                        <div class="col">
-                            <span class="tmpBlock"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-wrapper work-info">
-                    <h4 class="title">Место работы</h4>
-                    <div class="row row&#45;&#45;work">
-                        <div class="col">
-                            <span class="tmpBlock"></span>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <div class="form-footer">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-md-1">
-                        <a href="" class="goback">Назад</a>
-                    </div>
-                    <div class="col col-md-3 d-flex justify-content-end">
-                        <button class="bubbly-button">Далее</button>
-                    </div>
-                </div>
-            </div>
-        </div>-->
 
     </div>
 </div>

@@ -74,8 +74,6 @@
 .step[data-step-num="3"],
 .step[data-step-num="4"]
   display: none
-  .form
-    padding-top: 50px
 
   h4.title
     text-align: left
@@ -98,6 +96,41 @@
     color: $dark-grey
     text-decoration: none
     border-bottom: 1px solid $dark-grey
+
+.step[data-step-num="4"]
+  .row
+    margin-bottom: 24px
+
+  .data-col
+    padding-left: 0
+    font-size: 18px
+    line-height: 29px
+    font-weight: 300
+
+.text--right
+  text-align: right
+  padding-left: 0
+
+.datacheck
+  display: inline-block
+  width: 14px
+  height: 14px
+  margin-left: 7px
+  background:
+    color: #80bdff
+    repeat: no-repeat
+    size: contain
+    position: center
+
+  &.datacheck--ok
+    background:
+      color: transparent
+      image: url("../images/icons/ic-datacheck-ok.svg")
+
+  &.datacheck--err
+    background:
+      color: transparent
+      image: url("../images/icons/ic-datacheck-err.svg")
 
 .tmpBlock
   display: inline-block

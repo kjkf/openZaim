@@ -1,7 +1,7 @@
 
-function formatCurrency(n){
+function formatCurrency(n, currency){
     var s = String(n);
-    if (s.length <= 4) return s + ' &#8381;';
+    if (s.length <= 4) return s + currency;
     var k = s.indexOf(".");
     if (k < 0) {
         k = s.length;
@@ -12,7 +12,7 @@ function formatCurrency(n){
     s = s.substr(0, k + 3);
     for (var i = k - 3, j = n < 0 ? 1 : 0; i > j; i -= 3) s = s.substr(0, i) + " " + s.substr(i);
 
-    return s + ' &#8381;';
+    return s + currency;
 
 }
 
