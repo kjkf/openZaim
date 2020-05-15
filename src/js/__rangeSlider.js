@@ -108,7 +108,7 @@ class RangeInput {
 
 }
 const rangeAmount = document.querySelector('.range.amount');
-if (rangeAmount) new RangeInput(rangeAmount, 'currency');
+if (rangeAmount) new RangeInput(rangeAmount, 'currency', '.amonutVal');
 
 const rangeAmountAppl = document.querySelector('.range.amount-appl');
 if (rangeAmountAppl) new RangeInput(rangeAmountAppl, 'currency', '.amonutVal');
