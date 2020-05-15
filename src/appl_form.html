@@ -15,86 +15,289 @@
 <div class="application-form">
     <div class="container">
         <h2 class="title">Получение 150 000 ₽</h2>
+
         <div class="form-wrapper">
-            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг 1 из 4) </h3>
+            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг <span class="stepNum">1</span> из 4) </h3>
             <div class="form-header--sub">
                 <span class="green-rect"></span>
                 <h6 class="subtitle">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
             </div>
+
             <form class="form">
-                <div class="row row--amount">
-                    <div class="col-md-2">
-                        <span class="label">Сумма</span>
-                    </div>
-                    <div class="col">
-                        <div class="range-wrapper">
-                            <div class="range amount-appl">
-                                <input id="amountRange" type="range" min="3000" max="500000" step="1000" >
-                                <div class="range-output">
-                                    <output class="output" for="amountRange">
-                                        210 000 &#8381;
-                                    </output>
-                                </div>
-                                <div class="range-minmax">
-                                    <div class="min"></div>
-                                    <div class="max"></div>
+                <div class="form-group step" data-step-num="1">
+                    <div class="row row--amount">
+                        <div class="col-md-2">
+                            <span class="label">Сумма</span>
+                        </div>
+                        <div class="col">
+                            <div class="range-wrapper">
+                                <div class="range amount-appl">
+                                    <input id="amountRange" type="range" min="3000" max="500000" step="1000" >
+                                    <div class="range-output">
+                                        <output class="output" for="amountRange">
+                                            210 000 &#8381;
+                                        </output>
+                                    </div>
+                                    <div class="range-minmax">
+                                        <div class="min"></div>
+                                        <div class="max"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row row--term">
-                    <div class="col-md-2">
-                        <span class="label">Срок</span>
-                    </div>
-                    <div class="col">
-                        <div class="range-wrapper">
-                            <div class="range year-appl">
-                                <input id="yearRange" type="range" min="3" max="1095" step="1" value="549">
-                                <div class="range-output">
-                                    <output class="output" for="yearRange">
-                                        1.5 года
-                                    </output>
-                                </div>
-                                <div class="range-minmax">
-                                    <div class="min"></div>
-                                    <div class="max"></div>
+                    <div class="row row--term">
+                        <div class="col-md-2">
+                            <span class="label">Срок</span>
+                        </div>
+                        <div class="col">
+                            <div class="range-wrapper">
+                                <div class="range year-appl">
+                                    <input id="yearRange" type="range" min="3" max="1095" step="1" value="549">
+                                    <div class="range-output">
+                                        <output class="output" for="yearRange">
+                                            1.5 года
+                                        </output>
+                                    </div>
+                                    <div class="range-minmax">
+                                        <div class="min"></div>
+                                        <div class="max"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row row--fio">
+                        <div class="col">
+                            <span class="tmpBlock"></span>
+                        </div>
+                        <div class="col">
+                            <span class="tmpBlock"></span>
+                        </div>
+                    </div>
+                    <div class="row row--contact">
+                        <div class="col">
+                            <span class="tmpBlock"></span>
+                        </div>
+                        <div class="col">
+                            <span class="tmpBlock"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row row--fio">
-                    <div class="col">
-                        <span class="tmpBlock"></span>
+
+                <div class="form-group step" data-step-num="2">
+                    <div class="row-wrapper passport-info">
+                        <h4 class="title">Уважаемый заёмщик, укажите свои паспортные данные</h4>
+                        <div class="row row--passport">
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                        </div>
+                        <div class="row row--passport">
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <span class="tmpBlock"></span>
+                    <div class="row-wrapper work-info">
+                        <h4 class="title">Место работы</h4>
+                        <div class="row row--work">
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row row--contact">
-                    <div class="col">
-                        <span class="tmpBlock"></span>
+
+                <div class="form-group step" data-step-num="3">
+                    <div class="row-wrapper passport-info">
+                        <h4 class="title">333Уважаемый заёмщик, укажите свои паспортные данные</h4>
+                        <div class="row row--passport">
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                        </div>
+                        <div class="row row--passport">
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <span class="tmpBlock"></span>
+                    <div class="row-wrapper work-info">
+                        <h4 class="title">Место работы</h4>
+                        <div class="row row--work">
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="form-group step" data-step-num="4">
+                    <div class="row-wrapper passport-info">
+                        <h4 class="title">4444 Уважаемый заёмщик, укажите свои паспортные данные</h4>
+                        <div class="row row--passport">
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                        </div>
+                        <div class="row row--passport">
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-wrapper work-info">
+                        <h4 class="title">Место работы</h4>
+                        <div class="row row--work">
+                            <div class="col">
+                                <span class="tmpBlock"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </form>
             <div class="form-footer">
                 <div class="row">
                     <div class="col-md-9">
-                        <label for="accept" class="accept">
+                        <label for="accept" class="form__footer-text"  data-step-num="1">
                             <input type="checkbox" id="accept">
                             Даю согласие на обработку персональных данных и на получение материалов рекламного характера, а также согласен с публичной офертой и документами.
                         </label>
+
+                        <div class="justify-content-between align-items-center"  data-step-num="2">
+                            <div class="col-md-1">
+                                <button id="prev" class="goback">Назад</button>
+                            </div>
+                            <div class="col-md-6 form__footer-text">
+                                Уважаемый клиент, ещё совсем немного,
+                                Вы прошли почти половину пути!
+                            </div>
+                        </div>
                     </div>
-                    <div class="col d-flex justify-content-end">
+
+                    <div class="col-md-3 d-flex justify-content-end ">
+                        <button class="bubbly-button" id="next">Далее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="form-wrapper step" data-step-num="2">
+            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг 2 из 4) </h3>
+            <div class="form-header&#45;&#45;sub">
+                <span class="green-rect"></span>
+                <h6 class="subtitle">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
+            </div>
+
+            <form class="form">
+
+            </form>
+            <div class="form-footer">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-1">
+                        <a href="" class="goback">Назад</a>
+                    </div>
+                    <div class="col-md-6 form__footer-text">
+                        Уважаемый клиент, ещё совсем немного,
+                        Вы прошли почти половину пути!
+                    </div>
+                    <div class="col col-md-3 d-flex justify-content-end ">
                         <button class="bubbly-button">Далее</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="form-wrapper step" data-step-num="3">
+            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг 3 из 4) </h3>
+            <div class="form-header&#45;&#45;sub">
+                <span class="green-rect"></span>
+                <h6 class="subtitle">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
+            </div>
+
+            <form class="form">
+
+            </form>
+            <div class="form-footer">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-1">
+                        <a href="" class="goback">Назад</a>
+                    </div>
+                    <div class="col col-md-3 d-flex justify-content-end ">
+                        <button class="bubbly-button">Далее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-wrapper step" data-step-num="4">
+            <h3 class="form-header">Заявка на получение - 150 000 рублей (шаг 4 из 4) </h3>
+            <div class="form-header&#45;&#45;sub">
+                <span class="green-rect"></span>
+                <h6 class="subtitle">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
+            </div>
+
+            <form class="form">
+                <div class="row-wrapper passport-info">
+                    <h4 class="title">Уважаемый заёмщик, укажите свои паспортные данные</h4>
+                    <div class="row row&#45;&#45;passport">
+                        <div class="col">
+                            <span class="tmpBlock"></span>
+                        </div>
+                        <div class="col">
+                            <span class="tmpBlock"></span>
+                        </div>
+                    </div>
+                    <div class="row row&#45;&#45;passport">
+                        <div class="col">
+                            <span class="tmpBlock"></span>
+                        </div>
+                        <div class="col">
+                            <span class="tmpBlock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-wrapper work-info">
+                    <h4 class="title">Место работы</h4>
+                    <div class="row row&#45;&#45;work">
+                        <div class="col">
+                            <span class="tmpBlock"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="form-footer">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-1">
+                        <a href="" class="goback">Назад</a>
+                    </div>
+                    <div class="col col-md-3 d-flex justify-content-end">
+                        <button class="bubbly-button">Далее</button>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
     </div>
 </div>
 
