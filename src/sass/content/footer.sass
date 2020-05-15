@@ -1,4 +1,7 @@
 .footer
+  .container
+    +laptop-down
+      padding: 0
   &__content
     display: flex
     flex-direction: column
@@ -13,32 +16,81 @@
     align-items: center
     width: 100%
     height: 93px
-    border-bottom: 1px solid #474646
+    border-bottom: 1px solid #555454
+    +laptop-down
+      flex-wrap: wrap
+      padding-top: 20px
+      padding-bottom: 10px
+      height: auto
+    +tablet-down
+      flex-direction: column-reverse
+      padding-top: 30px
+      padding-bottom: 35px
     //background-color: red
-
+  .link
+    line-height: inherit
+    +laptop-down
+      font-size: 12px
+    +tablet-down
+      font-size: 12px
+      //line-height: inherit
   .menu
     list-style: none
     display: flex
     flex-direction: row
     justify-content: flex-start
     align-items: center
-    //background-color: green
+    +laptop-down
+      justify-content: space-between
+      width: 100%
+    +tablet-down
+      flex-direction: column
+      justify-content: center
+
   .menu_item
     margin: 0 50px 0 0
+    +laptop-down
+      margin: 0
+    +tablet-down
+      margin-top: 30px
   .menu_link
     text-decoration: none
     color: #FFFFFF
     font-family: $font-Exo2-Medium
     font-size: 18px
+    +laptop-down
+      font-size: 16px
   .icon_bar
+    +laptop-down
+      margin-top: 20px
+    +tablet-down
+      flex-direction: row
+      margin-top: 0px
     .menu_item
       margin-right: 25px
+      margin-top: 0!important
       &:last-child
         margin-right: 0
 
   &__text
     margin-top: 35px
+    +laptop-down
+      margin-top: 20px
+    +tablet-down
+      margin-top: 25px
+    .bold
+      +laptop-down
+        font-size: 14px
+      +tablet-down
+        font-size: 16px!important
+        line-height: 1.1!important
     .paragrfaph
       font-size: 16px
       margin-bottom: 20px
       flex-wrap: wrap
+      +laptop-down
+        font-size: 12px
+        margin-bottom: 10px
+        line-height: 1.7
+      +tablet-down
+        line-height: 2.5
