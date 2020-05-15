@@ -55,6 +55,10 @@ $phone-width-min: 320px
 	@media screen and (max-width: $phone-width-min)
 		@content
 
+=laptop_1-down
+	@media screen and (max-width: 1500px)
+		@content
+
 
 =scrolled($height)
 	max-height: $height
@@ -66,3 +70,11 @@ $phone-width-min: 320px
 		@content
 
 
+=bg-image($w, $h, $bg-col, $url, $bg-size)
+	width: $w
+	height: $h
+	background:
+		color: $bg-col
+		image: url(#{$url})
+		repeat: no-repeat
+		size: $bg-size
