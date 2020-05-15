@@ -1,0 +1,96 @@
+.header
+  background-color: $light-black
+  color: $white
+  min-height: 80px
+  display: flex
+  +laptop-down
+    min-height: 50px
+
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    +laptop
+      max-width: 1780px
+
+  &__contacts
+    +laptop-down
+      display: none
+    .contacts__phone
+      color: $white
+      margin-right: 20px
+
+  &__menu
+    display: flex
+    align-items: center
+    .menu-wrap
+      display: flex
+      +laptop-down
+        display: none
+    .menu
+      margin-right: 160px
+      +laptop_1-down
+        margin-right: 20px
+    .menu_item
+      margin-right: 25px
+      &:last-child
+        margin-right: 0px
+    &.active
+      .menu-wrap
+        display: flex
+        flex-direction: column
+        align-items: center
+        //opacity: 1
+        //transition: opacity 12s
+        position: absolute
+        top: 50px
+        left: 0px
+        background-color: $light-black
+        z-index: 1
+        width: 100%
+        padding: 25px 25px 15px
+        border-radius: 0px 0px 10px 10px
+      .menu
+        width: 100%
+        flex-direction: column
+        padding-bottom: 22px
+        margin-bottom: 50px
+        position: relative
+        &:after
+          content: ''
+          position: absolute
+          bottom: 0px
+          left: 50%
+          width: 84%
+          margin-left: calc(-84%/2)
+          border-bottom: 1px solid $grey_1
+      .menu_item
+        margin-right: 0px
+      .menu_link
+        font-size: 24px
+        line-height: 3
+      .btn-close
+        display: inline-block
+      .btn-gamburg
+        display: none
+      .header__contacts
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-right: 0px
+      .contacts__phone
+        order: 2
+        font-size: 24px
+        margin-bottom: 35px
+        margin-right: 0px
+      .bubbly-button
+        padding: 14px 20px
+        margin-bottom: 35px
+
+  .btn-gamburg
+    display: none
+    +laptop-down
+      display: block
+  .btn-close
+    display: none
+
