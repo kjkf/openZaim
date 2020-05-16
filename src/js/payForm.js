@@ -1,5 +1,7 @@
 
 $(document).ready( function() {
+    const applForm = document.querySelector('.application-form');
+    if (!applForm) return;
     $("#cardNumber").mask("9999 9999 9999 9999", {
         autoclear: false,
         placeholder: ' '
