@@ -2,12 +2,23 @@
   padding: 50px 236px 40px
   background: $dark-grey
   color: #ffffff
+  +laptop-down
+    padding: 20px 0 40px
+
+  .container
+    +laptop-down
+      padding-left: 0
+      padding-right: 0
   
   .title
     width: 100%
     text-align: center
     margin-bottom: 50px
     color: #ffffff
+    +laptop-down
+      font-size: 26px
+      line-height: 31px
+      margin-bottom: 19px
 
 .review__image
   margin: 0 auto
@@ -16,6 +27,10 @@
   overflow: hidden
   border-radius: 50%
   margin-bottom: 50px
+  +laptop-down
+    width: 110px
+    height: 110px
+    margin-bottom: 20px
 
   img
     height: 100%
@@ -27,10 +42,21 @@
     font-size: 18px
     line-height: 29px
     margin-bottom: 30px
+    +laptop-down
+      font-size: 14px
+      line-height: 22px
+      margin-bottom: 23px
 
   .review-name
     margin-bottom: 15px
     font-weight: bold
+    +laptop-down
+      font-size: 20px
+      margin-bottom: 0
+
+  .review-city
+    +laptop-down
+      font-size: 14px
 
 .tns-outer
   position: relative
@@ -48,6 +74,13 @@
     position: center
   width: 60px
   height: 120px
+  +laptop-down
+    width: 64px
+    height: 69px
+    left: 89%
+    top: 20px
   &:first-child
     transform: rotate(180deg)
     left: -142px
+    +laptop-down
+      left: 12px

@@ -2,6 +2,12 @@
   padding: 48px 0 9px
   color: #ffffff
   position: relative
+  +laptop-down
+    padding-top: 22px
+
+  .container
+    +laptop-down
+      padding-left: 0
 
   .title
     color: #ffffff
@@ -11,17 +17,28 @@
 
   h1
     margin-bottom: 61px
+    +laptop-down
+      font-size: 20px
+      line-height: 24px
+      margin-bottom: 75px
 
   h2
     font-size: 70px
     line-height: 84px
     margin-bottom: 20px
-
+    +laptop-down
+      font-size: 40px
+      line-height: 48px
+      margin-bottom: 17px
 
   h6
     font-size: 24px
     line-height: 29px
     margin-bottom: 297px
+    +laptop-down
+      font-size: 18px
+      line-height: 22px
+      margin-bottom: 189px
 
   .substrate
     font-family: $font-Exo2-Bold
@@ -36,9 +53,12 @@
     +laptop-down
       font-size: 164px
       line-height: 197px
+      top: 112px
+      line-height: -15px
 
-  .btn
-    padding: 18px 38px
+  .small-text
+    +laptop-down
+      display: none
 
 .range-block
   display: flex
@@ -46,6 +66,8 @@
   align-items: flex-start
   margin-bottom: 70px
   padding-left: 11px
+  +laptop-down
+    flex-direction: column-reverse
 
   .range-text
     display: inline-block
@@ -53,9 +75,18 @@
     font-size: 22px
     line-height: 26px
     margin-bottom: 16px
+    +laptop-down
+      display: none
 
   .range-button
     max-width: 375px
+    +laptop-down
+      align-self: center
+
+  .btn
+    padding: 18px 38px
+    +laptop-down
+      padding: 15px 17px
 
 .footer-banner
   .container
@@ -63,6 +94,10 @@
     justify-content: center
     align-items: center
     min-height: 300px
+    +laptop-down
+      min-height: 200px
 
   .btn
     padding: 18px 40px
+    +laptop-down
+      padding: 15px 18px
