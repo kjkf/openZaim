@@ -1,6 +1,6 @@
 
 $(document).ready( function() {
-    const applForm = document.querySelector('.application-form');
+    const applForm = document.querySelector('.pay-form');
     if (!applForm) return;
     $("#cardNumber").mask("9999 9999 9999 9999", {
         autoclear: false,

@@ -23,8 +23,8 @@
                 <h6 class="subtitle status">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
             </div>
 
-            <form class="form">
-                <div class="form-group step" data-step-num="1">
+            <form class="form needs-validation" novalidate>
+                <div class="step" data-step-num="1">
                     <div class="row row--amount">
                         <div class="col-md-2">
                             <span class="label">Сумма</span>
@@ -67,25 +67,30 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row row--fio">
-                        <div class="col">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group mb-0">
+                                <label class="form-control-label with-ic">
+                                    <input type="text" class="form-control" placeholder="Фамилия Имя Отчество" required>
+                                    <div class="form-control-img">
+                                        <svg class="ic-svg ic-ufo"><use xlink:href="images/icons/sprite.svg#ic-ufo"/></svg>
+                                        <svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>
+                                        <!--<svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-male"/></svg>-->
+                                    </div>
+                                    <span class="form-control-title">Фамилия Имя Отчество</span>
+                                </label>
+                            </div>
+
                             <span class="tmpBlock"></span>
                         </div>
-                        <div class="col">
+                        <div class="col-6">
                             <span class="tmpBlock"></span>
-                        </div>
-                    </div>
-                    <div class="row row--contact">
-                        <div class="col">
-                            <span class="tmpBlock"></span>
-                        </div>
-                        <div class="col">
                             <span class="tmpBlock"></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group step" data-step-num="2">
+                <div class="step" data-step-num="2">
                     <div class="row-wrapper passport-info">
                         <h4 class="title">Уважаемый заёмщик, укажите свои паспортные данные</h4>
                         <div class="row row--passport">
@@ -115,7 +120,7 @@
                     </div>
                 </div>
 
-                <div class="form-group step" data-step-num="3">
+                <div class="step" data-step-num="3">
                     <div class="row-wrapper passport-info">
                         <h4 class="title">333Уважаемый заёмщик, укажите свои паспортные данные</h4>
                         <div class="row row--passport">
@@ -145,7 +150,7 @@
                     </div>
                 </div>
 
-                <div class="form-group step" data-step-num="4">
+                <div class="step" data-step-num="4">
                     <h4 class="title">Проводим скориннг полученных данных</h4>
                     <div class="row">
                         <div class="col-md-4 bold">Фамилия имя отчество</div>
