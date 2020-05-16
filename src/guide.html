@@ -10,6 +10,51 @@
 </head>
 <body>
 <div class="container mt-5">
+    <div class="d-flex flex-column">
+        <p>Для валидации <b>формы</b> необходимо добавить соответствующие класс и аттрибут:</p>
+        <pre>
+&lt;form class="needs-validation" novalidate&gt;
+        </pre>
+        <p>все элементы формы должны быть внуртри тега <b>form</b>, кнопка должна быть <b>submit</b></p>
+        <pre>
+&lt;button type="submit" class="btn bubbly-button bubbly-button-green"&gt;send&lt;/button&gt;
+        </pre>
+        <p>Общая структура поля</p>
+        <pre>
+&lt;label class="form-control-label with-ic"&gt;
+    &lt;input type="text" class="form-control" placeholder="Пароль" required&gt;
+    &lt;div class="form-control-img"&gt;&lt;svg class="ic-svg"&gt;&lt;use xlink:href="images/icons/sprite.svg#ic-lock"/&gt;&lt;/svg&gt;&lt;/div&gt;
+    &lt;span class="form-control-title"&gt;Пароль&lt;/span&gt;
+&lt;/label&gt;
+        </pre>
+
+        <p>Для поля с иконкой, необходимо добавить класс <b>with-ic</b></p>
+        <pre>
+&lt;label class="form-control-label with-ic"&gt;
+        </pre>
+        <p>А обязательным полям необходимо добавить аттрибут <b>required</b>:</p>
+        <pre>
+&lt;input type="text" class="form-control" placeholder="Фамилия Имя Отчество" required&gt;
+        </pre>
+
+        <p>Когда поле неактивное, добавляется аттрибут и\или класс <b>disabled</b></p>
+        <pre>
+&lt;input type="text" class="form-control disabled" placeholder="Фамилия Имя Отчество" disabled&gt;
+        </pre>
+
+        <p>Когда поле валидное, то добавляется класс <b>is-valid</b></p>
+        <pre>
+&lt;input type="text" class="form-control is-valid" placeholder="Фамилия Имя Отчество" required&gt;
+        </pre>
+
+        <p>Когда поле невалидное, то добавляется класс <b>is-invalid</b></p>
+        <pre>
+&lt;input type="text" class="form-control is-invalid" placeholder="Фамилия Имя Отчество" required&gt;
+        </pre>
+        <p class="mb-5">Классы <b>is-valid, is-invalid</b> добавляются автом-ки при проверке формы</p>
+
+    </div>
+
     <form class="needs-validation" novalidate>
         <div class="row">
             <div class="col-6">
