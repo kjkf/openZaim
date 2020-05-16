@@ -103,17 +103,25 @@
     display: none
 
 .form-control-img
+  display: flex
+  justify-content: center
+  align-items: center
   position: absolute
   top: $input_pt
-  left: $input_pl
+  left: calc(#{$input_pl} - 3px)
   width: $input_ic_w
   height: $input_ic_h
+  fill: $grey
   +laptop-down
     top: $input_pt_tablet
     left: $input_pl_tablet
   +tablet-down
     top: $input_pt_mob
     left: $input_pl_mob
+
+.ic-svg
+  width: $input_ic_w
+  height: $input_ic_h
 
 .with-ic
   .form-control
