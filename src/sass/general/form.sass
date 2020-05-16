@@ -1,0 +1,147 @@
+.form-control
+  height: auto
+  //padding: $input_pt $input_pl
+  padding: $input_pt_edit $input_pl $input_pb_edit
+  font-size: 24px
+  font-weight: 300
+  line-height: 38px
+  color: $input_col
+  background-color: $input_bg
+  border-color: $input_br
+  border-radius: 4px
+  box-shadow: inset 0px 3px 5px rgba(51, 51, 51, 0.25)
+
+  +laptop-down
+    padding: $input_pt_edit_tablet $input_pl_tablet $input_pb_edit_tablet
+    //18px 10px 0px
+    font-size: 18px
+
+  +tablet-down
+    padding: $input_pt_edit_mob $input_pl_mob $input_pb_edit_mob
+    //20px 15px 0px
+    font-size: 14px
+    line-height: 34px
+
+  +placeholder
+    color: $input_placeholder_col
+    font-size: 24px
+    line-height: 1.6
+    +laptop-down
+      font-size: 18px
+    +tablet-down
+      font-size: 14px
+
+  &:focus
+    padding: $input_pt_edit $input_pl $input_pb_edit
+    background-color: $input_bg
+    border-color: $input_br
+    outline: 0
+    box-shadow: inset 0px 3px 5px rgba(51, 51, 51, 0.25)
+    +laptop-down
+      padding: $input_pt_edit_tablet $input_pl_tablet $input_pb_edit_tablet
+    +tablet-down
+      padding: $input_pt_edit_mob $input_pl_mob $input_pb_edit_mob
+
+.form-control.is-invalid, .was-validated .form-control:invalid
+  color: $input_col_invalid
+  border-color: $input_br_invalid
+  padding-right: $input_pl
+  background-image: none
+  box-shadow: none
+  +laptop-down
+    padding-right: $input_pl_tablet
+  +tablet-down
+    padding-right: $input_pl_mob
+  &:focus
+    background-color: $input_bg
+    border-color: $input_br_invalid
+    outline: 0
+    box-shadow: none
+
+  +placeholder
+    color: $input_col_invalid
+
+  & ~ .form-control-img
+    fill: $input_col_invalid
+  & ~ .form-control-title
+    color: $input_col_invalid
+
+.form-control.is-valid, .was-validated .form-control:valid
+  color: $input_col
+  border-color: $input_br
+  padding-right: $input_pl
+  background-image: none
+  box-shadow: none
+  +laptop-down
+    padding-right: $input_pl_tablet
+  +tablet-down
+    padding-right: $input_pl_mob
+
+  &:focus
+    background-color: $input_bg
+    border-color: $input_br
+    outline: 0
+    box-shadow: none
+
+  & ~ .form-control-img
+    fill: $input_col_valid
+  & ~ .form-control-title
+    color: $input_col_valid
+
+.form-control.disabled, .form-control:disabled
+  padding: $input_pt $input_pl
+  color: $input_col_disabled
+  border-color: $input_br_disabled
+  background-color: $input_bg_disabled
+  box-shadow: none
+  +laptop-down
+    padding: $input_pt_tablet $input_pl_tablet
+  +tablet-down
+    padding: 10px $input_pl_mob
+
+  & ~ .form-control-title
+    display: none
+
+.form-control-img
+  position: absolute
+  top: $input_pt
+  left: $input_pl
+  width: $input_ic_w
+  height: $input_ic_h
+  +laptop-down
+    top: $input_pt_tablet
+    left: $input_pl_tablet
+  +tablet-down
+    top: $input_pt_mob
+    left: $input_pl_mob
+
+.with-ic
+  .form-control
+    padding-left: calc(#{$input_ic_w} + #{$input_pl_in} + #{$input_pl})
+    +laptop-down
+      padding-left: calc(#{$input_ic_w} + #{$input_pl_in_tablet} + #{$input_pl_tablet})
+    +tablet-down
+      padding-left: calc(#{$input_ic_w} + #{$input_pl_in_mob} + #{$input_pl_mob})
+
+    & ~ .form-control-title
+      padding-left: calc(#{$input_ic_w} + #{$input_pl_in} + #{$input_pl})
+      +laptop-down
+        padding-left: calc(#{$input_ic_w} + #{$input_pl_in_tablet} + #{$input_pl_tablet})
+      +tablet-down
+        padding-left: calc(#{$input_ic_w} + #{$input_pl_in_mob} + #{$input_pl_mob})
+
+.form-control-title
+  position: absolute
+  top: $input_title_t
+  font-size: 12px
+  padding-left: $input_pl
+  color: $input_placeholder_col
+  +laptop-down
+    top: $input_title_t_tablet
+    padding-left: $input_pl_tablet
+  +tablet-down
+    top: $input_title_t_mob
+    padding-left: $input_pl_mob
+
+.form-control-label
+  position: relative
