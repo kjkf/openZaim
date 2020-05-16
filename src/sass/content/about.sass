@@ -1,10 +1,38 @@
 .about.banner
   padding: 160px 0 146px
+  +laptop-down
+    padding: 50px 0
+
+  .title
+    +tablet-down
+      margin-left: 10px
 
   h1
     margin-bottom: 16px
+    +laptop-down
+      font-size: 60px
+      line-height: 72px
+      font-family: $font-Exo2-Thin
+
   h6
     margin-bottom: 174px
+    +laptop-down
+      padding-right: 144px
+      margin-bottom: 216px
+    +tablet-down
+      padding-right: 0
+      margin-bottom: 170px
 
   .range-block
     margin-bottom: 0
+
+  .range-wrapper
+    margin-bottom: 52px
+
+  .range-text
+    +tablet-down
+      display: block
+      position: absolute
+      left: 10px
+      top: 288px
+      font-family: Exo2-Light
