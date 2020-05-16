@@ -85,8 +85,14 @@
 
   & ~ .form-control-img
     fill: $input_col_valid
+    .ic-ufo
+      display: none
+    .ic-male
+      display: block
   & ~ .form-control-title
     color: $input_col_valid
+
+
 
 .form-control.disabled, .form-control:disabled
   padding: $input_pt $input_pl
@@ -122,6 +128,10 @@
 .ic-svg
   width: $input_ic_w
   height: $input_ic_h
+  background-color: blue
+
+.ic-male
+  display: none
 
 .with-ic
   .form-control
