@@ -1,11 +1,17 @@
 .login-form
+  .container
+    +tablet-down
+      display: flex
+      flex-direction: column
+      align-items: center
   .form-wrapper
     margin: 0px 15px
     +laptop-down
       margin: 0px
     +tablet-down
-      margin-left: -15px
-      margin-right: -15px
+      width: calc(100% + 20px)
+      //margin-left: -15px
+      //margin-right: -15px
 
   .form-header
     padding-left: 20px
