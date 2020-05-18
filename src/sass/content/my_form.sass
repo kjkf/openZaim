@@ -1,0 +1,41 @@
+.my-form
+  +laptop-down
+    padding: 20px 0px 40px
+  .form-wrapper
+    margin: 0px 15px
+  .wrapper
+    flex-direction: column
+    padding: 0px
+
+.nav-tabs
+  justify-content: space-around
+  .nav-link
+    font-size: 18px
+    line-height: 22px
+    color: inherit
+    padding: 13px 0px
+    &:hover, &:focus
+      border-color: transparent
+
+  .nav-item.show .nav-link, .nav-link.active
+    color: $green
+    border-color: transparent transparent $green
+    border-bottom-width: 2px
+    font-weight: bold
+
+.tab-pane
+  position: relative
+  &__in
+    padding: 50px $tab_pane_pl 38px
+  .title
+    text-align: left
+    margin-bottom: 25px
+  .company-name
+    margin-bottom: 35px
+  .sum
+    position: absolute
+    right: $tab_pane_pl
+    bottom: 0px
+    height: 100%
+    display: flex
+    align-items: center    

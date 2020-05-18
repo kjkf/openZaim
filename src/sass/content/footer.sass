@@ -2,14 +2,18 @@
   .container
     +laptop-down
       padding: 0
-  &__content
+  &-content
     display: flex
     flex-direction: column
-    justify-content: center
-    align-items: center
-    padding: 0px 15px 50px 15px
+    justify-content: flex-start
+    align-items: flex-start
+    padding: 0px 15px 20px 15px
+    +laptop-down
+      padding-bottom: 0
+    +tablet-down
+        padding: 0px 10px 20px 10px
 
-  &__menublock
+  &-menublock
     display: flex
     flex-direction: row
     justify-content: space-between
@@ -61,36 +65,70 @@
     +laptop-down
       font-size: 16px
   .icon_bar
+    .menu_item
+      margin-right: 0
+      margin-left: 15px
+      margin-top: 0!important
+      &:first-child
+        margin-left: 0
+      +laptop-down
+        margin: 0
     +laptop-down
       margin-top: 20px
     +tablet-down
       flex-direction: row
-      margin-top: 0px
-    .menu_item
-      margin-right: 25px
-      margin-top: 0!important
-      &:last-child
-        margin-right: 0
+      justify-content: space-between
 
-  &__text
+      margin-top: 0px
+
+
+  &-text
     margin-top: 35px
     +laptop-down
       margin-top: 20px
     +tablet-down
-      margin-top: 25px
+      margin-top: 30px
+
     .bold
       +laptop-down
         font-size: 14px
       +tablet-down
         font-size: 16px!important
-        line-height: 1.1!important
+        //line-height: 1.1!important
     .paragrfaph
       font-size: 16px
-      margin-bottom: 20px
+      margin-bottom: 16px
       flex-wrap: wrap
+      line-height: normal
+      letter-spacing: normal
+      //flex-wrap: wrap
+      //word-break: break-all
       +laptop-down
         font-size: 12px
         margin-bottom: 10px
         line-height: 1.7
       +tablet-down
         line-height: 2.5
+    .link
+      line-height: inherit
+  &-title
+    font-size: 16px
+    //margin-bottom: 16px
+    flex-wrap: wrap
+    line-height: normal
+    letter-spacing: 1px
+    +laptop-down
+      margin-bottom: 0
+    +tablet-down
+      letter-spacing: 0
+  &-text__row
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
+    +laptop-down
+      margin-bottom: 10px
