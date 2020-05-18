@@ -1,12 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap")
+.pay-form
+  .form-wrapper
+    padding-bottom: 30px
+    position: relative
+  .form-footer
+    padding: 0 147px
+    margin-top: 50px
+    margin-bottom: 30px
+    &:before
+      bottom: 330px
+      +laptop-down
+        bottom: 495px
+      +tablet-down
+        bottom: 585px
+    +laptop-down
+      padding: 0 58px
+    +tablet-down
+      padding: 0 10px
 
 
 .cards-types
   max-width: 858px
   margin: auto
   width: 100%
+  flex-wrap: nowrap
   & div
     text-align: center
+    img
+      width: 100%
 
   @media screen and (max-width: 576px)
     margin: 0 auto
@@ -99,9 +120,10 @@
 
 
   &__button 
-    width: 100%
+    width: 70%
     margin-top: 20px
     cursor: pointer
+    justify-content: center
 
     @media screen and (max-width: 480px) 
       margin-top: 10px
@@ -503,7 +525,8 @@
 .card-input 
   margin-bottom: 20px
   &__label 
-    font-size: 14px
+    font-size: 16px
+    line-height: 26px
     margin-bottom: 5px
     font-weight: 500
     color: #1a3b5d
@@ -513,20 +536,21 @@
 
   &__input 
     width: 100%
-    height: 50px
-    border-radius: 5px
+    height: 70px
+    border-radius: 4px
     box-shadow: none
-    border: 1px solid #ced6e0
     transition: all 0.3s ease-in-out
-    font-size: 18px
+    font-size: 24px
     padding: 5px 15px
-    background: none
+    background: $grey_2
     color: #1a3b5d
-    font-family: "Source Sans Pro", sans-serif
+    font-family: Exo2-Light
+    border: 1px solid $grey
 
     &:hover,
     &:focus 
-      border-color: #3d9cff
+      //border-color: #3d9cff
+      background: none
   
 
     &:focus 

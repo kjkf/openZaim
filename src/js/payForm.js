@@ -26,11 +26,11 @@ $(document).ready( function() {
     const cardItem = document.querySelector('.card-item');
     const inputs = document.querySelectorAll('.card-input__input');
     const cardItemTypeImg = document.querySelectorAll('.card-item__typeImg');
-    console.log(cardNumberInput);
+    //console.log(cardNumberInput);
 
     cardNumberInput.addEventListener('keydown', e => {
         const number = e.target.value.trim();
-        console.log(number, e.target.value, number.length);
+        //console.log(number, e.target.value, number.length);
         if (number.length > 2) return;
         let imgType = "visa.png";
         /*let re = new RegExp("^4");
@@ -38,7 +38,7 @@ $(document).ready( function() {
 
         let re = new RegExp("^5[1-5]");
         if (number.match(re) != null) imgType = "ic-mastercard.svg";
-        console.log(imgType, `images/icons/${imgType}.svg`);
+        //console.log(imgType, `images/icons/${imgType}.svg`);
         cardItemTypeImg.forEach(item => {
             item.src = `images/icons/${imgType}`;
         })

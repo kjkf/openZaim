@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Guide</title>
+    <title>Заявка</title>
+    <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
@@ -26,7 +28,7 @@
             <form class="form needs-validation" novalidate name="applForm">
                 <div class="step" data-step-num="1">
                     <div class="row row--amount">
-                        <div class="col-md-2">
+                        <div class="col-md-2 label-wrapper">
                             <span class="label">Сумма</span>
                         </div>
                         <div class="col">
@@ -47,7 +49,7 @@
                         </div>
                     </div>
                     <div class="row row--term">
-                        <div class="col-md-2">
+                        <div class="col-md-2 label-wrapper">
                             <span class="label">Срок</span>
                         </div>
                         <div class="col">
@@ -68,10 +70,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6">
-                            <div class="form-group mb-0">
+                        <div class="col-md-12 col-xl-6">
+                            <div class="form-group ">
                                 <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control" placeholder="Фамилия Имя Отчество" required id="fio">
+                                    <input type="text" class="form-control disabled" placeholder="Фамилия Имя Отчество" required id="fio">
                                     <div class="form-control-img">
                                         <svg class="ic-svg ic-ufo"><use xlink:href="images/icons/sprite.svg#ic-ufo"/></svg>
                                         <!--<svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>-->
@@ -81,27 +83,27 @@
                                 </label>
                             </div>
 
-                            <div class="form-group mb-0">
+                            <div class="form-group ">
                                 <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    <input type="text" class="form-control disabled" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                                            placeholder="Электронная почта" required  id="email">
                                     <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-at"/></svg></div>
                                     <span class="form-control-title">Электронная почта</span>
                                 </label>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="form-group mb-0">
+                        <div class="col-md-12 col-xl-6">
+                            <div class="form-group ">
                                 <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control" placeholder="Дата рождения" required id="dateBirth">
+                                    <input type="text" class="form-control disabled" placeholder="Дата рождения" required id="dateBirth">
                                     <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-cake"/></svg></div>
                                     <span class="form-control-title">Дата рождения</span>
                                 </label>
                             </div>
 
-                            <div class="form-group mb-0">
+                            <div class="form-group ">
                                 <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control" placeholder="Мобильный телефон" required id="phoneNum">
+                                    <input type="text" class="form-control disabled" placeholder="Мобильный телефон" required id="phoneNum">
                                     <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-call"/></svg></div>
                                     <span class="form-control-title">Мобильный телефон</span>
                                 </label>
@@ -114,35 +116,40 @@
                     <div class="row-wrapper passport-info">
                         <h4 class="title">Уважаемый заёмщик, укажите свои паспортные данные</h4>
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group mb-0">
+                            <div class="col-md-12 col-xl-6">
+                                <div class="form-group ">
                                     <label class="form-control-label with-ic">
-                                        <input type="text" class="form-control" placeholder="Серия и номер паспорта" id="passport">
+                                        <input type="text" class="form-control disabled" placeholder="Серия и номер паспорта" id="passport">
                                         <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-passport"/></svg></div>
                                         <span class="form-control-title">Серия и номер паспорта</span>
                                     </label>
                                 </div>
-
-                                <div class="form-group mb-0">
-                                    <label class="form-control-label">
-                                        <input type="text" class="form-control" placeholder="Код подразделения" id="departmentCode">
-                                        <span class="form-control-title">Код подразделения</span>
-                                    </label>
-                                </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group mb-0">
+                            <div class="col-md-12 col-xl-6">
+                                <div class="form-group ">
                                     <label class="form-control-label with-ic">
-                                        <input type="text" class="form-control" placeholder="Дата выдачи"  id="dateOfIssue">
+                                        <input type="text" class="form-control disabled" placeholder="Дата выдачи"  id="dateOfIssue">
                                         <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-calendar"/></svg></div>
                                         <span class="form-control-title">Дата выдачи</span>
                                     </label>
                                 </div>
+                            </div>
 
-                                <div class="form-group mb-0">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-xl-6">
+                                <div class="form-group ">
                                     <label class="form-control-label">
-                                        <input type="text" class="form-control" placeholder="Кем выдан" id="issuedBy">
+                                        <input type="text" class="form-control disabled" placeholder="Код подразделения" id="departmentCode">
+                                        <span class="form-control-title">Код подразделения</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xl-6">
+                                <div class="form-group ">
+                                    <label class="form-control-label">
+                                        <input type="text" class="form-control disabled" placeholder="Кем выдан" id="issuedBy">
                                         <span class="form-control-title">Кем выдан</span>
                                     </label>
                                 </div>
@@ -153,9 +160,9 @@
                         <h4 class="title">Место работы</h4>
                         <div class="row row--work">
                             <div class="col-md-12">
-                                <div class="form-group mb-0">
+                                <div class="form-group ">
                                     <label class="form-control-label with-ic">
-                                        <input type="text" class="form-control" placeholder="Укажите место работы" id="workPlace">
+                                        <input type="text" class="form-control disabled" placeholder="Укажите место работы" id="workPlace">
                                         <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-suitcase"/></svg></div>
                                         <span class="form-control-title">Место работы</span>
                                     </label>
@@ -166,30 +173,139 @@
                 </div>
 
                 <div class="step" data-step-num="3">
-                    <div class="row-wrapper passport-info">
-                        <h4 class="title">333Уважаемый заёмщик, укажите свои паспортные данные</h4>
-                        <div class="row row--passport">
-                            <div class="col">
-                                <span class="tmpBlock"></span>
+                    <div class="row-wrapper">
+                        <h4 class="title">Адрес регистрации по паспорту</h4>
+
+                        <div class="row">
+                            <div class="col-xl-6 col-md-12">
+                                <div class="form-group ">
+                                    <label class="form-control-label with-ic">
+                                        <input type="text" class="form-control disabled" placeholder="Область / Регион" id="areaRegistration">
+                                        <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-meetpoint"/></svg></div>
+                                        <span class="form-control-title">Область / Регион</span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="col">
-                                <span class="tmpBlock"></span>
+                            <div class="col-xl-6 col-md-12">
+                                <div class="form-group ">
+                                    <label class="form-control-label with-ic">
+                                        <input type="text" class="form-control disabled" placeholder="Город / Населённый пункт" id="cityRegistration">
+                                        <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-building"/></svg></div>
+                                        <span class="form-control-title">Город / Населённый пункт*</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <div class="row row--passport">
-                            <div class="col">
-                                <span class="tmpBlock"></span>
+
+                        <div class="row">
+                            <div class="col-xl-6 col-md-12">
+                                <div class="form-group ">
+                                    <label class="form-control-label">
+                                        <input type="text" class="form-control disabled" placeholder="Улица*" id="streetRegistration">
+                                        <span class="form-control-title">Улица*</span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="col">
-                                <span class="tmpBlock"></span>
+                            <div class="col-xl-6 col-md-12">
+                                <div class="row row-home">
+                                    <div class="col-md-4">
+                                        <div class="form-group ">
+                                            <label class="form-control-label">
+                                                <input type="text" class="form-control disabled" placeholder="Дом" id="homeRegistration">
+                                                <span class="form-control-title">Дом</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group ">
+                                            <label class="form-control-label">
+                                                <input type="text" class="form-control disabled" placeholder="Корпус" id="buildingRegistration">
+                                                <span class="form-control-title">Корпус</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group ">
+                                            <label class="form-control-label">
+                                                <input type="text" class="form-control disabled" placeholder="Квартира" id="apartmentRegistration">
+                                                <span class="form-control-title">Квартира</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="row-wrapper work-info">
-                        <h4 class="title">Место работы</h4>
-                        <div class="row row--work">
-                            <div class="col">
-                                <span class="tmpBlock"></span>
+                    <div class="row-wrapper">
+                        <h4 class="title">Адрес регистрации совпадает с адресом проживания?</h4>
+                        <div class="row">
+                            <div class="col-md-12 buttons">
+                                <button type="submit" class="btn bubbly-button bubbly-button-green" id="yesBtn">Да, я живу там где прописан</button>
+                                <button type="button" class="btn bubbly-button bubbly-button-pink" id="noBtn">Нет, я проживаю по другому адресу</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-wrapper d-none" id="factAddress">
+                        <h4 class="title">Адрес проживания</h4>
+                        <div class="row">
+                            <div class="col-xl-6 col-md-12">
+                                <div class="form-group ">
+                                    <label class="form-control-label with-ic">
+                                        <input type="text" class="form-control disabled" placeholder="Область / Регион" id="areaFact">
+                                        <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-meetpoint"/></svg></div>
+                                        <span class="form-control-title">Область / Регион</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-12">
+                                <div class="form-group ">
+                                    <label class="form-control-label with-ic">
+                                        <input type="text" class="form-control disabled" placeholder="Город / Населённый пункт" id="cityFact">
+                                        <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-building"/></svg></div>
+                                        <span class="form-control-title">Город / Населённый пункт*</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-6 col-md-12">
+                                <div class="form-group ">
+                                    <label class="form-control-label">
+                                        <input type="text" class="form-control disabled" placeholder="Улица*" id="streetFact">
+                                        <span class="form-control-title">Улица*</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-12">
+                                <div class="row row-home">
+                                    <div class="col-md-4">
+                                        <div class="form-group ">
+                                            <label class="form-control-label">
+                                                <input type="text" class="form-control disabled" placeholder="Дом" id="homeFact">
+                                                <span class="form-control-title">Дом</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group ">
+                                            <label class="form-control-label">
+                                                <input type="text" class="form-control disabled" placeholder="Корпус" id="buildingFact">
+                                                <span class="form-control-title">Корпус</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group ">
+                                            <label class="form-control-label">
+                                                <input type="text" class="form-control disabled" placeholder="Квартира" id="apartmentFact">
+                                                <span class="form-control-title">Квартира</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -279,27 +395,32 @@
 
                 <div class="form-footer">
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-xl-9 col-md-12 footer-text">
                             <input type="checkbox" id="accept">
                             <label for="accept" class="form__footer-text check-box"  data-step-num="1">
                                 <i class="box"></i> Даю согласие на обработку персональных данных и на получение материалов рекламного характера, а также согласен с публичной офертой и документами.
                             </label>
 
                             <div class="justify-content-between align-items-center"  data-step-num="2">
-                                <div class="col-md-1">
+                                <div class="col-xl-1 prev-btn-wrapper">
                                     <a href="#" id="prev" class="goback">Назад</a>
                                 </div>
-                                <div class="col-md-7 form__footer-text">
+                                <div class="col-md-12 col-xl-7 form__footer-text">
                                     Уважаемый клиент, ещё совсем немного,
                                     Вы прошли почти половину пути!
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 d-flex justify-content-end ">
+                        <div class="col-xl-3 col-md-12 d-flex submit-wrapper ">
                             <button type="submit" class="btn bubbly-button bubbly-button-green" id="next">Далее</button>
                         </div>
                     </div>
                 </div>
+
+                <input type="hidden" id="surname" value="">
+                <input type="hidden" id="name" value="">
+                <input type="hidden" id="patronymic" value="">
+                <input type="hidden" id="gender" value="">
             </form>
 
             <footer class="footer bg-darkgrey">
@@ -365,7 +486,7 @@
     </div>
 </div>
 
-
 <script src="main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
 </body>
 </html>

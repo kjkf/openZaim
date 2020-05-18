@@ -93,35 +93,39 @@
                     </div>
                     <div class="card-form__inner">
                         <div class="card-input">
-                            <label for="cardNumber" class="card-input__label">Card Number</label>
-                            <input type="text" id="cardNumber" class="card-input__input" autocomplete="off" data-label="cardNumberLabel">
+                            <label for="cardNumber" class="card-input__label">Номер карты</label>
+                            <input type="text" id="cardNumber" class="card-input__input" autocomplete="off" data-label="cardNumberLabel" placeholder="5555 7777 8888 9999">
                         </div>
-                        <div class="card-input">
+                        <div class="card-input d-none">
                             <label for="cardName" class="card-input__label">Card Holders</label>
                             <input type="text" id="cardName" class="card-input__input" autocomplete="off" data-label="cardNameLabel">
                         </div>
                         <div class="card-form__row">
                             <div class="card-form__col">
                                 <div class="card-form__group">
-                                    <label for="cardMonth" class="card-input__label">Expiration Date</label>
+                                    <label for="cardMonth" class="card-input__label">Срок действия</label>
                                     <select class="card-input__input -select" id="cardMonth" data-label="cardDateLabel">
-                                        <option value="" disabled selected>Month</option>
+                                        <option value="" disabled selected>Месяц</option>
                                     </select>
                                     <select class="card-input__input -select" id="cardYear" data-label="cardDateLabel">
-                                        <option value="" disabled selected>Year</option>
+                                        <option value="" disabled selected>Год</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="card-form__col -cvv">
                                 <div class="card-input">
                                     <label for="cardCvv" class="card-input__label">CVV</label>
-                                    <input type="text" class="card-input__input" id="cardCvv" maxlength="4" autocomplete="off">
+                                    <input type="text" class="card-input__input" id="cardCvv" maxlength="4" autocomplete="off" placeholder="123">
                                 </div>
                             </div>
                         </div>
 
+                        <div class="row d-flex justify-content-center">
+                            <button class="btn bubbly-button bubbly-button-green card-form__button">Привязать карту</button>
+
+                        </div>
                         <!--<button class="card-form__button">                           Submit                        </button>-->
-                        <button class="btn bubbly-button bubbly-button-green card-form__button">Привязать карту</button>
+
                     </div>
                 </div>
 
@@ -137,66 +141,66 @@
                     Для того чтобы получить услугу подбора кредитных продуктов, Вам нужно привязать Вашу банковскую карту (VISA, MASTERCARD, MIR) к аккаунту. На карте должен быть не нулевой баланс. Совершая платеж, Вы соглашаетесь с публичной офертой подписки и даете Ваше согласие на обработку персональных данных и получение рекламных материалов. Также Вы подтверждаете, что уведомлены о списании авторизационного платежа в счет стоимости услуги при привязке карты, о списании 399 (трёхсот девяноста девяти) рублей каждые 5 дней использования сервиса, на срок пять месяцев и поручаете оператору применять рекуррентные платежи. Безопасность платежей осуществляется с помощью БАНКА-ЭКВАЙЕРА, функционирующего на основе современных протоколов и технологий, разработанных международными платежными системами VISA International и MasterCard International (3D Secure, USAF). Безопасность передаваемой информации обеспечивается с помощью современных протоколов безопасности в Интернет (SSL/TLS).
                 </div>
             </div>
-            <footer class="footer bg-darkgrey">
-                <div class="container">
-                    <div class="footer__content">
-                        <div class="footer__menublock">
-                            <ul class="menu">
-                                <li class="menu_item"><a href="" class="menu_link">О компании</a></li>
-                                <li class="menu_item"><a href="" class="menu_link">Отзывы</a></li>
-                                <li class="menu_item"><a href="" class="menu_link">Помощь</a></li>
-                                <li class="menu_item"><a href="" class="menu_link">Документы</a></li>
-                                <li class="menu_item"><a href="" class="menu_link">Личный кабинет</a></li>
-                            </ul>
-                            <ul class="menu icon_bar">
-                                <li class="menu_item">
-                                    <a href="" class="menu_link">
-                                        <img src="../images/icons/ic-visa.svg" alt="" class="menu_img">
-                                    </a>
-                                </li>
-                                <li class="menu_item">
-                                    <a href="" class="menu_link">
-                                        <img src="../images/icons/ic-mastercard.svg" alt="" class="menu_img">
-                                    </a>
-                                </li>
-                                <li class="menu_item">
-                                    <a href="" class="menu_link">
-                                        <img src="../images/icons/ic-mir.png" alt="" class="menu_img">
-                                    </a>
-                                </li>
-                                <li class="menu_item">
-                                    <a href="" class="menu_link">
-                                        <img src="../images/icons/ic-uniteller.png" alt="" class="menu_img">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer__text">
-                            <p class="paragrfaph bold">Zaym-Center © 2020 Все права на сайт защищены</p>
-                            <p class="paragrfaph">
-                                Услуги по подбору займов на проекте «Zaym-Center» оказываются ООО «Лид Профит» ОГРН 1205200014579 , ИНН/КПП 5257196322/525701001,
-                                являющимся оператором обработки персональных данных,</p>
-                            <p class="paragrfaph">
-                                Проект осуществляет только подбор кредитов и микрозаймов между лицом желающим взять займ, и кредитными учреждениями, которые на
-                                основании ФЗ «О потребительском кредите (займе)» от 21.12.2013 № 353-ФЗ имеют право осуществлять профессиональную деятельность по
-                                предоставлению потребительских займов. Проект не является финансовым учреждением, банком или кредитором, и не несёт ответственности
-                                за любые заключенные договоры кредитования или условия. Чтобы оформить заявку на получение займа, Вам необходимо пройти регистрацию
-                                и аутентификацию на проекте.</p>
-                            <p class="paragrfaph">ООО «Лид Профит» является операторами персональных данных (<a href="" class="link link__light">Приказ № 197-нд от 08.06.2018</a>).</p>
-                            <p class="paragrfaph">
-                                Сервис «Zaym-Center» использует куки для предоставления услуг. Условия хранения или доступа к куки Вы можете настроить в своём браузере.
-                                Сервис предназначен для лиц старше 18 лет. Расчет в калькуляторах на сайте основан на среднем показателе процентной ставки кредитов РФ.
-                                Не является публичной офертой. Расчет может значительно отличаться от реальной процентной ставки, которая будет предложена вам финансовыми
-                                организациями.</p>
-                            <p class="paragrfaph bold">
-                                Внимание! Услуга «Активация сервиса» по обработке заявки является платной и составляет 349 руб. Для отключения подписки удалите карты в
-                                &nbsp; <a href="" class="link bold">личном кабинете </a> сайта. Активация сервиса не гарантирует вам получение займа.</p>
-                        </div>
+
+        </div>
+        <footer class="footer bg-darkgrey">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__menublock">
+                        <ul class="menu">
+                            <li class="menu_item"><a href="" class="menu_link">О компании</a></li>
+                            <li class="menu_item"><a href="" class="menu_link">Отзывы</a></li>
+                            <li class="menu_item"><a href="" class="menu_link">Помощь</a></li>
+                            <li class="menu_item"><a href="" class="menu_link">Документы</a></li>
+                            <li class="menu_item"><a href="" class="menu_link">Личный кабинет</a></li>
+                        </ul>
+                        <ul class="menu icon_bar">
+                            <li class="menu_item">
+                                <a href="" class="menu_link">
+                                    <img src="../images/icons/ic-visa.svg" alt="" class="menu_img">
+                                </a>
+                            </li>
+                            <li class="menu_item">
+                                <a href="" class="menu_link">
+                                    <img src="../images/icons/ic-mastercard.svg" alt="" class="menu_img">
+                                </a>
+                            </li>
+                            <li class="menu_item">
+                                <a href="" class="menu_link">
+                                    <img src="../images/icons/ic-mir.png" alt="" class="menu_img">
+                                </a>
+                            </li>
+                            <li class="menu_item">
+                                <a href="" class="menu_link">
+                                    <img src="../images/icons/ic-uniteller.png" alt="" class="menu_img">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__text">
+                        <p class="paragrfaph bold">Zaym-Center © 2020 Все права на сайт защищены</p>
+                        <p class="paragrfaph">
+                            Услуги по подбору займов на проекте «Zaym-Center» оказываются ООО «Лид Профит» ОГРН 1205200014579 , ИНН/КПП 5257196322/525701001,
+                            являющимся оператором обработки персональных данных,</p>
+                        <p class="paragrfaph">
+                            Проект осуществляет только подбор кредитов и микрозаймов между лицом желающим взять займ, и кредитными учреждениями, которые на
+                            основании ФЗ «О потребительском кредите (займе)» от 21.12.2013 № 353-ФЗ имеют право осуществлять профессиональную деятельность по
+                            предоставлению потребительских займов. Проект не является финансовым учреждением, банком или кредитором, и не несёт ответственности
+                            за любые заключенные договоры кредитования или условия. Чтобы оформить заявку на получение займа, Вам необходимо пройти регистрацию
+                            и аутентификацию на проекте.</p>
+                        <p class="paragrfaph">ООО «Лид Профит» является операторами персональных данных (<a href="" class="link link__light">Приказ № 197-нд от 08.06.2018</a>).</p>
+                        <p class="paragrfaph">
+                            Сервис «Zaym-Center» использует куки для предоставления услуг. Условия хранения или доступа к куки Вы можете настроить в своём браузере.
+                            Сервис предназначен для лиц старше 18 лет. Расчет в калькуляторах на сайте основан на среднем показателе процентной ставки кредитов РФ.
+                            Не является публичной офертой. Расчет может значительно отличаться от реальной процентной ставки, которая будет предложена вам финансовыми
+                            организациями.</p>
+                        <p class="paragrfaph bold">
+                            Внимание! Услуга «Активация сервиса» по обработке заявки является платной и составляет 349 руб. Для отключения подписки удалите карты в
+                            &nbsp; <a href="" class="link bold">личном кабинете </a> сайта. Активация сервиса не гарантирует вам получение займа.</p>
                     </div>
                 </div>
-            </footer>
-        </div>
-
+            </div>
+        </footer>
     </div>
 </div>
 
