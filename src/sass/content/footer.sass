@@ -2,14 +2,14 @@
   .container
     +laptop-down
       padding: 0
-  &__content
+  &-content
     display: flex
     flex-direction: column
-    justify-content: center
-    align-items: center
-    padding: 0px 15px 50px 15px
+    justify-content: flex-start
+    align-items: flex-start
+    padding: 0px 15px 20px 15px
 
-  &__menublock
+  &-menublock
     display: flex
     flex-direction: row
     justify-content: space-between
@@ -72,7 +72,7 @@
       &:last-child
         margin-right: 0
 
-  &__text
+  &-text
     margin-top: 35px
     +laptop-down
       margin-top: 20px
@@ -86,11 +86,28 @@
         line-height: 1.1!important
     .paragrfaph
       font-size: 16px
-      margin-bottom: 20px
+      margin-bottom: 16px
       flex-wrap: wrap
+      line-height: normal
+      letter-spacing: normal
       +laptop-down
         font-size: 12px
         margin-bottom: 10px
         line-height: 1.7
       +tablet-down
         line-height: 2.5
+    .link
+      line-height: inherit
+  &-title
+    font-size: 16px
+    margin-bottom: 16px
+    flex-wrap: wrap
+    line-height: normal
+    letter-spacing: 1px
+  &-text__row
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+    margin-bottom: 16px

@@ -1,0 +1,100 @@
+.howitworks-block
+  width: 100%
+  padding-top: 50px
+  padding-bottom: 25px
+  .container
+    +laptop-down
+      min-width: 700px
+      margin-right: auto
+      margin-left: auto
+      padding: 0
+      //width: 100%
+    +tablet-down
+      min-width: 310px
+      margin-right: auto
+      margin-left: auto
+      padding: 0 10px
+
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    font-family: $font-Exo2-Light
+    font-size: 18px
+    width: 100%
+    .title
+      width: 100%
+      text-align: center
+      margin-bottom: 43px
+      letter-spacing: 0
+      +laptop-down
+        margin-bottom: 15px
+      +tablet-down
+
+.list
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  flex-wrap: wrap
+  list-style-type: none
+  font-size: 24px
+  //padding-left: 82px
+  +laptop-down
+    flex-direction: row
+    font-size: 14px
+  &_item
+    margin-bottom: 7px
+    counter-increment: inst
+    position: relative
+    background-color: red
+    padding-top: 15px
+    padding-left: 210px
+    +laptop-down
+      width: 310px
+      padding-left: 64px
+      margin-right: 40px
+      margin-bottom: 10px
+    +tablet-down
+      width: 297px
+      margin-right: auto
+      margin-left: auto
+      padding-left: 50px
+      margin-bottom: 22px
+    &::before
+      width: 80px
+      height: 80px
+      position: absolute
+      content: counter(inst)
+      color: #B292E5
+      border: 2px solid #B292E5
+      border-radius: 50%
+      font-family: $font-Exo2-Regular
+      font-size: 32px
+      line-height: 75px
+      text-align: center
+      top: 25px
+      left: 82px
+      +laptop-down
+        width: 48px
+        height: 48px
+        font-size: 18px
+        line-height: 45px
+        left: 5px
+        top: 5px
+      +tablet-down
+        width: 42px
+        height: 42px
+        line-height: 40px
+        left: 0
+        top: 5px
+  .paragrfaph
+    margin-bottom: 20px
+    +laptop-down
+      line-height: 1.8
+      margin-bottom: 5px
+  .bold
+    font-size: 24px
+    +laptop-down
+      font-size: 14px
