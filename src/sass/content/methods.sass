@@ -2,6 +2,9 @@
   width: 100%
   padding-top: 50px
   padding-bottom: 35px
+  +laptop-down
+    padding-top: 20px
+    padding-bottom: 0px
   .container
     +laptop-down
       min-width: 700px
@@ -76,7 +79,7 @@
     justify-content: flex-start
     //flex-wrap: wrap
   +tablet-down
-    width: 100%
+    min-width: 100%
     height: auto
     flex-direction: column
     justify-content: flex-start
