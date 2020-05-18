@@ -23,7 +23,7 @@
                 <h6 class="subtitle status">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
             </div>
 
-            <form class="form needs-validation" novalidate>
+            <form class="form needs-validation" novalidate name="applForm">
                 <div class="step" data-step-num="1">
                     <div class="row row--amount">
                         <div class="col-md-2">
@@ -71,21 +71,41 @@
                         <div class="col-6">
                             <div class="form-group mb-0">
                                 <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control" placeholder="Фамилия Имя Отчество" required>
+                                    <input type="text" class="form-control" placeholder="Фамилия Имя Отчество" required id="fio">
                                     <div class="form-control-img">
                                         <svg class="ic-svg ic-ufo"><use xlink:href="images/icons/sprite.svg#ic-ufo"/></svg>
-                                        <svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>
-                                        <!--<svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-male"/></svg>-->
+                                        <!--<svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>-->
+                                        <svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-male"/></svg>
                                     </div>
                                     <span class="form-control-title">Фамилия Имя Отчество</span>
                                 </label>
                             </div>
 
-                            <span class="tmpBlock"></span>
+                            <div class="form-group mb-0">
+                                <label class="form-control-label with-ic">
+                                    <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                           placeholder="Электронная почта" required  id="email">
+                                    <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-at"/></svg></div>
+                                    <span class="form-control-title">Электронная почта</span>
+                                </label>
+                            </div>
                         </div>
                         <div class="col-6">
-                            <span class="tmpBlock"></span>
-                            <span class="tmpBlock"></span>
+                            <div class="form-group mb-0">
+                                <label class="form-control-label with-ic">
+                                    <input type="text" class="form-control" placeholder="Дата рождения" required id="dateBirth">
+                                    <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-cake"/></svg></div>
+                                    <span class="form-control-title">Дата рождения</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group mb-0">
+                                <label class="form-control-label with-ic">
+                                    <input type="text" class="form-control" placeholder="Мобильный телефон" required id="phoneNum">
+                                    <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-call"/></svg></div>
+                                    <span class="form-control-title">Мобильный телефон</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,28 +113,53 @@
                 <div class="step" data-step-num="2">
                     <div class="row-wrapper passport-info">
                         <h4 class="title">Уважаемый заёмщик, укажите свои паспортные данные</h4>
-                        <div class="row row--passport">
-                            <div class="col">
-                                <span class="tmpBlock"></span>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-0">
+                                    <label class="form-control-label with-ic">
+                                        <input type="text" class="form-control" placeholder="Серия и номер паспорта" id="passport">
+                                        <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-passport"/></svg></div>
+                                        <span class="form-control-title">Серия и номер паспорта</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group mb-0">
+                                    <label class="form-control-label">
+                                        <input type="text" class="form-control" placeholder="Код подразделения" id="departmentCode">
+                                        <span class="form-control-title">Код подразделения</span>
+                                    </label>
+                                </div>
                             </div>
-                            <div class="col">
-                                <span class="tmpBlock"></span>
-                            </div>
-                        </div>
-                        <div class="row row--passport">
-                            <div class="col">
-                                <span class="tmpBlock"></span>
-                            </div>
-                            <div class="col">
-                                <span class="tmpBlock"></span>
+
+                            <div class="col-md-6">
+                                <div class="form-group mb-0">
+                                    <label class="form-control-label with-ic">
+                                        <input type="text" class="form-control" placeholder="Дата выдачи"  id="dateOfIssue">
+                                        <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-calendar"/></svg></div>
+                                        <span class="form-control-title">Дата выдачи</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group mb-0">
+                                    <label class="form-control-label">
+                                        <input type="text" class="form-control" placeholder="Кем выдан" id="issuedBy">
+                                        <span class="form-control-title">Кем выдан</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row-wrapper work-info">
                         <h4 class="title">Место работы</h4>
                         <div class="row row--work">
-                            <div class="col">
-                                <span class="tmpBlock"></span>
+                            <div class="col-md-12">
+                                <div class="form-group mb-0">
+                                    <label class="form-control-label with-ic">
+                                        <input type="text" class="form-control" placeholder="Укажите место работы" id="workPlace">
+                                        <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-suitcase"/></svg></div>
+                                        <span class="form-control-title">Место работы</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -232,31 +277,31 @@
                     </div>
                 </div>
 
-            </form>
-            <div class="form-footer">
-                <div class="row">
-                    <div class="col-md-9">
-                        <input type="checkbox" id="accept">
-                        <label for="accept" class="form__footer-text check-box"  data-step-num="1">
-                            <i class="box"></i> Даю согласие на обработку персональных данных и на получение материалов рекламного характера, а также согласен с публичной офертой и документами.
-                        </label>
+                <div class="form-footer">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input type="checkbox" id="accept">
+                            <label for="accept" class="form__footer-text check-box"  data-step-num="1">
+                                <i class="box"></i> Даю согласие на обработку персональных данных и на получение материалов рекламного характера, а также согласен с публичной офертой и документами.
+                            </label>
 
-                        <div class="justify-content-between align-items-center"  data-step-num="2">
-                            <div class="col-md-1">
-                                <a href="#" id="prev" class="goback">Назад</a>
-                            </div>
-                            <div class="col-md-7 form__footer-text">
-                                Уважаемый клиент, ещё совсем немного,
-                                Вы прошли почти половину пути!
+                            <div class="justify-content-between align-items-center"  data-step-num="2">
+                                <div class="col-md-1">
+                                    <a href="#" id="prev" class="goback">Назад</a>
+                                </div>
+                                <div class="col-md-7 form__footer-text">
+                                    Уважаемый клиент, ещё совсем немного,
+                                    Вы прошли почти половину пути!
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-3 d-flex justify-content-end ">
-                        <button type="submit" class="btn bubbly-button bubbly-button-green" id="next">Далее</button>
+                        <div class="col-md-3 d-flex justify-content-end ">
+                            <button type="submit" class="btn bubbly-button bubbly-button-green" id="next">Далее</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
+
             <footer class="footer bg-darkgrey">
                 <div class="container">
                     <div class="footer__content">

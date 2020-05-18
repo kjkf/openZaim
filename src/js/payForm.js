@@ -2,7 +2,7 @@
 $(document).ready( function() {
     const applForm = document.querySelector('.pay-form');
     if (!applForm) return;
-    $("#cardNumber").mask("9999 9999 9999 9999", {
+    $("#cardNumber").mask("#### #### #### ####", {
         autoclear: false,
         placeholder: ' '
     });
