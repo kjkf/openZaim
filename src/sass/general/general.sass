@@ -20,7 +20,7 @@ body
 	+tablet
 		font-size: $fontSize_body_tablet
 
-h1, h2, h3, h4, h6, p, ul
+h1, h2, h3, h4, h6, p, ul, label, .form-group
 	margin: 0px
 	padding: 0px
 
@@ -64,6 +64,7 @@ h4
 .title
 	color: $fontColorMain
 	font-family: $font-Exo2-Bold
+	letter-spacing: -0.4px
 
 .bold
 	font-family: $font-Exo2-Semibold
@@ -151,13 +152,15 @@ h4
 	font-size: 24px
 	line-height: 32px
 	color: $button-text-color
-	padding: 14px 40px
+	padding: 20px 40px
 	-webkit-appearance: none
 	appearance: none
 	border-radius: 0px
 	border: none
 	cursor: pointer
 	position: relative
+	+laptop-down
+		padding: 15px 40px
 	&:hover
 		color: $button-text-color
 	&:focus, &:active
@@ -190,3 +193,35 @@ h4
 	&__img
 		width: 100%
 		height: auto
+
+.g-recaptcha
+	transform: scale(0.9)
+	transform-origin: 0
+	+laptop_1-down
+		transform: scale(0.75)
+
+.oz-dialog
+	.modal-header
+		padding: 88px 28px 25px
+		border-width: 0px
+		.close
+			position: absolute
+			right: 28px
+			top: 48px
+			+bg-image(36px, 36px, transparent, "../images/icons/ic-multiply.png", contain)
+
+	.modal-title
+		width: 100%
+		text-align: center
+	.modal-body
+		//padding: 0px 16px 25px
+		padding: 0px 0px 25px 30px
+	.modal-footer
+		padding: 0px 16px 65px
+		border-width: 0px
+	.modal-footer>*
+		margin: 0px
+	.btn
+		width: 100%
+	.row
+		width: 100%

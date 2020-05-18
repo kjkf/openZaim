@@ -162,8 +162,55 @@
 
 .form-control-label
   position: relative
+  width: 100%
 
+.msg
+  display: inline-block
+  font-size: 24px
+  width: 100%
+  text-align: center
+  letter-spacing: 0.2px
+  +laptop-down
+    font-size: 18px
+  &.is-invalid
+    color: $red_1
+
+.oz-form
+  background: $body_bg
+  padding: 100px 0px
+  +laptop-down
+    padding: 20px 0px 40px
+  +tablet-down
+    padding: 40px 0px 40px
+  .title
+    text-align: center
+  h2.title
+    margin-bottom: 58px
+    +laptop-down
+      margin-bottom: 20px
+    +tablet-down
+      margin-bottom: 35px
+  h3.title
+    +laptop-down
+      font-size: 22px
+  .form-wrapper
+    background: #FFFFFF
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25)
+    border-radius: 10px
+    margin-bottom: 30px
+    +tablet-down
+      box-shadow: none
+      border-bottom-left-radius: 0px
+      border-bottom-right-radius: 0px
+  .form-header
+    text-align: center
+    background: $light-grey
+    padding: 21px 0 16px
+    border-radius: 10px 10px 0 0
+  form
+    width: 100%
 pre
   background: #f0f0f0
   padding: 7px
   margin: 0 0 1em
+

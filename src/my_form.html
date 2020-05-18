@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
-    <title>Авторизация</title>
+    <title>Личный кабинет</title>
 </head>
 <body>
 <header class="header">
@@ -32,57 +32,35 @@
         </div>
     </div>
 </header>
-<div class="oz-form login-form">
+<div class="oz-form my-form">
     <div class="container">
-        <h2 class="title">Авторизация</h2>
+        <h2 class="title">Личный кабинет</h2>
         <div class="form-wrapper">
-            <h3 class="title form-header">Для входа в личный кабинет введите номер телефона и фамилию</h3>
+            <h3 class="title form-header">Иванов Иван Иванович</h3>
             <div class="wrapper">
-                <form class="needs-validation login-form__form" novalidate>
-                    <div class="row">
-                        <div class="col-xl-1 col-md-0"></div>
-                        <div class="col-xl-10 col-md-12"><span class="msg is-invalid">Мы не нашли Ваших данных, возможно Вы ещё не зарегистрированы</span></div>
-                        <div class="col-xl-1 col-md-0"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="form-group">
-                                <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control" disabled placeholder="Мобильный телефон" required>
-                                    <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-call"/></svg></div>
-                                    <span class="form-control-title">Мобильный телефон</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="form-group">
-                                <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control" disabled placeholder="Фамилия Имя Отчество" required>
-                                    <div class="form-control-img">
-                                        <svg class="ic-svg ic-ufo"><use xlink:href="images/icons/sprite.svg#ic-ufo"/></svg>
-                                        <svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>
-                                        <!--<svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-male"/></svg>-->
-                                    </div>
-                                    <span class="form-control-title">Фамилия Имя Отчество</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row login-form__footer">
-                        <div class="col-xl-6 col-md-0 col-0"></div>
-                        <div class="col-xl-3 col-md-7 col-12">
-                            <div class="form-group mb-sm-0 mb-4">
-                                <div class="g-recaptcha" data-sitekey="xxx"></div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-5 col-12">
-                            <div class="form-group mb-sm-0">
-                                <!--<button type="submit" class="btn bubbly-button bubbly-button-green" >Войти</button>-->
-                                <button type="button" class="btn bubbly-button bubbly-button-green"  data-toggle="modal" data-target="#exampleModal">Войти</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">ывыв</div>
+                    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">11</div>
+                    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">чч</div>
+                    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+                </div>
             </div>
         </div>
     </div>
@@ -145,38 +123,6 @@
         </div>
     </div>
 </footer>
-
-<div class="modal fade" id="exampleModal" style="display: block; opacity: 1">
-    <div class="modal-dialog oz-dialog login-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="title modal-title" id="exampleModalLabel">Введите пароль из SMS</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group mb-0">
-                            <label class="form-control-label with-ic">
-                                <input type="text" class="form-control" placeholder="Пароль" required>
-                                <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-lock"/></svg></div>
-                                <span class="form-control-title">Пароль</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="row">
-                    <div class="col-6"><button type="button" class="btn bubbly-button bubbly-button-pink">Запросить пароль повторно</button></div>
-                    <div class="col-6"><button type="button" class="btn bubbly-button bubbly-button-green">Войти</button></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="https://www.google.com/recaptcha/api.js"></script>
 <script src="main.min.js"></script>
 </body>
 </html>
