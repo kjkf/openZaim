@@ -11,29 +11,29 @@
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
-  <header class="header">
-      <div class="container">
-          <div class="logo header__logo">
-              <a href="#" class="logo__link"><img src="../images/icons/logo_white.svg" alt="OPENZAIM" class="logo__img"></a>
-          </div>
-          <div class="header__menu">
-              <button type="button" class="btn btn-gamburg" id="btn_gamburg"></button>
-              <button type="button" class="btn btn-close" id="btn_close"></button>
-              <div class="menu-wrap">
-                  <ul class="menu">
-                      <li class="menu_item"><a href="" class="menu_link">Как это работает</a></li>
-                      <li class="menu_item"><a href="" class="menu_link">Способы получения</a></li>
-                      <li class="menu_item"><a href="" class="menu_link">Отзывы</a></li>
-                      <li class="menu_item"><a href="" class="menu_link">О сервисе</a></li>
-                  </ul>
-                  <div class="contacts header__contacts">
-                      <a href="tel:+7656696721" class="contacts__phone">+7(465) 669-67-21</a>
-                      <button class="btn bubbly-button bubbly-button-green">Получить деньги</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
+<header class="header">
+    <div class="container">
+        <div class="logo header__logo">
+            <a href="#" class="logo__link"><img src="../images/icons/logo_white.svg" alt="OPENZAIM" class="logo__img"></a>
+        </div>
+        <div class="header__menu">
+            <button type="button" class="btn btn-gamburg" id="btn_gamburg"></button>
+            <button type="button" class="btn btn-close" id="btn_close"></button>
+            <div class="menu-wrap">
+                <ul class="menu">
+                    <li class="menu_item"><a href="index.html#howitworks-block" class="menu_link smooth_scroll">Как это работает</a></li>
+                    <li class="menu_item"><a href="index.html#methods-block" class="menu_link smooth_scroll">Способы получения</a></li>
+                    <li class="menu_item"><a href="index.html#reviews-block" class="menu_link smooth_scroll">Отзывы</a></li>
+                    <li class="menu_item"><a href="index.html#aboutservice-block" class="menu_link smooth_scroll">О сервисе</a></li>
+                </ul>
+                <div class="contacts header__contacts">
+                    <a href="tel:+7656696721" class="contacts__phone">+7(465) 669-67-21</a>
+                    <button class="btn bubbly-button bubbly-button-green">Получить деньги</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="about banner gradient-bg">
     <div class="container">
         <h1 class="title">О сервисе</h1>
@@ -63,7 +63,7 @@
     </div>
 </div>
 <div id="accordion">
-  <div class="text-block bg-darkgrey">
+  <div class="text-block bg-darkgrey" id="aboutService">
       <div class="container">
         <div class="text-block__head" id="aboutService_heading">
           <h3 class="title title__white">Принцип работы сервиса</h3>
@@ -105,7 +105,7 @@
         </div>
       </div>
   </div>
-  <div class="text-block bg-lightgrey">
+  <div class="text-block bg-lightgrey" id="paymentSecurity">
       <div class="container">
         <div class="text-block__head" id="paymentSecurity_heading">
           <h3 class="title">Гарантии безопасности платежей</h3>
@@ -119,7 +119,7 @@
         </div>
       </div>
   </div>
-  <div class="text-block bg-darkgrey">
+  <div class="text-block bg-darkgrey" id="securityGuarantee">
       <div class="container">
         <div class="text-block__head" id="securityGuarantee_heading">
           <h3 class="title title__white">Гарантии безопасности</h3>
@@ -148,7 +148,7 @@
         </div>
       </div>
   </div>
-  <div class="text-block bg-lightgrey">
+  <div class="text-block bg-lightgrey" id="refund">
       <div class="container">
         <div class="text-block__head" id="refund_heading">
           <h3 class="title">Возврат</h3>
@@ -162,7 +162,7 @@
         </div>
       </div>
   </div>
-  <div class="text-block bg-darkgrey">
+  <div class="text-block bg-darkgrey" id="documents">
       <div class="container">
         <div class="text-block__head" id="documents_heading">
           <h3 class="title title__white">Документы и договоры</h3>
@@ -178,7 +178,7 @@
         </div>
       </div>
   </div>
-  <div class="text-block bg-lightgrey">
+  <div class="text-block bg-lightgrey" id="ban">
       <div class="container">
         <div class="text-block__head" id="ban_heading">
           <h3 class="title">Запрет на пользование персональными данными</h3>
@@ -204,7 +204,7 @@
         </div>
       </div>
   </div>
-  <div class="reviews-block">
+  <div class="reviews-block" id="reviews-block" >
       <div class="container">
         <div class="text-block__head" id="reviews_heading">
           <h3 class="title title__white">Отзывы о нашей работе</h3>
@@ -258,7 +258,7 @@
         </div>
       </div>
   </div>
-  <div class="feedback-block bg-lightgrey">
+  <div class="feedback-block bg-lightgrey" id="feedback-block">
    <div class="container">
      <div class="feedback-block__head" id="feedback_heading">
         <h3 class="title">Связаться с нами</h3>
@@ -321,11 +321,11 @@
       <div class="footer-content">
         <div class="footer-menublock">
           <ul class="menu">
-            <li class="menu_item"><a href="" class="menu_link">О компании</a></li>
-            <li class="menu_item"><a href="" class="menu_link">Отзывы</a></li>
-            <li class="menu_item"><a href="" class="menu_link">Помощь</a></li>
-            <li class="menu_item"><a href="" class="menu_link">Документы</a></li>
-            <li class="menu_item"><a href="" class="menu_link">Личный кабинет</a></li>
+            <li class="menu_item"><a href="about.html#" class="menu_link smooth_scroll">О компании</a></li>
+            <li class="menu_item"><a href="about.html#reviews-block" class="menu_link smooth_scroll">Отзывы</a></li>
+            <li class="menu_item"><a href="about.html#feedback-block" class="menu_link smooth_scroll">Помощь</a></li>
+            <li class="menu_item"><a href="about.html#documents" class="menu_link smooth_scroll">Документы</a></li>
+            <li class="menu_item"><a href="login.html" class="menu_link smooth_scroll">Личный кабинет</a></li>
           </ul>
           <ul class="menu icon_bar">
             <li class="menu_item">
