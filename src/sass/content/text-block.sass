@@ -1,63 +1,104 @@
 .text-block
   width: 100%
   padding-top: 50px
-  padding-bottom: 35px
+  padding-bottom: 30px
+  +laptop-down
+    padding: 0
+  //   padding: 20px 0 5px 0
   .container
+    padding: 0 30px
     +laptop-down
       min-width: 700px
-      margin-right: auto
-      margin-left: auto
-      padding: 0
-      //width: 100%
+      // margin-right: auto
+      // margin-left: auto
+      padding: 20px 15px
     +tablet-down
       min-width: 310px
-      margin-right: auto
-      margin-left: auto
-      padding: 0 10px
+      // margin-right: auto
+      // margin-left: auto
+      padding: 20px 10px
 
-  &__content
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
-    align-items: flex-start
-    font-family: $font-Exo2-Light
-    font-size: 18px
-    width: 100%
-    .title
-      width: 100%
-      text-align: center
-      margin-bottom: 43px
-      letter-spacing: 0
-      +laptop-down
-        margin-bottom: 15px
-      +tablet-down
+  .title
+    letter-spacing: 0
 
-    .paragrfaph
+  .paragrfaph
+    letter-spacing: 1
+    line-height: 1.7
+    margin-bottom: 26px
+    &:last-child
+      margin-bottom: 0
+    +laptop-down
+      margin-bottom: 10px
+      font-size: 16px
+      line-height: 1.66
       letter-spacing: 1
-      line-height: 1.7
-      margin-bottom: 26px
-      +laptop-down
-        margin-bottom: 0
-        font-size: 16px
-        line-height: 1.7
-        letter-spacing: 1
-  .center
-    justify-content: center
-    align-items: center
+    +tablet-down
+      margin-bottom: 20px
   .link
-    //width: 100%
     text-align: left
     +laptop-down
   		font-size: 16px
   .bubbly-button
     box-shadow: none
     +laptop-down
+      margin-top: 10px
+    +tablet-down
+      margin-top: 0px
+
+  &__head
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-bottom: 42px
+    +laptop-down
+      flex-direction: row
+      justify-content: space-between
+      margin-bottom: 0px
+    +tablet-down
+      align-items: flex-end
+
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    font-family: $font-Exo2-Light
+    font-size: 18px
+    width: 100%
+    +laptop-down
       margin-top: 20px
+    +tablet-down
+      margin-top: 30px
 
-  
+  // .center
+  //   justify-content: center
+  //   align-items: center
 
-.testfontbig
+
+.link-bar
   display: flex
-  font-size: 40px
-  color: black
-  font-family: $font-Exo2-Thin
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+  width: 100%
+
+.btn-accordion
+  display: none
+  background-repeat: no-repeat
+  background-size: 25px 25px
+  background-position: right center
+  +laptop-down
+    display: flex
+
+.btn-accordion__show
+  background-image: url("../images/icons/ic-arrow-down.svg")
+.btn-accordion__hide
+  background-image: url("../images/icons/ic-arrow-up.svg")
+
+
+// .testfontbig
+//   display: flex
+//   font-size: 40px
+//   color: black
+//   font-family: $font-Exo2-Thin
