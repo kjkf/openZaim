@@ -21,6 +21,30 @@
   .title
     letter-spacing: 0
 
+  .paragrfaph
+    letter-spacing: 1
+    line-height: 1.7
+    margin-bottom: 26px
+    &:last-child
+      margin-bottom: 0
+    +laptop-down
+      margin-bottom: 10px
+      font-size: 16px
+      line-height: 1.66
+      letter-spacing: 1
+    +tablet-down
+      margin-bottom: 20px
+  .link
+    text-align: left
+    +laptop-down
+  		font-size: 16px
+  .bubbly-button
+    box-shadow: none
+    +laptop-down
+      margin-top: 10px
+    +tablet-down
+      margin-top: 0px
+
   &__head
     display: flex
     flex-direction: column
@@ -42,31 +66,15 @@
     font-family: $font-Exo2-Light
     font-size: 18px
     width: 100%
-
-
-    .paragrfaph
-      letter-spacing: 1
-      line-height: 1.7
-      margin-bottom: 26px
-      &:last-child
-        margin-bottom: 0
-      +laptop-down
-        margin-bottom: 0
-        font-size: 16px
-        line-height: 1.7
-        letter-spacing: 1
-  .center
-    justify-content: center
-    align-items: center
-  .link
-    //width: 100%
-    text-align: left
-    +laptop-down
-  		font-size: 16px
-  .bubbly-button
-    box-shadow: none
     +laptop-down
       margin-top: 20px
+    +tablet-down
+      margin-top: 30px
+
+  // .center
+  //   justify-content: center
+  //   align-items: center
+
 
 .link-bar
   display: flex
