@@ -207,26 +207,49 @@ h4
 
 .oz-dialog
 	.modal-header
-		padding: 88px 28px 25px
+		padding: 70px 28px 25px
 		border-width: 0px
+		+laptop-down
+			padding: 54px 28px 35px
+		+tablet-down
+			padding: 56px 10px 30px
 		.close
 			position: absolute
-			right: 28px
-			top: 48px
+			right: 26px
+			top: 28px
 			+bg-image(36px, 36px, transparent, "../images/icons/ic-multiply.png", contain)
 
 	.modal-title
 		width: 100%
 		text-align: center
+		+tablet-down
+			font-size: 24px
+			line-height: 29px
 	.modal-body
 		//padding: 0px 16px 25px
-		padding: 0px 0px 25px 30px
+		padding: 0px 0px 30px 30px
+		+laptop-down
+			padding: 0px 0px 28px 0px
+		+tablet-down
+			padding: 0px 0px 40px 0px
 	.modal-footer
 		padding: 0px 16px 65px
 		border-width: 0px
+		+laptop-down
+			padding: 0px 0px 50px
+		+tablet-down
+			padding: 0px 0px 38px
+		.row
+			+tablet-down
+				flex-direction: column
+				align-items: center
 	.modal-footer>*
 		margin: 0px
 	.btn
 		width: 100%
+		+laptop-down
+			height: 100%
 	.row
 		width: 100%
+		+laptop-down
+			margin: 0px
