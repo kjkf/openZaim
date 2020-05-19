@@ -4,13 +4,18 @@
   +tablet-down
     padding-top: 40px
     padding-bottom: 30px
+
   .form-wrapper
-    margin: 0px 15px
+    margin: 0px 15px 40px
     +laptop-down
-      margin: 0px
+      margin: 0px 0px 40px
+    +tablet-down
+      margin-bottom: 30px
+
   .form-wrapper .form-header
     +laptop-down
       padding: 21px 0 20px
+
   .wrapper
     flex-direction: column
     padding: 0px
@@ -44,7 +49,7 @@
     color: $green
     border-color: transparent transparent $green
     border-bottom-width: 2px
-    font-weight: bold
+    font-w: bold
     +tablet-down
       border-bottom-width: 1px
       border-bottom-color: $light-grey
