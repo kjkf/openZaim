@@ -1,0 +1,62 @@
+.feedback-block
+  width: 100%
+  padding-top: 50px
+  padding-bottom: 30px
+  +laptop-down
+    padding: 0
+  .container
+    max-width: 1476px
+    padding: 0 15px
+    +laptop-down
+      min-width: 700px
+      padding: 20px 15px
+    +tablet-down
+      min-width: 310px
+      padding: 20px 10px
+  .title
+    letter-spacing: 0
+  .paragrfaph
+    margin-bottom: 0
+
+  &__head
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    //margin-bottom: 42px
+    +laptop-down
+      flex-direction: row
+      justify-content: space-between
+      margin-bottom: 0px
+    +tablet-down
+      align-items: flex-end
+
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    font-family: $font-Exo2-Light
+    font-size: 18px
+    width: 100%
+    margin-top: 48px
+
+
+  &__row
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-start
+    flex-wrap: wrap
+    width: 100%
+    margin-bottom: 40px
+
+  &__col
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    margin-right: 25px
+    &:last-child
+      margin-right: 0
+    //width: 50%
