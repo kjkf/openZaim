@@ -416,30 +416,48 @@
         <p class="paragrfaph">Мы сделаем всё, чтобы у вас осталось положительное впечатление от работы нашего сервиса.</p>
       </div>
       <div class="feedback-block__row">
-        <div class="feedback-block__col" style="width: 858px">
-          <div class="feedback-block__row">
-            Fields
-          </div>
-          <button class="btn bubbly-button bubbly-button-green">Отправить</button>
+        <div class="feedback-block__col col-lg-7 col-md-5 col-12" >
+          <form action="" id="form_feedback">
+            <div class="feedback-block__row inside_row">
+              <div class="feedback-block__fields">
+                <label class="form-control-label with-ic">
+                    <input type="text" class="form-control" placeholder="Ваше имя" required id="fio">
+                    <div class="form-control-img">
+                        <svg class="ic-svg ic-ufo"><use xlink:href="images/icons/sprite.svg#ic-ufo"/></svg>
+                        <svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>
+                    </div>
+                    <span class="form-control-title">Ваше имя</span>
+                </label>
+              </div>
+              <div class="feedback-block__fields">
+                <label class="form-control-label with-ic">
+                    <input type="text" class="form-control"  placeholder="Электронная почта" required id="email">
+                    <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-at"/></svg></div>
+                    <span class="form-control-title">Электронная почта</span>
+                </label>
+              </div>
+            </div>
+            <label class="form-control-label ">
+                <textarea name="name" rows="3" cols="80" class="form-control" placeholder="Ваше сообщение \n1 \n2" id="message"></textarea>
+                <span class="form-control-title">Ваше сообщение</span>
+            </label>
+            <button class="btn bubbly-button bubbly-button-green">Отправить</button>
+          </form>
         </div>
-        <div class="feedback-block__col">
-          <p class="paragrfaph bold">ООО «Лид Профит»</p>
-          <p class="paragrfaph">ОГРН 1205200014579</p>
-          <p class="paragrfaph">ИНН/КПП  5257196322/525701001</p>
-
-          <p class="paragrfaph"><span class="bold">Почтовый адрес:</span> 603000, г. Нижний Новгород,</p>
-          <p class="paragrfaph">ул. Электровозная 7Б,</p>
-          <p class="paragrfaph">лит.Ж, помещение 93</p>
-
-          <p class="paragrfaph"><span class="bold">Телефон:</span> 8 (800) 222-22-05</p>
+        <div class="feedback-block__col col-lg-4 col-md-5 col-12" style="width: 500px">
+            <p class="paragrfaph bold">ООО «Лид Профит»</p>
+            <p class="paragrfaph">ОГРН 1205200014579</p>
+            <p class="paragrfaph">ИНН/КПП  5257196322/525701001</p>
+            <p class="paragrfaph"><span class="bold">Почтовый адрес: </span> 603000, г. Нижний Новгород, ул. Электровозная 7Б, лит.Ж, помещение 93</p>
+            <p class="paragrfaph"><span class="bold">Телефон:</span> 8 (800) 222-22-05</p>
         </div>
       </div>
     </div>
   </div>
  </div>
 
-<!-- <script src="plugins/tiny-slider.js"></script>
+<!-- <script src="plugins/tiny-slider.js"></script>-->
 
-<script src="main.min.js"></script> -->
+<script src="main.min.js"></script>
 </body>
 </html>
