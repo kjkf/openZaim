@@ -1,0 +1,136 @@
+.my-form
+  .offer-bl
+    margin: 0px 15px 40px
+    +laptop-down
+      margin-left: 0px
+      margin-right: 0px
+      margin-bottom: 20px
+      padding-bottom: 24px
+    +tablet-down
+      padding-bottom: 30px
+      margin-bottom: 40px
+    &:last-child
+      margin-bottom: 0px
+      +laptop-down
+        margin-bottom: 20px
+      +tablet-down
+        margin-bottom: 10px
+
+.offer-bl
+  display: flex
+  flex-direction: column
+  align-self: center
+  width: 100%
+  background: #FFFFFF
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25)
+  border-radius: 10px
+  padding: 0px 30px 50px
+  +laptop-down
+    max-width: 340px
+    width: 340px
+    padding-left: 10px
+    padding-right: 10px
+  +tablet-down
+
+  +phone-down
+    width: 100%
+
+  &__title
+    display: flex
+    align-items: center
+    justify-content: center
+    align-self: center
+    color: $white
+    font-size: 24px
+    line-height: 29px
+    text-align: center
+    border-radius: 0px 0px 10px 10px
+    min-height: 48px
+    padding: 0px 6.5%
+    +laptop-down
+      font-size: 18px
+      line-height: 22px
+      padding: 0px 6%
+      margin-bottom: 15px
+    +tablet-down
+      font-size: 24px
+      line-height: 29px
+      margin-bottom: 26px
+    +phone-down
+      padding: 5px 0px
+
+  &__img
+    width: 250px
+    height: 60px
+    border-radius: 4px
+    background-color: #282828
+    overflow: hidden
+    margin-top: 5px
+    +laptop-down
+      width: 200px
+      height: 48px
+      margin-bottom: 25px
+    +tablet-down
+      width: 250px
+      height: 60px
+      margin-bottom: 15px
+    img
+      width: 100%
+      height: auto
+
+.offer-bl-row
+  display: flex
+  justify-content: space-between
+  width: 100%
+  +laptop-down
+    flex-direction: column
+    align-items: center
+
+.offer-cond
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+  font-size: 18px
+  font-family: $font-Exo2-Bold
+  flex-grow: 1
+  +laptop-down
+    flex-direction: column
+    margin-bottom: 25px
+  +tablet-down
+    font-size: 24px
+    margin-bottom: 15px
+
+
+  &__item
+    +laptop-down
+      margin: 10px 0px
+    +tablet-down
+      margin: 22px 0px
+
+.btn
+  +laptop-down
+    min-width: 228px
+  +phone-down
+    padding: 15px 18px
+
+.offer-bl--red
+  .offer-bl__title
+    background-color: $red
+
+.offer-bl--green
+  .offer-bl__title
+    background-color: $green
+
+.offer-bl-wrap
+  display: flex
+  flex-direction: column
+  +laptop-down
+    flex-direction: row
+    justify-content: space-between
+    flex-wrap: wrap
+  +tablet-down
+    flex-direction: column
+    justify-content: center
+
+  +phone-down
+    margin: 0 -10px
