@@ -14,9 +14,13 @@
       max-width: 1780px
 
   &__contacts
+    display: flex
+    align-items: center
     +laptop-down
       display: none
     .contacts__phone
+      font-size: 18px
+      line-height: 22px
       color: $white
       margin-right: 20px
 
@@ -96,3 +100,15 @@
   .bubbly-button
     padding-top: 14px
     padding-bottom: 14px
+  .btn-exit
+    display: none
+
+.header-person-date
+  .header__menu
+    display: none
+  .btn-exit
+    display: block
+    +laptop-down
+      font-size: 18px
+      line-height: 22px
+      padding: 4px 23px
