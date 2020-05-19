@@ -1,53 +1,151 @@
 .application-form
   background: $body_bg
-  padding: 100px 0
+  padding: 100px 0 70px
+  +laptop-down
+    padding: 20px 0
+  +tablet-down
+    padding: 40px 0
+
+  .container
+    padding: 0 24px 0 39px
+    +laptop-down
+      padding: 0px 9px 0 24px
+    +tablet-down
+      padding: 0
 
   .title
     text-align: center
     margin-bottom: 58px
+    +laptop-down
+      margin-bottom: 20px
+    +tablet-down
+      margin-bottom: 34px
 
 .form-wrapper
+  position: relative
   background: #FFFFFF
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25)
   border-radius: 10px
   margin-bottom: 30px
+  +tablet-down
+    box-shadow: none
 
   .form-header
     text-align: center
     background: $light-grey
     padding: 21px 0 16px
     border-radius: 10px 10px 0 0
+    font-family: Exo2-Semibold
+    +laptop-down
+      font-size: 22px
+      line-height: 26px
+      padding: 21px 0 21px
+    +tablet-down
+      padding: 21px 20px 20px
 
   .form-header--sub
+    position: relative
     display: flex
-    padding-right: 295px
+    padding: 13px 0
+    //padding-right: 295px
     border-bottom: 1px solid $light-grey
+    +laptop-down
+      padding-right: 0
+      position: relative
     .subtitle
+      z-index: 10
       font-size: 18px
       line-height: 22px
       text-align: center
       width: 100%
       align-self: center
+      +laptop-down
+        font-size: 16px
+        line-height: 19px
+        position: relative
+        padding: 20px 0
+      +tablet-down
+        padding: 20px 16px
     .green-rect
       display: inline-block
       height: 100%
-      width: 295px
+      width: calc(100% / 4) //295px
       background: $green
       min-height: 50px
+      position: absolute
+      left: 0
+      top: 0
+      z-index: 0
+
+      +tablet-down
+        width: 125px
 
   .form
-    padding: 86px 147px 100px
+    padding: 82px 147px 28px
     position: relative
+    +laptop-down
+      padding: 40px 58px 40px
+    +tablet-down
+      padding: 70px 10px 40px
+
+    &:before
+      content: ''
+      background: $light-grey
+      position: absolute
+      display: inline-block
+      width: 100%
+      height: 1px
+      //top: 0
+      left: 0
+      right: 0
+      bottom: 130px
+      +laptop-down
+        bottom: 220px
+      +tablet-down
+        bottom: 315px
+
+    &[data-step='2']
+      &:before
+        +laptop-down
+          bottom: 165px
+        +tablet-down
+          bottom: 275px
+
+    &[data-step='3']
+      &:before
+        +laptop-down
+          bottom: 120px
+        +tablet-down
+          bottom: 185px
 
     .row
       align-items: flex-start
-      margin-bottom: 40px
+      //margin-bottom: 40px
+      +laptop-down
+        flex-direction: column
+        margin-bottom: 0
+      & .label-wrapper
+        padding: 0 15px
+        margin-right: 13px
+        min-width: 134px
+        +laptop-down
+          margin-bottom: 40px
       &.row--amount
-        margin-bottom: 74px
-      &.row--fio
-        margin-bottom: 20px
-      &.row--contact
-        margin-bottom: 100px
+        margin-bottom: 69px
+        +laptop-down
+          margin-bottom: 23px
+      &.row--term
+        margin-bottom: 38px
+        +laptop-down
+          margin-bottom: 23px
+      &.row-home
+        +laptop-down
+          flex-direction: row
+        +tablet-down
+          flex-wrap: nowrap
+        .form-group
+          margin-bottom: 10px
+
       &:last-child
         margin-bottom: 0
 
@@ -55,10 +153,38 @@
       font-size: 32px
       line-height: 38px
       font-family: $font-Exo2-Bold
+      +laptop-down
+        font-size: 18px
+        line-height: 22px
+        font-family: Exo2-Semibold
+
+    .form-group
+      margin-bottom: 20px
+
+    .step[data-step-num="1"]
+      .form-group
+        &:last-child
+          margin-bottom: 0
+          +laptop-down
+            margin-bottom: 20px
 
   .range-wrapper
-    padding-top: 10px
+    padding-top: 15px
+    +laptop-down
+      font-size: 18px
+      line-height: 22px
+
+  .range .range-output .output
+    +laptop-down
+      padding: 6px 24px
+
+
+  .range-minmax
+    padding-top: 2px
     color: $fontColorMain
+    +laptop-down
+      font-size: 16px
+      line-height: 19px
 
   .form-control-label
     width: 100%
@@ -67,28 +193,119 @@
       &:focus
         border-color: $light-black
 
+.row-wrapper
+  .buttons
+    display: flex
+    justify-content: flex-end
+    +laptop-down
+      justify-content: space-between
+      flex-direction: row-reverse
+    +tablet-down
+      flex-direction: column
+      align-items: center
+  .btn
+    font-family: Exo2-Light
+    font-size: 24px
+    line-height: 29px
+    padding: 7px 22px
+    max-width: 260px
+    &:first-child
+      margin-right: 35px
+      +laptop-down
+        margin-right: 0
+      +tablet-down
+        margin-bottom: 30px
+
+    +laptop-down
+      font-size: 18px
+      line-height: 22px
+      max-width: 228px
+
+.form-wrapper .form
+  .address-info
+    margin-bottom: 30px
+  .address-btns
+    margin-bottom: 50px
+    +laptop-down
+      margin-bottom: 43px
+    +tablet-down
+      margin-bottom: 34px
+  .passport-info
+    margin-bottom: 31px
+    +laptop-down
+      margin-bottom: 22px
+    +tablet-down
+      margin-bottom: 10px
+    .row
+      margin-bottom: 0
+
 .form-footer
   //border-top: 1px solid $light-grey
   padding-top: 30px //30px 147px
-  margin-top: 100px
-  &:before
-    content: ''
-    background: $light-grey
-    position: absolute
-    display: inline-block
-    width: 100%
-    height: 1px
-    //top: 0
-    left: 0
-    right: 0
-    bottom: 197px
+  margin-top: 93px
+  +laptop-down
+    margin-top: 2px
+
+  &.step-2
+    +tablet-down
+      padding-top: 0
+    .submit-wrapper
+      justify-content: flex-end
+      margin-top: 0
+      +laptop-down
+        justify-content: space-between
+      +tablet-down
+        flex-direction: column-reverse
+        align-items: center
+        justify-content: center
+    margin-top: 82px
+    .bubbly-button
+      //width: unset
+      +tablet-down
+        margin-bottom: 20px
+    .form__footer-text
+      font-family: Exo2-Medium
+      +laptop-down
+        padding: 0
+      +tablet-down
+        //margin-bottom: 30px
+
+    &.laptop
+      margin-top: 0
+      +tablet-down
+        margin-top: 37px
+      [data-step-num="2"] .form__footer-text
+        padding: 0
+      .submit-wrapper
+        align-items: center
+
+  .footer-text-wrapper
+    +laptop-down
+      margin-bottom: 20px
 
   .bubbly-button
     width: 100%
     box-shadow: none
+    +laptop-down
+      width: 40%
+    +tablet-down
+      width: 75%
   .form__footer-text
     font-size: 18px
     line-height: 29px
+    +laptop-down
+      font-size: 16px
+      line-height: 26px
+      padding-top: 9px
+
+  .submit-wrapper
+    margin-top: 7px
+    justify-content: flex-end
+    +laptop-down
+      justify-content: center
+      margin-top: 0
+    +tablet-down
+      margin-top: 19px
 
 .step[data-step-num="2"],
 .step[data-step-num="3"],
@@ -98,6 +315,24 @@
   h4.title
     text-align: left
     margin-bottom: 40px
+    +laptop-down
+      font-size: 26px
+      line-height: 31px
+      text-align: center
+      margin-bottom: 19px
+    +tablet-down
+      text-align: left
+      margin-bottom: 41px
+
+  .work-info
+    .title
+      +tablet-down
+        margin-bottom: 30px
+
+  .address-btns
+    .title
+      +tablet-down
+        margin-bottom: 30px
 
   .row--passport
     margin-bottom: 20px
@@ -106,19 +341,31 @@
 
 .form-footer [data-step-num="2"]
   display: none
+  padding-top: 8px
+  +laptop-down
+    position: relative
   .form__footer-text
     text-align: center
+    padding: 0 73px 0 45px
 
-  .goback
-    font-size: 24px
-    line-height: 38px
-    font-family: $font-Exo2-Medium
-    color: $dark-grey
-    text-decoration: none
-    border-bottom: 1px solid $dark-grey
+.goback
+  display: inline-block
+  width: 76px
+  height: 40px
+  font-size: 24px
+  line-height: 38px
+  font-family: $font-Exo2-Medium
+  color: $dark-grey
+  text-decoration: underline !important
+  //border-bottom: 1px solid $dark-grey
+  +laptop-down
+    font-size: 26px
+    line-height: 42px
 
 .step[data-step-num="4"]
   margin-bottom: 100px
+  .row
+    flex-direction: row
 
   .data-col
     padding-left: 0
@@ -151,10 +398,5 @@
       color: transparent
       image: url("../images/icons/ic-datacheck-err.svg")
 
-.tmpBlock
-  display: inline-block
-  background: #f5f8f9
-  width: 100%
-  min-height: 70px
-  border-radius: 4px
-  border: 1px solid #B7B5B3
+.header.header-appl-form .container
+  justify-content: center
