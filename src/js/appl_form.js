@@ -18,6 +18,8 @@ $(document).ready( function() {
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
 
+        const progressBar = document.querySelector('.green-rect');
+
         $("#phoneNum").mask("+7 (9##) ### ## ##", {
             autoclear: false,
             placeholder: ' '
@@ -52,7 +54,6 @@ $(document).ready( function() {
             prepareValidate(step);
         });
 
-        console.log(form);
         form.addEventListener('submit', event => {
             if (!form.checkValidity()) {
                 console.log('=== invalid');
@@ -108,32 +109,42 @@ $(document).ready( function() {
                     footerStepOne.style.display = 'block';
                     footerStepElse.classList.remove('d-flex');
                     footer.classList.remove('step-2');
-                    form.style.paddingTop = '86px';
+                    //form.style.paddingTop = '86px';
 
                     const btnWrapper = footer.querySelector('.prev-btn-wrapper');
                     btnWrapper.classList.add('col-xl-1');
                     btnWrapper.insertAdjacentElement('afterBegin', prevBtn);
                 } else {
                     footer.classList.add('step-2');
-                    form.style.paddingTop = '50px';
-
                     const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
                     if (windowInner < 1200) {
                         const btnWrapper = prevBtn.parentNode;
                         btnWrapper.classList.remove('col-xl-1');
                         nextBtn.insertAdjacentElement('beforeBegin', prevBtn);
+                        footer.classList.add('laptop');
                     } else {
+                        //form.style.paddingTop = '50px';
                         const btnWrapper = footer.querySelector('.prev-btn-wrapper');
                         btnWrapper.classList.add('col-xl-1');
                         btnWrapper.insertAdjacentElement('afterBegin', prevBtn);
+                        footer.classList.remove('laptop');
                     }
-                }
 
+                }
+                stepProgressbar(goalStep);
                 currentStepBlock.style.display = 'none';
                 goalStepBlock.style.display = 'block';
                 stepNumSpan.innerHTML = goalStep;
+                form.dataset.step = goalStep;
                 return goalStep;
             }
+        }
+
+        function stepProgressbar(step) {
+            const formWidth = form.getBoundingClientRect().width;
+            const progress = formWidth * step / 4;
+
+            progressBar.style.width = `${progress}px`
         }
 
         function prepareValidate(step) {
@@ -162,11 +173,11 @@ $(document).ready( function() {
             })
         });
 // ============ DADATA ==================
-        <!-- Емеил -->
+     /*   <!-- Емеил -->
         $("#email").suggestions({
             token: "19d220bd37bd3ed2856f17882140bbbde39ead9d",
             type: "EMAIL",
-            /* Вызывается, когда пользователь выбирает одну из подсказок */
+            /!* Вызывается, когда пользователь выбирает одну из подсказок *!/
             onSelect: function(suggestion) {
                 console.log(suggestion);
             }
@@ -235,7 +246,7 @@ $(document).ready( function() {
         <!-- Кем выдан паспорт 19d220bd37bd3ed2856f17882140bbbde39ead9d-->
         var token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
 
-        function join(arr /*, separator */) {
+        function join(arr /!*, separator *!/) {
             var separator = arguments.length > 1 ? arguments[1] : ", ";
             return arr.filter(function(n){return n}).join(separator);
         }
@@ -284,7 +295,7 @@ $(document).ready( function() {
             count: 15
         });
 
-        function join(arr /*, separator */) {
+        function join(arr /!*, separator *!/) {
             var separator = arguments.length > 1 ? arguments[1] : ", ";
             return arr.filter(function(n){return n}).join(separator);
         }
@@ -332,6 +343,6 @@ $(document).ready( function() {
             constraints: $city,
             count: 15
         });
-
+*/
     }
 });

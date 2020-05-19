@@ -1,22 +1,47 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap")
 .pay-form
-  .form-wrapper
-    padding-bottom: 30px
-    position: relative
-  .form-footer
-    padding: 0 147px
-    margin-top: 50px
-    margin-bottom: 30px
-    &:before
-      bottom: 330px
-      +laptop-down
-        bottom: 495px
-      +tablet-down
-        bottom: 585px
+  .container
     +laptop-down
-      padding: 0 58px
+      padding: 0 22px 0 39px
+    +tablet-down
+      padding: 0
+
+  .form-wrapper
+    padding-bottom: 23px
+    position: relative
+    margin-bottom: 60px
+  .form-footer
+    position: relative
+    padding: 0 147px
+    margin-top: 65px
+    margin-bottom: 0px
+    +laptop-down
+      margin-top: 52px
+    +tablet-down
+      margin-top: 58px
+    &:before
+      content: ''
+      background: $light-grey
+      position: absolute
+      display: inline-block
+      width: 100%
+      height: 1px
+      left: 0
+      right: 0
+      bottom: 260px
+      +laptop-down
+        bottom: 323px
+      +tablet-down
+        bottom: 595px
+    +laptop-down
+      padding: 0 58px 16px
     +tablet-down
       padding: 0 10px
+
+    .form__footer-text
+      +laptop-down
+        font-size: 14px
+        line-height: 22px
 
 
 .cards-types
@@ -24,10 +49,27 @@
   margin: auto
   width: 100%
   flex-wrap: nowrap
-  & div
-    text-align: center
+  +laptop-down
+    padding: 0 58px
+    max-height: 100px
+  +tablet-down
+    padding: 0 10px
+    max-height: 60px
+
+  & .img-wrapper
+    width: 25%
+    text-align: left
+    padding: 0
+    &:nth-child(2)
+      padding-left: 23px
+      +tablet-down
+        padding: 0
+    &:nth-child(3)
+      text-align: center
+    &:last-child
+      text-align: right
     img
-      width: 100%
+      height: 100%
 
   @media screen and (max-width: 576px)
     margin: 0 auto
@@ -35,12 +77,14 @@
 .wrapper 
   //min-height: 100vh
   display: flex
-  padding: 50px 15px
+  padding: 76px 15px 41px
+  +laptop-down
+    padding: 40px 58px 41px
+  +tablet-down
+    padding: 30px 0px 20px
   @media screen and (max-width: 700px), (max-height: 500px) 
     flex-wrap: wrap
     flex-direction: column
-
-
 
 .card-form 
   max-width: 858px
@@ -50,22 +94,26 @@
   @media screen and (max-width: 576px) 
     margin: 0 auto
 
-
   &__inner 
     background: #fff
     // box-shadow: 3px 13px 30px 0px rgba(21, 34, 67, 0.2)
     box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4)
     border-radius: 10px
-    padding: 35px
-    padding-top: 180px
+    //padding: 35px
+    padding: 159px 146px 28px 149px
+    +laptop-down
+      padding: 150px 117px 42px 117px
+    +tablet-down
+      padding: 156px 11px 42px 11px
 
     @media screen and (max-width: 480px) 
-      padding: 25px
-      padding-top: 165px
+      //padding: 25px
+      //padding-top: 165px
+      padding: 150px 117px 42px 117px
   
     @media screen and (max-width: 360px) 
-      padding: 15px
-      padding-top: 165px
+      padding: 11px
+      padding-top: 156px
   
 
 
@@ -73,19 +121,21 @@
     display: flex
     align-items: flex-start
     @media screen and (max-width: 480px) 
-      flex-wrap: wrap
+      flex-wrap: nowrap
   
 
 
   &__col 
     flex: auto
     margin-right: 35px
+    +laptop-down
+      margin-right: 10px
 
     &:last-child 
       margin-right: 0
   
 
-    @media screen and (max-width: 480px) 
+    //@media screen and (max-width: 480px)
       margin-right: 0
       flex: unset
       width: 100%
@@ -97,9 +147,13 @@
   
 
     &.-cvv 
-      max-width: 150px
+      max-width: 169px
+      +laptop-down
+        max-width: 145px
+      +tablet-down
+        max-width: 93px
       @media screen and (max-width: 480px) 
-        max-width: initial
+        //max-width: initial
     
   
 
@@ -111,7 +165,9 @@
 
     .card-input__input 
       flex: 1
-      margin-right: 15px
+      margin-right: 27px
+      +laptop-down
+        margin-right: 10px
 
       &:last-child 
         margin-right: 0
@@ -120,12 +176,22 @@
 
 
   &__button 
-    width: 70%
-    margin-top: 20px
+    width: 100%
+    margin-top: 28px
     cursor: pointer
     justify-content: center
+    +laptop-down
+      margin-top: 0
+      width: 68%
+      padding: 15px 20px
+      font-family: Exo2-Light
+      line-height: 29px
+    +tablet-down
+      width: 76%
+      padding: 15px 18px
+      margin-top: 20px
 
-    @media screen and (max-width: 480px) 
+    //@media screen and (max-width: 480px)
       margin-top: 10px
   
 
@@ -142,6 +208,9 @@
   z-index: 2
   width: 100%
 
+  +laptop-down
+    max-width: 338px
+    height: 210px
   @media screen and (max-width: 480px) 
     max-width: 310px
     height: 220px
@@ -265,6 +334,8 @@
     justify-content: space-between
     margin-bottom: 50px
     padding: 0 10px
+    +laptop-down
+      margin-bottom: 25px
 
     @media screen and (max-width: 480px) 
       margin-bottom: 25px
@@ -374,6 +445,11 @@
     display: inline-block
     padding: 10px 15px
     cursor: pointer
+    +laptop-down
+      font-size: 20px
+      margin-bottom: 0
+    +tablet-down
+      font-size: 17px
 
     @media screen and (max-width: 480px) 
       font-size: 21px
@@ -382,7 +458,7 @@
   
 
     @media screen and (max-width: 360px) 
-      font-size: 19px
+      font-size: 17px
       margin-bottom: 10px
       padding: 10px 10px
   
@@ -391,6 +467,8 @@
   &__numberItem 
     width: 24px
     display: inline-block
+    +laptop-down
+      width: 12px
     &.-active 
       width: 30px
   
@@ -523,7 +601,11 @@
 
 
 .card-input 
-  margin-bottom: 20px
+  margin-bottom: 24px
+  +laptop-down
+    margin-bottom: 21px
+  +tablet-down
+    margin-bottom: 11px
   &__label 
     font-size: 16px
     line-height: 26px
@@ -533,6 +615,9 @@
     width: 100%
     display: block
     user-select: none
+    +laptop-down
+      font-size: 14px
+      line-height: 17px
 
   &__input 
     width: 100%
@@ -546,6 +631,9 @@
     color: #1a3b5d
     font-family: Exo2-Light
     border: 1px solid $grey
+    +laptop-down
+      font-size: 14px
+      height: 55px
 
     &:hover,
     &:focus 
@@ -563,6 +651,7 @@
       background-position: 90% center
       background-repeat: no-repeat
       padding-right: 30px
+      max-width: 170px
   
 
 

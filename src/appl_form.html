@@ -11,10 +11,14 @@
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
-<div class="header" style="width: 100%;height: 80px; background: #333333;">
-    <div class="container"></div>
+<div class="header header-appl-form">
+    <div class="container">
+        <div class="logo header__logo">
+            <a href="#" class="logo__link"><img src="../images/icons/logo_white.svg" alt="OPENZAIM" class="logo__img"></a>
+        </div>
+    </div>
 </div>
-<div class="application-form">
+<div class="application-form oz-form">
     <div class="container">
         <h2 class="title">Получение <span class="amonutVal">150 000</span> ₽</h2>
 
@@ -25,10 +29,10 @@
                 <h6 class="subtitle status">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
             </div>
 
-            <form class="form needs-validation" novalidate name="applForm">
+            <form class="form needs-validation" novalidate name="applForm" data-step="1">
                 <div class="step" data-step-num="1">
                     <div class="row row--amount">
-                        <div class="col-md-2 label-wrapper">
+                        <div class="label-wrapper">
                             <span class="label">Сумма</span>
                         </div>
                         <div class="col">
@@ -49,7 +53,7 @@
                         </div>
                     </div>
                     <div class="row row--term">
-                        <div class="col-md-2 label-wrapper">
+                        <div class="label-wrapper">
                             <span class="label">Срок</span>
                         </div>
                         <div class="col">
@@ -173,7 +177,7 @@
                 </div>
 
                 <div class="step" data-step-num="3">
-                    <div class="row-wrapper">
+                    <div class="row-wrapper address-info">
                         <h4 class="title">Адрес регистрации по паспорту</h4>
 
                         <div class="row">
@@ -237,7 +241,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row-wrapper">
+                    <div class="row-wrapper address-btns">
                         <h4 class="title">Адрес регистрации совпадает с адресом проживания?</h4>
                         <div class="row">
                             <div class="col-md-12 buttons">
@@ -395,14 +399,14 @@
 
                 <div class="form-footer">
                     <div class="row">
-                        <div class="col-xl-9 col-md-12 footer-text">
+                        <div class="col-xl-9 col-md-12 footer-text-wrapper">
                             <input type="checkbox" id="accept">
                             <label for="accept" class="form__footer-text check-box"  data-step-num="1">
                                 <i class="box"></i> Даю согласие на обработку персональных данных и на получение материалов рекламного характера, а также согласен с публичной офертой и документами.
                             </label>
 
                             <div class="justify-content-between align-items-center"  data-step-num="2">
-                                <div class="col-xl-1 prev-btn-wrapper">
+                                <div class="prev-btn-wrapper">
                                     <a href="#" id="prev" class="goback">Назад</a>
                                 </div>
                                 <div class="col-md-12 col-xl-7 form__footer-text">
@@ -422,69 +426,74 @@
                 <input type="hidden" id="patronymic" value="">
                 <input type="hidden" id="gender" value="">
             </form>
-
-            <footer class="footer bg-darkgrey">
-                <div class="container">
-                    <div class="footer__content">
-                        <div class="footer__menublock">
-                            <ul class="menu">
-                                <li class="menu_item"><a href="" class="menu_link">О компании</a></li>
-                                <li class="menu_item"><a href="" class="menu_link">Отзывы</a></li>
-                                <li class="menu_item"><a href="" class="menu_link">Помощь</a></li>
-                                <li class="menu_item"><a href="" class="menu_link">Документы</a></li>
-                                <li class="menu_item"><a href="" class="menu_link">Личный кабинет</a></li>
-                            </ul>
-                            <ul class="menu icon_bar">
-                                <li class="menu_item">
-                                    <a href="" class="menu_link">
-                                        <img src="../images/icons/ic-visa.svg" alt="" class="menu_img">
-                                    </a>
-                                </li>
-                                <li class="menu_item">
-                                    <a href="" class="menu_link">
-                                        <img src="../images/icons/ic-mastercard.svg" alt="" class="menu_img">
-                                    </a>
-                                </li>
-                                <li class="menu_item">
-                                    <a href="" class="menu_link">
-                                        <img src="../images/icons/ic-mir.png" alt="" class="menu_img">
-                                    </a>
-                                </li>
-                                <li class="menu_item">
-                                    <a href="" class="menu_link">
-                                        <img src="../images/icons/ic-uniteller.png" alt="" class="menu_img">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer__text">
-                            <p class="paragrfaph bold">Zaym-Center © 2020 Все права на сайт защищены</p>
-                            <p class="paragrfaph">
-                                Услуги по подбору займов на проекте «Zaym-Center» оказываются ООО «Лид Профит» ОГРН 1205200014579 , ИНН/КПП 5257196322/525701001,
-                                являющимся оператором обработки персональных данных,</p>
-                            <p class="paragrfaph">
-                                Проект осуществляет только подбор кредитов и микрозаймов между лицом желающим взять займ, и кредитными учреждениями, которые на
-                                основании ФЗ «О потребительском кредите (займе)» от 21.12.2013 № 353-ФЗ имеют право осуществлять профессиональную деятельность по
-                                предоставлению потребительских займов. Проект не является финансовым учреждением, банком или кредитором, и не несёт ответственности
-                                за любые заключенные договоры кредитования или условия. Чтобы оформить заявку на получение займа, Вам необходимо пройти регистрацию
-                                и аутентификацию на проекте.</p>
-                            <p class="paragrfaph">ООО «Лид Профит» является операторами персональных данных (<a href="" class="link link__light">Приказ № 197-нд от 08.06.2018</a>).</p>
-                            <p class="paragrfaph">
-                                Сервис «Zaym-Center» использует куки для предоставления услуг. Условия хранения или доступа к куки Вы можете настроить в своём браузере.
-                                Сервис предназначен для лиц старше 18 лет. Расчет в калькуляторах на сайте основан на среднем показателе процентной ставки кредитов РФ.
-                                Не является публичной офертой. Расчет может значительно отличаться от реальной процентной ставки, которая будет предложена вам финансовыми
-                                организациями.</p>
-                            <p class="paragrfaph bold">
-                                Внимание! Услуга «Активация сервиса» по обработке заявки является платной и составляет 349 руб. Для отключения подписки удалите карты в
-                                &nbsp; <a href="" class="link bold">личном кабинете </a> сайта. Активация сервиса не гарантирует вам получение займа.</p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
 
     </div>
 </div>
+<footer class="footer bg-darkgrey">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-menublock">
+                <ul class="menu">
+                    <li class="menu_item"><a href="" class="menu_link">О компании</a></li>
+                    <li class="menu_item"><a href="" class="menu_link">Отзывы</a></li>
+                    <li class="menu_item"><a href="" class="menu_link">Помощь</a></li>
+                    <li class="menu_item"><a href="" class="menu_link">Документы</a></li>
+                    <li class="menu_item"><a href="" class="menu_link">Личный кабинет</a></li>
+                </ul>
+                <ul class="menu icon_bar">
+                    <li class="menu_item">
+                        <a href="" class="menu_link">
+                            <img src="../images/icons/ic-visa.svg" alt="" class="menu_img">
+                        </a>
+                    </li>
+                    <li class="menu_item">
+                        <a href="" class="menu_link">
+                            <img src="../images/icons/ic-mastercard.svg" alt="" class="menu_img">
+                        </a>
+                    </li>
+                    <li class="menu_item">
+                        <a href="" class="menu_link">
+                            <img src="../images/icons/ic-mir.png" alt="" class="menu_img">
+                        </a>
+                    </li>
+                    <li class="menu_item">
+                        <a href="" class="menu_link">
+                            <img src="../images/icons/ic-uniteller.png" alt="" class="menu_img">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-text">
+                <div class="footer-text__row">
+                    <p class="footer-title bold">Zaym-Center © 2020 Все права на сайт защищены</p>
+                </div>
+                <div class="footer-text__row">
+                    <p class="paragrfaph">
+                        Услуги по подбору займов на проекте «Zaym-Center» оказываются ООО «Лид Профит» ОГРН 1205200014579 , ИНН/КПП 5257196322/525701001,
+                        являющимся оператором обработки персональных данных,</p>
+                    <p class="paragrfaph">
+                        Проект осуществляет только подбор кредитов и микрозаймов между лицом желающим взять займ, и кредитными учреждениями, которые на
+                        основании ФЗ «О потребительском кредите (займе)» от 21.12.2013 № 353-ФЗ имеют право осуществлять профессиональную деятельность по
+                        предоставлению потребительских займов. Проект не является финансовым учреждением, банком или кредитором, и не несёт ответственности
+                        за любые заключенные договоры кредитования или условия. Чтобы оформить заявку на получение займа, Вам необходимо пройти регистрацию
+                        и аутентификацию на проекте.</p>
+                    <p class="paragrfaph">ООО «Лид Профит» является операторами персональных данных (<a href="" class="link link__light">Приказ № 197-нд от 08.06.2018</a>).</p>
+                    <p class="paragrfaph">
+                        Сервис «Zaym-Center» использует куки для предоставления услуг. Условия хранения или доступа к куки Вы можете настроить в своём браузере.
+                        Сервис предназначен для лиц старше 18 лет. Расчет в калькуляторах на сайте основан на среднем показателе процентной ставки кредитов РФ.
+                        Не является публичной офертой. Расчет может значительно отличаться от реальной процентной ставки, которая будет предложена вам финансовыми
+                        организациями.</p>
+                </div>
+                <div class="footer-text__row">
+                    <p class="paragrfaph bold">
+                        Внимание! Услуга «Активация сервиса» по обработке заявки является платной и составляет 349 руб. Для отключения подписки удалите карты в
+                        &nbsp;<a href="" class="link bold">личном кабинете </a> &nbsp;сайта. Активация сервиса не гарантирует вам получение займа.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
 <script src="main.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
