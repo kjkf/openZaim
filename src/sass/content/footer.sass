@@ -7,7 +7,7 @@
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start
-    padding: 0px 15px 50px 15px
+    padding: 0px 15px 30px 15px
     +laptop-down
       padding-bottom: 50px
     +tablet-down
@@ -31,6 +31,21 @@
       padding-top: 30px
       padding-bottom: 35px
     //background-color: red
+  .paragrfaph
+    display: block
+    font-size: 16px
+    margin-bottom: 16px
+    flex-wrap: wrap
+    line-height: normal
+    letter-spacing: normal
+    //flex-wrap: wrap
+    //word-break: break-all
+    +laptop-down
+      font-size: 12px
+      margin-bottom: 10px
+      line-height: 1.7
+    +tablet-down
+      line-height: 2.5
   .link
     line-height: inherit
     +laptop-down
@@ -95,22 +110,7 @@
       +tablet-down
         font-size: 16px!important
         //line-height: 1.1!important
-    .paragrfaph
-      font-size: 16px
-      margin-bottom: 16px
-      flex-wrap: wrap
-      line-height: normal
-      letter-spacing: normal
-      //flex-wrap: wrap
-      //word-break: break-all
-      +laptop-down
-        font-size: 12px
-        margin-bottom: 10px
-        line-height: 1.7
-      +tablet-down
-        line-height: 2.5
-    .link
-      line-height: inherit
+
   &-title
     font-size: 16px
     //margin-bottom: 16px
