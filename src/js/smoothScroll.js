@@ -45,6 +45,7 @@ if (menu_links!== null){
   function smoothScroll(event) {
     event.preventDefault();
     var target = event.currentTarget.getAttribute("href")
+    if (target.search("#")<0) target = target+"#"
     const page = target.substring(0,target.search("#"));
     const currloc = window.location.pathname
     //console.log('target = '+ target);
