@@ -1,13 +1,9 @@
 .banner
-  padding: 40px 0 9px
+  padding: 0px 0 9px
   color: #ffffff
   position: relative
-  margin-top: $header_h //banner height
-  +laptop-down
-    margin-top: $header_h_mob
-    padding-top: 22px
-  +tablet-down
-    padding-top: 50px
+  //margin-top: $header_h //banner height
+
 
   .container
     +laptop-down
@@ -117,3 +113,14 @@
     padding: 18px 40px
     +laptop-down
       padding: 15px 18px
+
+.banner__in
+  margin-top: $header_h
+  padding-top: 40px
+  height: calc(100vh - #{$header_h})
+  +laptop-down
+    margin-top: $header_h_mob
+    padding-top: 22px
+    height: calc(100vh - #{$header_h_mob})
+  +tablet-down
+    padding-top: 50px
