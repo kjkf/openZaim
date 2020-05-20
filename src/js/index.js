@@ -73,6 +73,19 @@ $(document).ready( function() {
                 form.classList.add('was-validated');
             }, false);
         });
+
+        const inputList = document.querySelectorAll('.form-control');
+        //console.log(inputList);
+        inputList.forEach(input => {
+            input.addEventListener('input', e => {
+                if (input.value !== '') {
+                    input.classList.remove('disabled');
+                } else {
+                    input.classList.add('disabled');
+                }
+            })
+        });
+
     }, false);
 
 });

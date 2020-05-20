@@ -181,7 +181,7 @@ $(document).ready( function() {
             });
         }
 
-        const inputList = document.querySelectorAll('.form-control');
+        /*const inputList = document.querySelectorAll('.form-control');
         //console.log(inputList);
         inputList.forEach(input => {
             input.addEventListener('input', e => {
@@ -191,7 +191,7 @@ $(document).ready( function() {
                     input.classList.add('disabled');
                 }
             })
-        });
+        });*/
 
 
 // ============ DADATA ==================
