@@ -88,7 +88,7 @@ task('styles', () => {
         .pipe(autoprefixer({
             cascade: false
         }))
-        .pipe(gulpif(env === 'prod', gcmq()))
+        //.pipe(gulpif(env === 'prod', gcmq()))
         .pipe(gulpif(env === 'prod', cleanCSS()))
         .pipe(gulpif(env === 'dev', sourcemaps.write()))
         .pipe(dest('dist/css'))
