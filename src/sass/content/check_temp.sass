@@ -1,0 +1,104 @@
+.check-data
+  .form-wrapper
+    margin: 0px 15px
+    +laptop-down
+      margin: 0px
+
+    .form
+      padding: 82px 150px 28px
+      +laptop-down
+        padding: 82px 60px 28px
+      +tablet-down
+        padding: 82px 10px 28px
+
+  &__in
+    display: flex
+    flex-direction: column
+    font-size: 18px
+    font-family: $font-Exo2-Bold
+    color: yellow
+    +tablet-down
+      font-size: 16px
+
+  .check-row
+    display: flex
+    justify-content: space-between
+    +tablet-down
+      flex-wrap: wrap
+      margin-bottom: 25px
+      &:last-child
+        margin-bottom: 0px
+
+    &-el
+      display: flex
+      padding: 13px 0px
+      flex-direction: column
+      align-items: flex-start
+      text-align: right
+      +tablet-down
+        padding: 6px 0px
+
+      &__item
+        margin-bottom: 20px
+        +laptop-down
+          display: none
+        &:last-child
+          margin-bottom: 0px
+        &:first-child
+          +laptop-down
+            display: block
+            margin-bottom: 0px
+
+  .check-label
+    background-color: red
+    width: 268px
+    +laptop-down
+      order: 2
+      text-align: left
+      padding-left: 10px
+      width: 390px
+      margin-right: auto
+    +tablet-down
+      width: auto
+
+  .check-value
+    background-color: blue
+    font-family: $font-Exo2-Medium
+    width: 415px
+    padding-left: 26px
+    +laptop-down
+      order: 4
+      padding-left: unset
+      align-items: flex-end
+      margin-left: auto
+    +tablet-down
+      width: 100%
+      margin-left: unset
+      align-items: flex-start
+
+
+  .check-status
+    background-color: green
+    width: 100px
+    margin-left: auto
+    +laptop-down
+      order: 3
+      margin-left: unset
+    +tablet-down
+      width: auto
+
+    .check-row-el__item
+      +laptop-down
+        display: none
+
+  .check-status-ic
+    background-color: pink
+    width: 14px
+    +laptop-down
+      order: 1
+    +tablet-down
+      width: auto
+
+
+
+
