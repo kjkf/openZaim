@@ -2,6 +2,7 @@
   padding: 0px 0 9px
   color: #ffffff
   position: relative
+  overflow: hidden
   //margin-top: $header_h //banner height
 
 
@@ -52,7 +53,7 @@
     font-size: 350px
     line-height: 420px
     opacity: .1
-    top: 105px
+    top: calc(105px + #{$header_h})
     left: -26px
     right: 0
     text-align: center
@@ -60,12 +61,12 @@
     +laptop-down
       font-size: 164px
       line-height: 197px
-      top: 112px
+      top: calc(112px + #{$header_h_mob})
       line-height: -15px
     +tablet-down
       font-size: 64px
       line-height: 77px
-      top: 190px
+      top: calc(190px + #{$header_h_mob})
       left: 0
 
   .small-text
