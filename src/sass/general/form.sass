@@ -85,13 +85,28 @@
 
   & ~ .form-control-img
     fill: $input_col_valid
-    .ic-ufo
+    //.ic-ufo
       display: none
-    .ic-male
+    //.ic-male
       display: block
   & ~ .form-control-title
     color: $input_col_valid
 
+  & ~ .form-control-img.male
+    .ic-ufo
+      display: none
+    .ic-male
+      display: block
+    .ic-female
+      display: none
+
+  & ~ .form-control-img.female
+    .ic-ufo
+      display: none
+    .ic-male
+      display: none
+    .ic-female
+      display: block
 
 
 .form-control.disabled, .form-control:disabled
@@ -129,7 +144,7 @@
   width: $input_ic_w
   height: $input_ic_h
 
-.ic-male
+.ic-male, .ic-female
   display: none
 
 .with-ic

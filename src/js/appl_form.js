@@ -192,6 +192,8 @@ $(document).ready( function() {
                 }
             })
         });
+
+
 // ============ DADATA ==================
         /*console.log('=== DADATA start ===11111');
         const token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
@@ -225,6 +227,11 @@ $(document).ready( function() {
             $("#name").val(fio.name);
             $("#patronymic").val(fio.patronymic);
             $("#gender").val(ruGender(fio.gender));
+            const fioIcon = $("#fio").next('.form-control-img');
+            const gender = fio.gender.toLowerCase();
+            const classList = 'male female';
+            const removeCLass = classList.replace().trim(gender);
+            fioIcon.addClass(gender).removeClass(removeCLass);
         }
 
         function clearSelected() {
