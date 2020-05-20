@@ -1,6 +1,7 @@
 const menu_links = document.querySelectorAll(".smooth_scroll");
 
 if (menu_links!== null){
+  //----------------------------------------------------------------------------
   const urlHash = location.hash;
   window.addEventListener('DOMContentLoaded', (event) => {
     if (urlHash) {
@@ -24,32 +25,41 @@ if (menu_links!== null){
       }
     }
   });
-
+  //----------------------------------------------------------------------------
+  // menu item click
+  //----------------------------------------------------------------------------
   for(let i=0; i<menu_links.length; i++) {
     menu_links[i].addEventListener("click", menuLinkClick);
   }
 
   function menuLinkClick(event) {
-    //removeActive();
     event.currentTarget.classList.add('selected_link');
     smoothScroll(event);
   }
 
+  function menuBarClose(){
+    const header__menu = document.querySelector('.header__menu');
+    if (header__menu.classList.contains('active')){header__menu.classList.remove('active');}
+  }
+
   function smoothScroll(event) {
     event.preventDefault();
-    const target = event.currentTarget.getAttribute("href")
-    const anotherPage = target.substring(0,target.search("#"));
+    var target = event.currentTarget.getAttribute("href")
+    const page = target.substring(0,target.search("#"));
     const currloc = window.location.pathname
-    console.log('target = '+ target);
-    if (anotherPage == "" || currloc.search(anotherPage)>=0){
-    //console.log("event.currentTarget.getAttribute('href') = "+event.currentTarget.getAttribute("href"));
+    //console.log('target = '+ target);
+    if (page == "" || currloc.search(page)>=0){
+      target = target.substring(target.search("#"), target.length);
+      //console.log("target = "+ target);
       const targetId = target === "#" ? "header" : target.substring(target.search("#"), target.length);
+      const header = document.querySelector('header').offsetHeight;
       const duration = 1500;
       const targetPosition = document.querySelector(targetId).offsetTop;
       const startPosition = window.pageYOffset;
-      const distance = targetPosition - startPosition - 80;
+      const distance = targetPosition - startPosition - header;
       let start = null;
 
+      menuBarClose();
       window.requestAnimationFrame(step);
 
       function step(timestamp) {
@@ -62,7 +72,9 @@ if (menu_links!== null){
       window.location.href = target// window.location(anotherPage)
     }
   }
-
+//----------------------------------------------------------------------------
+// function for smooth scroll
+//----------------------------------------------------------------------------
 function easeInOutCubic(t, b, c, d) {
 	t /= d/2;
 	if (t < 1) return c/2*t*t*t + b;

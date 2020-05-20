@@ -192,11 +192,11 @@
 
 .oz-form
   background: $body_bg
-  padding: 100px 0px
+  padding: calc(100px + #{$header_h}) 0px 100px
   +laptop-down
-    padding: 20px 0px 40px
+    padding:  calc(20px + #{$header_h_mob}) 0px 40px
   +tablet-down
-    padding: 40px 0px 40px
+    padding:  calc(40px + #{$header_h_mob}) 0px 40px
   .container
     +tablet-down
       display: flex
