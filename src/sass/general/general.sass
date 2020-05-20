@@ -253,3 +253,16 @@ h4
 		width: 100%
 		+laptop-down
 			margin: 0px
+
+.ic-status
+	display: inline-flex
+	min-width: 14px
+	min-height: 14px
+	+bg-image(14px, 14px, transparent, '', contain)
+	&--invalid
+		background-image: url("../images/icons/ic-datacheck-err.svg")
+	&--valid
+		background-image: url("../images/icons/ic-datacheck-ok.svg")
+	&--loader
+		background-image: url("../images/icons/ic-datacheck-ok.svg")
+
