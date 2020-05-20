@@ -3,6 +3,19 @@ $(document).ready( function() {
     const form = document.querySelector('.form');
 //console.log(form);
     if (form) {
+        var whatbrowser=new WhatBrowser;
+        if (whatbrowser) {
+            const browserSpan = document.getElementById('browserName');
+            const osSpan = document.getElementById('osName');
+            const deviceSpan = document.getElementById('deviceName');
+            browserSpan.innerHTML = `${whatbrowser.ua.browser.name} ${whatbrowser.ua.browser.major}`;
+            osSpan.innerHTML = `${whatbrowser.ua.os.name} ${whatbrowser.ua.os.version}`;
+            deviceSpan.innerHTML = whatbrowser.ua.device.name ? `${whatbrowser.ua.device.name}` : 'Компьютер';
+            console.log(whatbrowser.ua.browser);
+            console.log(whatbrowser.ua.os);
+            console.log(whatbrowser.ua.device);
+        }
+
         const validateList = [
             ['fio', 'dateBirth', 'email', 'phoneNum'],
             ['passport', 'departmentCode', 'dateOfIssue', 'issuedBy'],
@@ -19,6 +32,7 @@ $(document).ready( function() {
         const noBtn = document.getElementById('noBtn');
 
         const progressBar = document.querySelector('.green-rect');
+        const subtitle = document.querySelector('.subtitle');
 
         $("#phoneNum").mask("+7 (9##) ### ## ##", {
             autoclear: false,
@@ -44,7 +58,7 @@ $(document).ready( function() {
         let step = 1;
         nextBtn.addEventListener('click', e => {
             if (step >= 4) return;
-            //step = changeStep(step, 'next');
+            step = changeStep(step, 'next');
         });
 
         prevBtn.addEventListener('click', e => {
@@ -54,7 +68,7 @@ $(document).ready( function() {
             prepareValidate(step);
         });
 
-        form.addEventListener('submit', event => {
+        /*form.addEventListener('submit', event => {
             if (!form.checkValidity()) {
                 console.log('=== invalid');
                 event.preventDefault();
@@ -65,7 +79,7 @@ $(document).ready( function() {
             if (step < 4) event.preventDefault();
             step = changeStep(step, 'next');
             prepareValidate(step);
-        });
+        });*/
 
         noBtn.addEventListener('click', e => {
             const factAddress = document.getElementById('factAddress');
@@ -144,7 +158,12 @@ $(document).ready( function() {
             const formWidth = form.getBoundingClientRect().width;
             const progress = formWidth * step / 4;
 
-            progressBar.style.width = `${progress}px`
+            progressBar.style.width = `${progress}px`;
+            if (step === 4) {
+                subtitle.innerHTML = 'Проверенно 1024 параметра - 20% осталось';
+            } else {
+                subtitle.innerHTML = '+10% к одобрению за добавление номера Вашего мобильного телефона';
+            }
         }
 
         function prepareValidate(step) {

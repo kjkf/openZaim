@@ -63,7 +63,7 @@
         font-size: 16px
         line-height: 19px
         position: relative
-        padding: 20px 0
+        padding: 6px 0
       +tablet-down
         padding: 20px 16px
     .green-rect
@@ -117,6 +117,39 @@
           bottom: 120px
         +tablet-down
           bottom: 185px
+
+    &[data-step='4']
+      padding-top: 53px
+      +laptop-down
+        padding-top: 40px
+      &:before
+        display: none
+      .bold
+        +laptop-down
+          font-size: 16px
+          line-height: 26px
+      .step .row
+        margin-bottom: 17px
+        &.birth-row
+          margin-bottom: 31px
+        &.phone-num--row
+          margin-bottom: 3px
+        &.voice--row, &.sms--row, &.mms-row
+          margin-bottom: 8px
+        &.phone--row, &.passport--row
+          margin-bottom: 19px
+        &.address--row
+          margin-bottom: 33px
+        &.fssp--row
+          margin-bottom: 39px
+        &.social--row
+          margin-bottom: 24px
+        &.ip--row
+          margin-bottom: 23px
+        &.browser--row, &.os--row
+          margin-bottom: 25px
+        &:last-child
+          margin-bottom: 10px
 
     .row
       align-items: flex-start
@@ -363,15 +396,27 @@
     line-height: 42px
 
 .step[data-step-num="4"]
-  margin-bottom: 100px
+  margin-bottom: 0px
+  .col-status
+    text-align: right
   .row
     flex-direction: row
+    +laptop-down
+      .col-status
+        background: #e73c7e
+        order: 2
+      .data-col
+        background: #80bdff
+        order: 3
 
   .data-col
-    padding-left: 0
+    //padding-left: 0
     font-size: 18px
     line-height: 29px
     font-weight: 300
+    +laptop-down
+      font-size: 16px
+      line-height: 26px
 
 .text--right
   text-align: right
