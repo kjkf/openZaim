@@ -11,9 +11,6 @@ $(document).ready( function() {
             browserSpan.innerHTML = `${whatbrowser.ua.browser.name} ${whatbrowser.ua.browser.major}`;
             osSpan.innerHTML = `${whatbrowser.ua.os.name} ${whatbrowser.ua.os.version}`;
             deviceSpan.innerHTML = whatbrowser.ua.device.name ? `${whatbrowser.ua.device.name}` : 'Компьютер';
-            console.log(whatbrowser.ua.browser);
-            console.log(whatbrowser.ua.os);
-            console.log(whatbrowser.ua.device);
         }
 
         const validateList = [
@@ -41,9 +38,17 @@ $(document).ready( function() {
         $("#dateBirth").mask("##.##.####", {
             autoclear: false,
             placeholder: '_',
-            completed: function() {
+            completed: function(val) {
                 console.log('=-=-=-=-=-=-');
-                console.log( $("#dateBirth").val() );
+                //const regexp = /^[0-3][0-9]\.[0-1][0-9]\.\d{4}$/;
+                const regexp = /^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.-]([0]?[1-9]|[1][0-2])[.-]([0-9]{4}|[0-9]{2})$/;
+                console.log($("#dateBirth").val(), regexp);
+                console.log(regexp.test($("#dateBirth").val()));
+                if (!regexp.test($("#dateBirth").val())) {
+                    $("#dateBirth").val('');
+                    $("#dateBirth").blur();
+
+                }
             }
         });
         $("#dateOfIssue").mask("##.##.####", {

@@ -22,16 +22,16 @@ $(function() {
 
     function handlerForMediaQueries1200(x) {
         if(mql1200.matches) {
-
+            const phoneRow = document.querySelectorAll('.phone--row');
         } else {
 
         }
     }
 
     //===========================================
-   const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+    const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
     //console.log(windowInner, window.innerWidth);
-    if (windowInner < 1200 && windowInner > 768) {
+    if (windowInner < 1200 && windowInner >= 768) {
         handlerForMediaQueries1200();
     } else if (windowInner <= 768 &&  windowInner > 576) {
         handlerForMediaQueries();
