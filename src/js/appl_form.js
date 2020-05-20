@@ -193,18 +193,20 @@ $(document).ready( function() {
             })
         });
 // ============ DADATA ==================
-     /*   <!-- Емеил -->
+        /*console.log('=== DADATA start ===11111');
+        const token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
+        //Емеил
         $("#email").suggestions({
-            token: "19d220bd37bd3ed2856f17882140bbbde39ead9d",
+            token: token,
             type: "EMAIL",
             /!* Вызывается, когда пользователь выбирает одну из подсказок *!/
             onSelect: function(suggestion) {
                 console.log(suggestion);
             }
         });
-        <!-- фио -->
+        //фио
         $("#fio").suggestions({
-            token: "19d220bd37bd3ed2856f17882140bbbde39ead9d",
+            token: token,
             type: "NAME",
             onSelect: showSelected,
             onSelectNothing: clearSelected
@@ -232,8 +234,8 @@ $(document).ready( function() {
             $("#gender").val("");
         }
 
-        <!-- Кем выдан паспорт -->
-        var token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
+        //Кем выдан паспорт
+        //var token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
 
         function formatResult(value, currentValue, suggestion) {
             suggestion.value = suggestion.data.code;
@@ -256,17 +258,17 @@ $(document).ready( function() {
             onSelect: showSuggestion,
             onSelectNothing: clearSuggestion
         });
-        <!-- Место работы -->
+        //Место работы
         var sgt = $("#place_work").suggestions({
-            token: "19d220bd37bd3ed2856f17882140bbbde39ead9d",
+            token: token,
             type: "PARTY",
             noSuggestionsHint: "Ну, бывает... Оставьте тогда поле пустым!"
         }).suggestions();
 
-        <!-- Кем выдан паспорт 19d220bd37bd3ed2856f17882140bbbde39ead9d-->
-        var token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
+        //Кем выдан паспорт 19d220bd37bd3ed2856f17882140bbbde39ead9d
+        //var token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
 
-        function join(arr /!*, separator *!/) {
+        function join(arr) {
             var separator = arguments.length > 1 ? arguments[1] : ", ";
             return arr.filter(function(n){return n}).join(separator);
         }
@@ -315,12 +317,12 @@ $(document).ready( function() {
             count: 15
         });
 
-        function join(arr /!*, separator *!/) {
+ /!*       function join(arr /!*, separator *!/) {
             var separator = arguments.length > 1 ? arguments[1] : ", ";
             return arr.filter(function(n){return n}).join(separator);
-        }
+        }*!/
 
-        function formatCity(suggestion) {
+        /!*function formatCity(suggestion) {
             var address = suggestion.data;
             if (address.city_with_type === address.region_with_type) {
                 return address.settlement_with_type || "";
@@ -329,7 +331,7 @@ $(document).ready( function() {
                     address.city_with_type,
                     address.settlement_with_type]);
             }
-        }
+        }*!/
 
         var type  = "ADDRESS";
         var $region = $("#region_r");
@@ -362,7 +364,6 @@ $(document).ready( function() {
             bounds: "street",
             constraints: $city,
             count: 15
-        });
-*/
+        });*/
     }
 });
