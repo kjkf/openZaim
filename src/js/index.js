@@ -41,19 +41,25 @@ function formatTerm(n) {
 }
 
 $(document).ready( function() {
-    const btn_gamburg = document.getElementById('btn_gamburg');
-    if (btn_gamburg) {
-        const header__menu = document.querySelector('.header__menu');
-        btn_gamburg.addEventListener('click', () => {
-            header__menu.classList.add('active');
-            const btn_close = header__menu.querySelector('#btn_close');
-            btn_close.addEventListener('click', e => {
-                header__menu.classList.remove('active');
-            });
-            const links = header__menu.querySelectorAll('.menu-item');
-            links.forEach(link => link.addEventListener('click', e => btn_close.click()))
-        });
-    }
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', e => {
+    header.style.opacity = '.7';
+    if (pageYOffset === 0) header.style.opacity = '1';
+  })
+
+  const btn_gamburg = document.getElementById('btn_gamburg');
+  if (btn_gamburg) {
+    const header__menu = document.querySelector('.header__menu');
+    btn_gamburg.addEventListener('click', () => {
+      header__menu.classList.add('active');
+      const btn_close = header__menu.querySelector('#btn_close');
+      btn_close.addEventListener('click', e => {
+          header__menu.classList.remove('active');
+      });
+      const links = header__menu.querySelectorAll('.menu-item');
+      links.forEach(link => link.addEventListener('click', e => btn_close.click()))
+    });
+  }
     window.addEventListener('load', function() {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
