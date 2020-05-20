@@ -86,6 +86,16 @@ $(document).ready( function() {
             })
         });
 
+        var whatbrowser=new WhatBrowser;
+        if (whatbrowser) {
+            const browserSpan = document.getElementById('browserName');
+            const osSpan = document.getElementById('osName');
+            const deviceSpan = document.getElementById('deviceName');
+            if (browserSpan) browserSpan.innerHTML = `${whatbrowser.ua.browser.name} ${whatbrowser.ua.browser.major}`;
+            if (osSpan) osSpan.innerHTML = `${whatbrowser.ua.os.name} ${whatbrowser.ua.os.version}`;
+            if (deviceSpan) deviceSpan.innerHTML = whatbrowser.ua.device.name ? `${whatbrowser.ua.device.name}` : 'Компьютер';
+        }
+
     }, false);
 
 });
