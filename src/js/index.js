@@ -41,11 +41,11 @@ function formatTerm(n) {
 }
 
 $(document).ready( function() {
-  const header = document.querySelector('.header');
+  const header = document.querySelector('header');
   window.addEventListener('scroll', e => {
     header.style.opacity = '.7';
     if (pageYOffset === 0) header.style.opacity = '1';
-  })
+  });
 
   const btn_gamburg = document.getElementById('btn_gamburg');
   if (btn_gamburg) {
