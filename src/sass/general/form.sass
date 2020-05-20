@@ -85,14 +85,32 @@
 
   & ~ .form-control-img
     fill: $input_col_valid
-    .ic-ufo
+    //.ic-ufo
       display: none
-    .ic-male
+    //.ic-male
       display: block
   & ~ .form-control-title
     color: $input_col_valid
 
+.form-control.is-valid.female,
+.was-validated .form-control.female:valid
+  & ~ .form-control-img
+    .ic-ufo
+      display: none
+    .ic-male
+      display: none
+    .ic-female
+      display: block
 
+.form-control.is-valid.male,
+.was-validated .form-control.male:valid
+  & ~ .form-control-img
+    .ic-ufo
+      display: none
+    .ic-male
+      display: block
+    .ic-female
+      display: none
 
 .form-control.disabled, .form-control:disabled
   padding: $input_pt $input_pl
@@ -129,7 +147,7 @@
   width: $input_ic_w
   height: $input_ic_h
 
-.ic-male
+.ic-male, .ic-female
   display: none
 
 .with-ic

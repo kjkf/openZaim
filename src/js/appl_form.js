@@ -181,7 +181,7 @@ $(document).ready( function() {
             });
         }
 
-        const inputList = document.querySelectorAll('.form-control');
+        /*const inputList = document.querySelectorAll('.form-control');
         //console.log(inputList);
         inputList.forEach(input => {
             input.addEventListener('input', e => {
@@ -191,7 +191,9 @@ $(document).ready( function() {
                     input.classList.add('disabled');
                 }
             })
-        });
+        });*/
+
+
 // ============ DADATA ==================
         /*console.log('=== DADATA start ===11111');
         const token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
@@ -225,6 +227,11 @@ $(document).ready( function() {
             $("#name").val(fio.name);
             $("#patronymic").val(fio.patronymic);
             $("#gender").val(ruGender(fio.gender));
+            const fioIcon = $("#fio").next('.form-control-img');
+            const gender = fio.gender.toLowerCase();
+            const classList = 'male female';
+            const removeCLass = classList.replace().trim(gender);
+            fioIcon.addClass(gender).removeClass(removeCLass);
         }
 
         function clearSelected() {
