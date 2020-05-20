@@ -14,9 +14,9 @@ $(document).ready( function() {
         }
 
         const validateList = [
-            ['fio', 'dateBirth', 'email', 'phoneNum'],
-            ['passport', 'departmentCode', 'dateOfIssue', 'issuedBy'],
-            ['streetRegistration', 'homeRegistration', 'cityRegistration']
+            ['fio', 'dateBirth', 'email', 'phone'],
+            ['p_number', 'p_code', 'p_date', 'p_place'],
+            ['st_l', 'hse_l', 'city_l']
         ];
 
         const nextBtn = document.getElementById('next');
@@ -31,7 +31,7 @@ $(document).ready( function() {
         const progressBar = document.querySelector('.green-rect');
         const subtitle = document.querySelector('.subtitle');
 
-        $("#phoneNum").mask("+7 (9##) ### ## ##", {
+        $("#phone").mask("+7 (9##) ### ## ##", {
             autoclear: false,
             placeholder: ' '
         });
@@ -39,23 +39,19 @@ $(document).ready( function() {
             autoclear: false,
             placeholder: '_',
             completed: function(val) {
-                console.log('=-=-=-=-=-=-');
-                //const regexp = /^[0-3][0-9]\.[0-1][0-9]\.\d{4}$/;
                 const regexp = /^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.-]([0]?[1-9]|[1][0-2])[.-]([0-9]{4}|[0-9]{2})$/;
-                console.log($("#dateBirth").val(), regexp);
-                console.log(regexp.test($("#dateBirth").val()));
+
                 if (!regexp.test($("#dateBirth").val())) {
                     $("#dateBirth").val('');
                     $("#dateBirth").blur();
-
                 }
             }
         });
-        $("#dateOfIssue").mask("##.##.####", {
+        $("#p_date").mask("##.##.####", {
             autoclear: false,
             placeholder: ' '
         });
-        $("#passport").mask("#### #####", {
+        $("#p_number").mask("#### #####", {
             autoclear: false,
             placeholder: ' '
         });
@@ -63,7 +59,7 @@ $(document).ready( function() {
         let step = 1;
         nextBtn.addEventListener('click', e => {
             if (step >= 4) return;
-            step = changeStep(step, 'next');
+            //step = changeStep(step, 'next');
         });
 
         prevBtn.addEventListener('click', e => {
@@ -73,7 +69,7 @@ $(document).ready( function() {
             prepareValidate(step);
         });
 
-        /*form.addEventListener('submit', event => {
+        form.addEventListener('submit', event => {
             if (!form.checkValidity()) {
                 console.log('=== invalid');
                 event.preventDefault();
@@ -84,7 +80,7 @@ $(document).ready( function() {
             if (step < 4) event.preventDefault();
             step = changeStep(step, 'next');
             prepareValidate(step);
-        });*/
+        });
 
         noBtn.addEventListener('click', e => {
             const factAddress = document.getElementById('factAddress');
@@ -104,7 +100,7 @@ $(document).ready( function() {
             if (goalStepBlock) {
 
                 if (stepNum === 1) {
-                    const checkBox = footer.querySelector('#accept');
+                    const checkBox = footer.querySelector('#checkbox');
                     const isAccepts = checkBox && checkBox.checked;
                     if (!isAccepts) {
                         return stepNum;
