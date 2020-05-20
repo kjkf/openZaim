@@ -3,15 +3,6 @@ $(document).ready( function() {
     const form = document.querySelector('.form');
 //console.log(form);
     if (form) {
-        var whatbrowser=new WhatBrowser;
-        if (whatbrowser) {
-            const browserSpan = document.getElementById('browserName');
-            const osSpan = document.getElementById('osName');
-            const deviceSpan = document.getElementById('deviceName');
-            browserSpan.innerHTML = `${whatbrowser.ua.browser.name} ${whatbrowser.ua.browser.major}`;
-            osSpan.innerHTML = `${whatbrowser.ua.os.name} ${whatbrowser.ua.os.version}`;
-            deviceSpan.innerHTML = whatbrowser.ua.device.name ? `${whatbrowser.ua.device.name}` : 'Компьютер';
-        }
 
         const validateList = [
             ['fio', 'dateBirth', 'email', 'phone'],
@@ -195,7 +186,7 @@ $(document).ready( function() {
 
 
 // ============ DADATA ==================
-        /*console.log('=== DADATA start ===11111');
+       /* console.log('=== DADATA start ===6666');
         const token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
         //Емеил
         $("#email").suggestions({
@@ -230,8 +221,11 @@ $(document).ready( function() {
             const fioIcon = $("#fio").next('.form-control-img');
             const gender = fio.gender.toLowerCase();
             const classList = 'male female';
-            const removeCLass = classList.replace().trim(gender);
-            fioIcon.addClass(gender).removeClass(removeCLass);
+            const removeCLass = classList.replace(gender, '').trim(gender);
+            $("#fio").siblings('.form-control-img').addClass(gender).removeClass(removeCLass);
+            console.log('ssss = ', $("#fio").siblings('.form-control-img'));
+            console.log('next---', fioIcon);
+            console.log(gender,'===', removeCLass);
         }
 
         function clearSelected() {
