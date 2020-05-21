@@ -3,37 +3,47 @@ const menu_links = document.querySelectorAll(".smooth_scroll");
 if (menu_links!== null){
   //----------------------------------------------------------------------------
   const urlHash = location.hash;
+  console.log(urlHash);
+  const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
   window.addEventListener('DOMContentLoaded', (event) => {
+    if (acc !== null && windowInner<=1200) {
+      $('.accordion-collapse').collapse();
+    }
     if (urlHash) {
+      //setTimeout(() => { window.scrollTo(0, 0) }, 1000);
+      const acc = document.getElementById("accordion");
 
-      setTimeout(() => { window.scrollTo(0, 0) }, 1000)
+      if (acc !== null && windowInner<=1200){
 
-      scrollToBlock();
+        const collapseCount = $('.accordion-collapse').length;
 
-      // const acc = document.getElementById("accordion");
-      // const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
-      // if (acc !== null && windowInner<=1200){
-      //   $('.accordion-collapse').collapse();
-      //
-      //   $('.accordion-collapse').on('hidden.bs.collapse', function () {
-      //     console.log("collapsed");
-      //     scrollToBlock();
-      //   })
-      //   //accordionHideAll(btn_acc);
-      // }else {
-      //   scrollToBlock();
-      // }
+        let counter = 0;
+        $('.accordion-collapse').on('hidden.bs.collapse', function () {
+          if (counter === collapseCount - 1) {
+            scrollToBlock();
+            counter = 0;
+          }
+          counter++;
+        })
+        //accordionHideAll(btn_acc);
+      }else {
+        scrollToBlock();
+      }
 
       function scrollToBlock(){
         const anchors = document.querySelectorAll('a[href^="#"]');
         const header = document.querySelector('header').offsetHeight;
-        const startPosition = window.pageYOffset;
+        const startPosition = 0;
         const duration = 1500;
         const urlTarget = document.getElementById(urlHash.replace('#', ''));
+        const collapsible = urlTarget.querySelector('.accordion-collapse');
+        console.log(urlTarget, collapsible);
+        if (collapsible) collapsible.classList.add('show');
         const urlPosition = window.pageYOffset + urlTarget.getBoundingClientRect().top - header;
         let start = null;
-        console.log("urlhash start pos - urlTarget.getBoundingClientRect().top - "+ urlTarget.getBoundingClientRect().top);
-        console.log("urlPosition - "+ urlPosition)
+        console.log(startPosition, urlPosition);
+        //console.log("urlhash start pos - urlTarget.getBoundingClientRect().top - "+ urlTarget.getBoundingClientRect().top);
+        //console.log("urlPosition - "+ urlPosition)
 
         window.requestAnimationFrame(step);
 
