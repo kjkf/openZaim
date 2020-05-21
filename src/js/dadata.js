@@ -1,31 +1,145 @@
+/*
 $(document).ready( function() {
 // ============ DADATA ==================
- /*   console.log('=== DADATA start === 7777');
-    const token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
-//Емеил
-    $("#email").suggestions({
-        token: token,
-        type: "EMAIL",
-        //!* Вызывается, когда пользователь выбирает одну из подсказок *!/
-        onSelect: function(suggestion) {
-            console.log(suggestion);
-        }
-    });
+    const applForm = document.querySelector('form[name=applForm]');
+    const loginForm = document.querySelector('.login-form__form');
 
-    //фио
-    $("#fio").suggestions({
-        token: token,
-        type: "NAME",
-        onSelect: showSelected,
-        onSelectNothing: clearSelected
-    });
+    const token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
+
+    if (applForm) {
+        console.log('=== DADATA start === 7777');
+
+//Емеил
+        $("#email").suggestions({
+            token: token,
+            type: "EMAIL",
+            //!* Вызывается, когда пользователь выбирает одну из подсказок *!/
+            onSelect: function(suggestion) {
+                console.log(suggestion);
+            }
+        });
+
+//фио
+        $("#fio").suggestions({
+            token: token,
+            type: "NAME",
+            onSelect: showSelected,
+            onSelectNothing: clearSelected
+        });
+
+//Кем выдан паспорт
+        $("#p_code").suggestions({
+            token: token,
+            type: "fms_unit",
+            formatResult: formatResult,
+            onSelect: showSuggestion,
+            onSelectNothing: clearSuggestion
+        });
+//Место работы
+        var sgt = $("#place_work").suggestions({
+            token: token,
+            type: "PARTY",
+            noSuggestionsHint: "Ну, бывает... Оставьте тогда поле пустым!"
+        }).suggestions();
+
+//Кем выдан паспорт 19d220bd37bd3ed2856f17882140bbbde39ead9d
+
+        var type  = "ADDRESS";
+        var $regionL = $("#region_l");
+        var $cityL   = $("#city_l");
+        var $streetL = $("#st_l");
+
+// регион и район по паспорту
+        $regionL.suggestions({
+            token: token,
+            type: type,
+            hint: false,
+            bounds: "region"
+        });
+
+// город и населенный пункт по паспорту
+        $cityL.suggestions({
+            token: token,
+            type: type,
+            hint: false,
+            bounds: "city-settlement",
+            constraints: $regionL,
+            formatSelected: formatCity
+        });
+
+// улица по паспорту
+        $streetL.suggestions({
+            token: token,
+            type: type,
+            hint: false,
+            bounds: "street",
+            constraints: $cityL,
+            count: 15
+        });
+
+        var $regionR = $("#region_r");
+        var $cityR   = $("#city_r");
+        var $streetR = $("#st_r");
+
+// регион и район проживания
+        $regionR.suggestions({
+            token: token,
+            type: type,
+            hint: false,
+            bounds: "region"
+        });
+
+// город и населенный пункт проживания
+        $cityR.suggestions({
+            token: token,
+            type: type,
+            hint: false,
+            bounds: "city-settlement",
+            constraints: $regionR,
+            formatSelected: formatCity
+        });
+
+// улица проживания
+        $streetR.suggestions({
+            token: token,
+            type: type,
+            hint: false,
+            bounds: "street",
+            constraints: $cityR,
+            count: 15
+        });
+    }
+
+    if (loginForm) {
+//фио
+        $("#fio").suggestions({
+            token: token,
+            type: "NAME",
+            onSelect: showSelected,
+            onSelectNothing: clearSelected
+        });
+    }
+
+    function formatResult(value, currentValue, suggestion) {
+        suggestion.value = suggestion.data.code;
+        return suggestion.data.code + " — " + suggestion.data.name;
+    }
+
+    function showSuggestion(suggestion) {
+        console.log(suggestion);
+        $("#p_place").val(suggestion.data.name);
+    }
+
+    function clearSuggestion() {
+        $("#p_place").val("");
+    }
+
 
     function ruGender(gender) {
         return gender === "MALE" ? "мужской" :
             gender === "FEMALE" ? "женский" :
                 "не определен";
     }
-
 
     function showSelected(suggestion) {
         var fio = suggestion.data;
@@ -48,38 +162,6 @@ $(document).ready( function() {
         $("#gender").val("");
     }
 
-//Кем выдан паспорт
-    function formatResult(value, currentValue, suggestion) {
-        suggestion.value = suggestion.data.code;
-        return suggestion.data.code + " — " + suggestion.data.name;
-    }
-
-    function showSuggestion(suggestion) {
-        console.log(suggestion);
-        $("#p_place").val(suggestion.data.name);
-    }
-
-    function clearSuggestion() {
-        $("#p_place").val("");
-    }
-
-    $("#p_code").suggestions({
-        token: token,
-        type: "fms_unit",
-        formatResult: formatResult,
-        onSelect: showSuggestion,
-        onSelectNothing: clearSuggestion
-    });
-//Место работы
-    var sgt = $("#place_work").suggestions({
-        token: token,
-        type: "PARTY",
-        noSuggestionsHint: "Ну, бывает... Оставьте тогда поле пустым!"
-    }).suggestions();
-
-//Кем выдан паспорт 19d220bd37bd3ed2856f17882140bbbde39ead9d
-//var token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
-
     function join(arr) {
         var separator = arguments.length > 1 ? arguments[1] : ", ";
         return arr.filter(function(n){return n}).join(separator);
@@ -95,70 +177,5 @@ $(document).ready( function() {
                 address.settlement_with_type]);
         }
     }
-
-    var type  = "ADDRESS";
-    var $region = $("#region_l");
-    var $city   = $("#city_l");
-    var $street = $("#st_l");
-
-// регион и район
-    $region.suggestions({
-        token: token,
-        type: type,
-        hint: false,
-        bounds: "region"
-    });
-
-// город и населенный пункт
-    $city.suggestions({
-        token: token,
-        type: type,
-        hint: false,
-        bounds: "city-settlement",
-        constraints: $region,
-        formatSelected: formatCity
-    });
-
-// улица
-    $street.suggestions({
-        token: token,
-        type: type,
-        hint: false,
-        bounds: "street",
-        constraints: $city,
-        count: 15
-    });
-
-    var type  = "ADDRESS";
-    var $region = $("#region_r");
-    var $city   = $("#city_r");
-    var $street = $("#st_r");
-
-// регион и район
-    $region.suggestions({
-        token: token,
-        type: type,
-        hint: false,
-        bounds: "region"
-    });
-
-// город и населенный пункт
-    $city.suggestions({
-        token: token,
-        type: type,
-        hint: false,
-        bounds: "city-settlement",
-        constraints: $region,
-        formatSelected: formatCity
-    });
-
-// улица
-    $street.suggestions({
-        token: token,
-        type: type,
-        hint: false,
-        bounds: "street",
-        constraints: $city,
-        count: 15
-    });*/
 });
+*/

@@ -1,7 +1,7 @@
 
 $(document).ready( function() {
-    const form = document.querySelector('.form');
-//console.log(form);
+    const form = document.querySelector('form[name=applForm]');
+    //console.log(form);
     if (form) {
 
         const validateList = [
