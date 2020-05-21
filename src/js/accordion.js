@@ -1,26 +1,21 @@
 const acc = document.getElementById("accordion");
 if (acc !== null){
+  var btn_acc = document.getElementsByClassName('btn-accordion');
   const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
   console.log("1");
   if (windowInner<=1200){
     console.log("2");
     const collapsetab = document.getElementsByClassName('text-block__content show');
 
-    $('.text-block__content.show').collapse();
-    /*for (i=0; i<collapsetab.length; i++){
-      collapsetab[i].collapse()
-    }*/
+    $('.show').collapse();
+    accordionHideAll(btn_acc);
   }
 
-  //text-block__content
-
-  var btn_acc = document.getElementsByClassName('btn-accordion');
-
   for(let i = 0; i < btn_acc.length; i++) {
-  btn_acc[i].addEventListener("click", function() {
-    accordeonBtn(btn_acc[i]);
-    accordionHideAll(btn_acc,i);
-  })
+    btn_acc[i].addEventListener("click", function() {
+      accordeonBtn(btn_acc[i]);
+      accordionHideRest(btn_acc,i);
+    })
   }
 
   function accordeonBtn(el){
@@ -35,7 +30,7 @@ if (acc !== null){
     }
   }
 
-  function accordionHideAll(btn_acc,clicked_i){
+  function accordionHideRest(btn_acc,clicked_i){
     for(let i = 0; i < btn_acc.length; i++) {
       if (i!=clicked_i){
         btn_acc[i].classList.remove('btn-accordion__hide');
@@ -43,7 +38,36 @@ if (acc !== null){
       }
     }
   }
+  function accordionHideAll(btn_acc){
+    for(let i = 0; i < btn_acc.length; i++) {
+      btn_acc[i].classList.remove('btn-accordion__hide');
+      btn_acc[i].classList.add('btn-accordion__show');
+    }
+  }
 
+  $('.text-block__content').on('shown.bs.collapse', function () {
+  // do something...
+    console.log("shown");
+    const header = document.querySelector('header').offsetHeight;
+    const tabName= $(this).attr("aria-labelledby");
+    console.log("tabName - "+tabName);
+    const duration = 1500;
+    const elPosition = $("#"+tabName).offset().top - 20;
+    const startPosition = window.scrollY
+    //pageYOffset;
+    const distance = elPosition<=startPosition ? elPosition - header : elPosition - startPosition - header;
+    console.log("startPosition = "+ startPosition+"; elPosition = "+ elPosition+"; distance = "+distance);
+    let start = null;
+
+    window.requestAnimationFrame(step);
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+      if (progress < duration) window.requestAnimationFrame(step);
+    }
+  })
 
 }
 
