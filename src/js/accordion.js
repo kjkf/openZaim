@@ -5,9 +5,11 @@ if (acc !== null){
   if (windowInner<=1200){
     console.log("2");
     const collapsetab = document.getElementsByClassName('text-block__content show');
-    for (i=0; i<collapsetab.length; i++){
+
+    $('.text-block__content.show').collapse();
+    /*for (i=0; i<collapsetab.length; i++){
       collapsetab[i].collapse()
-    }
+    }*/
   }
 
   //text-block__content
