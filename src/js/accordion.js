@@ -1,15 +1,13 @@
 const acc = document.getElementById("accordion");
 if (acc !== null){
   var btn_acc = document.getElementsByClassName('btn-accordion');
-  const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
-  console.log("1");
-  if (windowInner<=1200){
-    console.log("2");
-    const collapsetab = document.getElementsByClassName('text-block__content show');
-
-    $('.show').collapse();
-    accordionHideAll(btn_acc);
-  }
+  // const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+  // if (windowInner<=1200){
+  //   const collapsetab = document.getElementsByClassName('text-block__content show');
+  //
+  //   $('.show').collapse();
+  //   //accordionHideAll(btn_acc);
+  // }
 
   for(let i = 0; i < btn_acc.length; i++) {
     btn_acc[i].addEventListener("click", function() {
@@ -45,18 +43,19 @@ if (acc !== null){
     }
   }
 
-  $('.text-block__content').on('shown.bs.collapse', function () {
+  $('.accordion-collapse').on('shown.bs.collapse', function () {
   // do something...
     console.log("shown");
-    const header = document.querySelector('header').offsetHeight;
-    const tabName= $(this).attr("aria-labelledby");
-    console.log("tabName - "+tabName);
+    const header = document.querySelector('header').offsetHeight + 20;
+    const tabName = $(this).attr("aria-labelledby");
+    const tab = document.getElementById(tabName);
+    const elp = tab.getBoundingClientRect().top
+    //console.log("tab.getBoundingClientRect().top - "+tab.getBoundingClientRect().top);
     const duration = 1500;
-    const elPosition = $("#"+tabName).offset().top - 20;
+    //const elPosition = $("#"+tabName).offset().top - 20;
     const startPosition = window.scrollY
-    //pageYOffset;
-    const distance = elPosition<=startPosition ? elPosition - header : elPosition - startPosition - header;
-    console.log("startPosition = "+ startPosition+"; elPosition = "+ elPosition+"; distance = "+distance);
+    const distance = elp - header
+    console.log("startPosition = "+ startPosition+"; elPosition = "+ elp+"; distance = "+distance);
     let start = null;
 
     window.requestAnimationFrame(step);
@@ -68,13 +67,7 @@ if (acc !== null){
       if (progress < duration) window.requestAnimationFrame(step);
     }
   })
-
 }
-
-
-
-
-
 
 
 // //scroll to top of shown accordion

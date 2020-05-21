@@ -7,6 +7,13 @@ if (menu_links!== null){
     if (urlHash) {
       setTimeout(() => { window.scrollTo(0, 0) }, 0)
 
+      const acc = document.getElementById("accordion");
+      const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+      if (acc !== null && windowInner<=1200){
+        $('.show').collapse();
+        //accordionHideAll(btn_acc);
+      }
+
       const anchors = document.querySelectorAll('a[href^="#"]');
       const header = document.querySelector('header').offsetHeight;
       const startPosition = window.pageYOffset;
@@ -14,6 +21,7 @@ if (menu_links!== null){
       const urlTarget = document.getElementById(urlHash.replace('#', ''));
       const urlPosition = window.pageYOffset + urlTarget.getBoundingClientRect().top - header;
       let start = null;
+      console.log("urlhash start pos - urlTarget.getBoundingClientRect().top - "+ urlTarget.getBoundingClientRect().top);
 
       window.requestAnimationFrame(step);
 
