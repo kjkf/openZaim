@@ -5,32 +5,43 @@ if (menu_links!== null){
   const urlHash = location.hash;
   window.addEventListener('DOMContentLoaded', (event) => {
     if (urlHash) {
-      setTimeout(() => { window.scrollTo(0, 0) }, 0)
 
+      setTimeout(() => { window.scrollTo(0, 0) }, 1000)
       const acc = document.getElementById("accordion");
       const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
       if (acc !== null && windowInner<=1200){
-        $('.show').collapse();
+        $('.accordion-collapse').collapse();
+
+        $('.accordion-collapse').on('hidden.bs.collapse', function () {
+          console.log("collapsed");
+          scrollToBlock();
+        })
         //accordionHideAll(btn_acc);
+      }else {
+        scrollToBlock();
       }
 
-      const anchors = document.querySelectorAll('a[href^="#"]');
-      const header = document.querySelector('header').offsetHeight;
-      const startPosition = window.pageYOffset;
-      const duration = 1500;
-      const urlTarget = document.getElementById(urlHash.replace('#', ''));
-      const urlPosition = window.pageYOffset + urlTarget.getBoundingClientRect().top - header;
-      let start = null;
-      console.log("urlhash start pos - urlTarget.getBoundingClientRect().top - "+ urlTarget.getBoundingClientRect().top);
+      function scrollToBlock(){
+        const anchors = document.querySelectorAll('a[href^="#"]');
+        const header = document.querySelector('header').offsetHeight;
+        const startPosition = window.pageYOffset;
+        const duration = 1500;
+        const urlTarget = document.getElementById(urlHash.replace('#', ''));
+        const urlPosition = window.pageYOffset + urlTarget.getBoundingClientRect().top - header;
+        let start = null;
+        console.log("urlhash start pos - urlTarget.getBoundingClientRect().top - "+ urlTarget.getBoundingClientRect().top);
+        console.log("urlPosition - "+ urlPosition)
 
-      window.requestAnimationFrame(step);
+        window.requestAnimationFrame(step);
 
-      function step(timestamp) {
-        if (!start) start = timestamp;
-        const progress = timestamp - start;
-        window.scrollTo(0, easeInOutCubic(progress, startPosition, urlPosition, duration));
-        if (progress < duration) window.requestAnimationFrame(step);
+        function step(timestamp) {
+          if (!start) start = timestamp;
+          const progress = timestamp - start;
+          window.scrollTo(0, easeInOutCubic(progress, startPosition, urlPosition, duration));
+          if (progress < duration) window.requestAnimationFrame(step);
+        }
       }
+
     }
   });
   //----------------------------------------------------------------------------

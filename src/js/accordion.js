@@ -54,8 +54,8 @@ if (acc !== null){
     const duration = 1500;
     //const elPosition = $("#"+tabName).offset().top - 20;
     const startPosition = window.scrollY
-    const distance = elp - header
-    console.log("startPosition = "+ startPosition+"; elPosition = "+ elp+"; distance = "+distance);
+    const distance = elp - header;
+    console.log("elPosition = "+ elp); //distance = "+distance);
     let start = null;
 
     window.requestAnimationFrame(step);
