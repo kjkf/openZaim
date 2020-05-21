@@ -66,7 +66,8 @@ $(document).ready( function() {
         // Loop over them and prevent submission
         var validation = Array.prototype.filter.call(forms, function(form) {
             form.addEventListener('submit', function(event) {
-                if ((form.checkValidity() === false)){
+                const isInvalid = form.querySelectorAll('.is-invalid');
+                if ((form.checkValidity() === false) || isInvalid.length > 0){
                     event.preventDefault();
                     event.stopPropagation();
                 }
