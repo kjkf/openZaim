@@ -7,19 +7,22 @@ if (menu_links!== null){
     if (urlHash) {
 
       setTimeout(() => { window.scrollTo(0, 0) }, 1000)
-      const acc = document.getElementById("accordion");
-      const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
-      if (acc !== null && windowInner<=1200){
-        $('.accordion-collapse').collapse();
 
-        $('.accordion-collapse').on('hidden.bs.collapse', function () {
-          console.log("collapsed");
-          scrollToBlock();
-        })
-        //accordionHideAll(btn_acc);
-      }else {
-        scrollToBlock();
-      }
+      scrollToBlock();
+
+      // const acc = document.getElementById("accordion");
+      // const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+      // if (acc !== null && windowInner<=1200){
+      //   $('.accordion-collapse').collapse();
+      //
+      //   $('.accordion-collapse').on('hidden.bs.collapse', function () {
+      //     console.log("collapsed");
+      //     scrollToBlock();
+      //   })
+      //   //accordionHideAll(btn_acc);
+      // }else {
+      //   scrollToBlock();
+      // }
 
       function scrollToBlock(){
         const anchors = document.querySelectorAll('a[href^="#"]');

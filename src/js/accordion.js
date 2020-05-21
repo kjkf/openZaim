@@ -1,13 +1,13 @@
 const acc = document.getElementById("accordion");
 if (acc !== null){
   var btn_acc = document.getElementsByClassName('btn-accordion');
-  // const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
-  // if (windowInner<=1200){
-  //   const collapsetab = document.getElementsByClassName('text-block__content show');
-  //
-  //   $('.show').collapse();
-  //   //accordionHideAll(btn_acc);
-  // }
+  const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+  if (windowInner<=1200){
+    const collapsetab = document.getElementsByClassName('text-block__content show');
+
+    $('.show').collapse();
+    //accordionHideAll(btn_acc);
+  }
 
   for(let i = 0; i < btn_acc.length; i++) {
     btn_acc[i].addEventListener("click", function() {
