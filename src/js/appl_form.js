@@ -43,7 +43,9 @@ $(document).ready( function() {
                 const diff = currentYear - year;
                 console.log(currentYear, year, '===', diff);
                 if (diff < 17 || diff > 100) {
-                    $("#dateBirth").addClass('invalid');
+                    $("#dateBirth").addClass('is-invalid');
+                } else {
+                    $("#dateBirth").removeClass('is-invalid');
                 }
 
             }
@@ -71,7 +73,8 @@ $(document).ready( function() {
         });
 
         form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
+            const isInvalid = document.querySelectorAll('.is-invalid');
+            if (!form.checkValidity() || isInvalid.length > 0) {
                 console.log('=== invalid');
                 event.preventDefault();
                 event.stopPropagation();
