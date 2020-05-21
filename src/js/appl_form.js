@@ -24,7 +24,7 @@ $(document).ready( function() {
 
         $("#phone").mask("+7 (9##) ### ## ##", {
             autoclear: false,
-            placeholder: ' '
+            placeholder: '_'
         });
         $("#dateBirth").mask("##.##.####", {
             autoclear: false,
@@ -33,18 +33,30 @@ $(document).ready( function() {
                 const regexp = /^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.-]([0]?[1-9]|[1][0-2])[.-]([0-9]{4}|[0-9]{2})$/;
 
                 if (!regexp.test($("#dateBirth").val())) {
-                    $("#dateBirth").val('');
-                    $("#dateBirth").blur();
+                    //$("#dateBirth").val('');
+                    //$("#dateBirth").blur();
+
+                    $("#dateBirth").addClass('invalid');
                 }
+                const currentYear = new Date().getFullYear();
+                const year = $("#dateBirth").val().slice(-4);
+                const diff = currentYear - year;
+                console.log(currentYear, year, '===', diff);
+                if (diff < 17 || diff > 100) {
+                    $("#dateBirth").addClass('is-invalid');
+                } else {
+                    $("#dateBirth").removeClass('is-invalid');
+                }
+
             }
         });
         $("#p_date").mask("##.##.####", {
             autoclear: false,
-            placeholder: ' '
+            placeholder: '_'
         });
         $("#p_number").mask("#### #####", {
             autoclear: false,
-            placeholder: ' '
+            placeholder: '_'
         });
 
         let step = 1;
@@ -61,7 +73,8 @@ $(document).ready( function() {
         });
 
         form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
+            const isInvalid = document.querySelectorAll('.is-invalid');
+            if (!form.checkValidity() || isInvalid.length > 0) {
                 console.log('=== invalid');
                 event.preventDefault();
                 event.stopPropagation();
@@ -186,7 +199,7 @@ $(document).ready( function() {
 
 
 // ============ DADATA ==================
-       /* console.log('=== DADATA start ===6666');
+        /*console.log('=== DADATA start ===6666');
         const token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
         //Емеил
         $("#email").suggestions({
@@ -218,14 +231,12 @@ $(document).ready( function() {
             $("#name").val(fio.name);
             $("#patronymic").val(fio.patronymic);
             $("#gender").val(ruGender(fio.gender));
-            const fioIcon = $("#fio").next('.form-control-img');
             const gender = fio.gender.toLowerCase();
             const classList = 'male female';
             const removeCLass = classList.replace(gender, '').trim(gender);
-            $("#fio").siblings('.form-control-img').addClass(gender).removeClass(removeCLass);
-            console.log('ssss = ', $("#fio").siblings('.form-control-img'));
-            console.log('next---', fioIcon);
-            console.log(gender,'===', removeCLass);
+            //$("#fio").siblings('.form-control-img').addClass(gender).removeClass(removeCLass);
+            $("#fio").addClass(gender).removeClass(removeCLass);
+            //console.log(fio.gender, '*****', gender,'===', removeCLass);
         }
 
         function clearSelected() {
@@ -318,22 +329,6 @@ $(document).ready( function() {
             count: 15
         });
 
- /!*       function join(arr /!*, separator *!/) {
-            var separator = arguments.length > 1 ? arguments[1] : ", ";
-            return arr.filter(function(n){return n}).join(separator);
-        }*!/
-
-        /!*function formatCity(suggestion) {
-            var address = suggestion.data;
-            if (address.city_with_type === address.region_with_type) {
-                return address.settlement_with_type || "";
-            } else {
-                return join([
-                    address.city_with_type,
-                    address.settlement_with_type]);
-            }
-        }*!/
-
         var type  = "ADDRESS";
         var $region = $("#region_r");
         var $city   = $("#city_r");
@@ -367,4 +362,4 @@ $(document).ready( function() {
             count: 15
         });*/
     }
-});
+});/**/
