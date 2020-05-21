@@ -60,7 +60,6 @@ $(document).ready( function() {
         });
 
         $("#email").blur(e => {
-            console.log( $("#email").val().slice(-9).toLowerCase());
             if ($("#email").val().slice(-9).toLowerCase() === '@gmail.ru') {
                 $("#email").addClass('is-invalid');
             } else {
@@ -84,7 +83,6 @@ $(document).ready( function() {
         form.addEventListener('submit', event => {
             const isInvalid = document.querySelectorAll('.is-invalid');
             if (!form.checkValidity() || isInvalid.length > 0) {
-                console.log('=== invalid');
                 event.preventDefault();
                 event.stopPropagation();
                 return;
@@ -94,14 +92,13 @@ $(document).ready( function() {
             step = changeStep(step, 'next');
             prepareValidate(step);
         });
-
         noBtn.addEventListener('click', e => {
             const factAddress = document.getElementById('factAddress');
             factAddress.classList.remove('d-none');
         });
 
         function changeStep(stepNum, direction) {
-            console.log('changeStep');
+            //console.log('changeStep');
             const goalStep = direction === 'next' ? stepNum + 1 : stepNum - 1;
             const currentStepBlock = form.querySelector(`.step[data-step-num="${stepNum}"]`);
             const goalStepBlock = form.querySelector(`.step[data-step-num="${goalStep}"]`);
