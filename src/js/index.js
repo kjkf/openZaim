@@ -75,13 +75,17 @@ $(document).ready( function() {
         });
 
         const inputList = document.querySelectorAll('.form-control');
-        //console.log(inputList);
+
         inputList.forEach(input => {
-            input.addEventListener('input', e => {
-                if (input.value !== '') {
+            input.addEventListener('keyup', e => {
+                const mask = input.dataset.mask ? input.dataset.mask : '';
+                //console.log('keyup =-=-=-=', input.value, );
+                //console.log(mask, '=-=', input.value);
+                if (input.value !== '' && input.value !== mask) {
                     input.classList.remove('disabled');
                 } else {
                     input.classList.add('disabled');
+
                 }
             })
         });

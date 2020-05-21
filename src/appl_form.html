@@ -99,7 +99,7 @@
                         <div class="col-md-12 col-xl-6">
                             <div class="form-group ">
                                 <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control disabled" placeholder="Дата рождения" required id="dateBirth" pattern="^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.-]([0]?[1-9]|[1][0-2])[.-]([0-9]{4}|[0-9]{2})$">
+                                    <input type="text" class="form-control disabled" placeholder="Дата рождения" data-mask="__.__.____" required id="dateBirth" pattern="^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.-]([0]?[1-9]|[1][0-2])[.-]([0-9]{4}|[0-9]{2})$">
                                     <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-cake"/></svg></div>
                                     <span class="form-control-title">Дата рождения</span>
                                 </label>
@@ -107,7 +107,7 @@
 
                             <div class="form-group ">
                                 <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control disabled" placeholder="Мобильный телефон" required id="phone">
+                                    <input type="text" class="form-control disabled" placeholder="Мобильный телефон" required id="phone" data-mask="+7 (9__) ___ __ __">
                                     <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-call"/></svg></div>
                                     <span class="form-control-title">Мобильный телефон</span>
                                 </label>
@@ -123,7 +123,7 @@
                             <div class="col-md-12 col-xl-6">
                                 <div class="form-group ">
                                     <label class="form-control-label with-ic">
-                                        <input type="text" class="form-control disabled" placeholder="Серия и номер паспорта" id="p_number">
+                                        <input type="text" class="form-control disabled" placeholder="Серия и номер паспорта" data-mask="____ _____" id="p_number">
                                         <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-passport"/></svg></div>
                                         <span class="form-control-title">Серия и номер паспорта</span>
                                     </label>
@@ -133,7 +133,7 @@
                             <div class="col-md-12 col-xl-6">
                                 <div class="form-group ">
                                     <label class="form-control-label with-ic">
-                                        <input type="text" class="form-control disabled" placeholder="Дата выдачи"  id="p_date" pattern="^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.-]([0]?[1-9]|[1][0-2])[.-]([0-9]{4}|[0-9]{2})$">
+                                        <input type="text" class="form-control disabled" placeholder="Дата выдачи"  id="p_date" data-mask="__.__.____" pattern="^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.-]([0]?[1-9]|[1][0-2])[.-]([0-9]{4}|[0-9]{2})$">
                                         <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-calendar"/></svg></div>
                                         <span class="form-control-title">Дата выдачи</span>
                                     </label>
@@ -479,7 +479,7 @@
                 <div class="form-footer">
                     <div class="row">
                         <div class="col-xl-9 col-md-12 footer-text-wrapper">
-                            <input type="checkbox accept" id="checkbox">
+                            <input type="checkbox" id="checkbox">
                             <label for="checkbox" class="form__footer-text check-box"  data-step-num="1">
                                 <i class="box"></i> Даю согласие на обработку персональных данных и на получение материалов рекламного характера, а также согласен с публичной офертой и документами.
                             </label>
