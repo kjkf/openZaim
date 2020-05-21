@@ -75,8 +75,12 @@ $(document).ready( function() {
             }, false);
         });
 
-        const inputList = document.querySelectorAll('.form-control');
+        $("#phone").mask("+7 (9##) ### ## ##", {
+            autoclear: false,
+            placeholder: '_'
+        });
 
+        const inputList = document.querySelectorAll('.form-control');
         inputList.forEach(input => {
             input.addEventListener('keyup', e => {
                 const mask = input.dataset.mask ? input.dataset.mask : '';
