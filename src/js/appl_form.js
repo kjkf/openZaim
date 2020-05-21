@@ -33,9 +33,19 @@ $(document).ready( function() {
                 const regexp = /^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.-]([0]?[1-9]|[1][0-2])[.-]([0-9]{4}|[0-9]{2})$/;
 
                 if (!regexp.test($("#dateBirth").val())) {
-                    $("#dateBirth").val('');
-                    $("#dateBirth").blur();
+                    //$("#dateBirth").val('');
+                    //$("#dateBirth").blur();
+
+                    $("#dateBirth").addClass('invalid');
                 }
+                const currentYear = new Date().getFullYear();
+                const year = $("#dateBirth").val().slice(-4);
+                const diff = currentYear - year;
+                console.log(currentYear, year, '===', diff);
+                if (diff < 17 || diff > 100) {
+                    $("#dateBirth").addClass('invalid');
+                }
+
             }
         });
         $("#p_date").mask("##.##.####", {
