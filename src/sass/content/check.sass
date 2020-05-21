@@ -24,7 +24,7 @@
     +laptop-down
       font-size: 26px
       text-align: center
-      margin-bottom: 0px
+      margin-bottom: 16px
     +phone-down
       text-align: left
       margin-bottom: 40px
@@ -45,7 +45,8 @@
       align-items: flex-start
       text-align: right
       +laptop-down
-        padding: 22px 0px
+        //padding: 22px 0px
+        padding: 6px 0px
       +tablet-down
         padding: 6px 0px
 
@@ -63,6 +64,7 @@
 
   .check-label
     width: 268px
+    text-align: left
     +laptop-down
       order: 2
       text-align: left
@@ -70,7 +72,8 @@
       width: 390px
       margin-right: auto
     +tablet-down
-      width: auto
+      //width: calc(100% - #{$status_ic_w})
+      width: 75%
 
   .check-value
     font-family: $font-Exo2-Medium
@@ -83,11 +86,12 @@
       align-items: flex-end
       margin-left: auto
       text-align: right
+      line-height: 25px
     +tablet-down
       width: 100%
       margin-left: unset
       align-items: flex-start
-
+      text-align: left
 
   .check-status
     //width: 100px
@@ -106,15 +110,20 @@
         display: none
 
   .check-status-ic
-    min-width: 14px
+    min-width: $status_ic_w
     display: flex
     justify-content: center
     align-items: center
     +laptop-down
       order: 1
+      justify-content: flex-start
+      //padding: 15px 0px
     +tablet-down
       width: auto
 
 
 
 
+.check-row-el__item
+  &:empty
+    display: none !important
