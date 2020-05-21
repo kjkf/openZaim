@@ -95,9 +95,20 @@ $(document).ready( function() {
             const browserSpan = document.getElementById('browserName');
             const osSpan = document.getElementById('osName');
             const deviceSpan = document.getElementById('deviceName');
+
             if (browserSpan) browserSpan.innerHTML = `${whatbrowser.ua.browser.name} ${whatbrowser.ua.browser.major}`;
             if (osSpan) osSpan.innerHTML = `${whatbrowser.ua.os.name} ${whatbrowser.ua.os.version}`;
             if (deviceSpan) deviceSpan.innerHTML = whatbrowser.ua.device.name ? `${whatbrowser.ua.device.name}` : 'Компьютер';
+        }
+        const ipSpan = document.getElementById('ipadress');
+        if (ipSpan) {
+            $.get('https://www.cloudflare.com/cdn-cgi/trace', function(data) {
+                const regexp = /\b(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\b/;
+                const result = data.match(regexp);
+
+                //console.log(data, result);
+                if (result) ipSpan.innerHTML = result[0];
+            })
         }
 
     }, false);
