@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
@@ -49,7 +50,7 @@
                         <div class="col-xl-6">
                             <div class="form-group">
                                 <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control disabled" placeholder="Мобильный телефон" required>
+                                    <input type="text" class="form-control disabled" placeholder="Мобильный телефон" required id="phone" data-mask="+7 (9__) ___ __ __">
                                     <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-call"/></svg></div>
                                     <span class="form-control-title">Мобильный телефон</span>
                                 </label>
@@ -58,11 +59,11 @@
                         <div class="col-xl-6">
                             <div class="form-group">
                                 <label class="form-control-label with-ic">
-                                    <input type="text" class="form-control disabled" placeholder="Фамилия Имя Отчество" required>
+                                    <input type="text" class="form-control disabled" placeholder="Фамилия Имя Отчество" required id="fio">
                                     <div class="form-control-img">
                                         <svg class="ic-svg ic-ufo"><use xlink:href="images/icons/sprite.svg#ic-ufo"/></svg>
-                                        <svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>
-                                        <!--<svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-male"/></svg>-->
+                                        <svg class="ic-svg ic-female"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>
+                                        <svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-male"/></svg>
                                     </div>
                                     <span class="form-control-title">Фамилия Имя Отчество</span>
                                 </label>
@@ -78,8 +79,8 @@
                         </div>
                         <div class="col-xl-3 col-md-5 col-12">
                             <div class="form-group mb-0">
-                                <!--<button type="submit" class="btn bubbly-button bubbly-button-green" >Войти</button>-->
-                                <button type="button" class="btn bubbly-button bubbly-button-green"  data-toggle="modal" data-target="#loginModal">Войти</button>
+                                <button type="submit" class="btn bubbly-button bubbly-button-green" >Войти</button>
+                                <!--<button type="button" class="btn bubbly-button bubbly-button-green"  data-toggle="modal" data-target="#loginModal">Войти</button>-->
                             </div>
                         </div>
                     </div>
@@ -185,5 +186,6 @@
 
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script src="main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
 </body>
 </html>

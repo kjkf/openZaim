@@ -1,7 +1,7 @@
 
 $(document).ready( function() {
-    const form = document.querySelector('.form');
-//console.log(form);
+    const form = document.querySelector('form[name=applForm]');
+    //console.log(form);
     if (form) {
 
         const validateList = [
@@ -22,10 +22,6 @@ $(document).ready( function() {
         const progressBar = document.querySelector('.green-rect');
         const subtitle = document.querySelector('.subtitle');
 
-        $("#phone").mask("+7 (9##) ### ## ##", {
-            autoclear: false,
-            placeholder: '_'
-        });
         $("#dateBirth").mask("##.##.####", {
             autoclear: false,
             placeholder: '_',
@@ -203,7 +199,6 @@ $(document).ready( function() {
             })
         });*/
 
-
 // ============ DADATA ==================
         /*console.log('=== DADATA start ===6666');
         const token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
@@ -369,3 +364,4 @@ $(document).ready( function() {
         });*/
     }
 });/**/
+
