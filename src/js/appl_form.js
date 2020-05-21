@@ -41,7 +41,7 @@ $(document).ready( function() {
                 const currentYear = new Date().getFullYear();
                 const year = $("#dateBirth").val().slice(-4);
                 const diff = currentYear - year;
-                console.log(currentYear, year, '===', diff);
+                //console.log(currentYear, year, '===', diff);
                 if (diff < 17 || diff > 100) {
                     $("#dateBirth").addClass('is-invalid');
                 } else {
@@ -57,6 +57,15 @@ $(document).ready( function() {
         $("#p_number").mask("#### #####", {
             autoclear: false,
             placeholder: '_'
+        });
+
+        $("#email").blur(e => {
+            console.log( $("#email").val().slice(-9).toLowerCase());
+            if ($("#email").val().slice(-9).toLowerCase() === '@gmail.ru') {
+                $("#email").addClass('is-invalid');
+            } else {
+                $("#email").removeClass('is-invalid');
+            }
         });
 
         let step = 1;

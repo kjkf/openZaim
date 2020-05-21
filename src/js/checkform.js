@@ -22,7 +22,7 @@ $(function() {
 
     function handlerForMediaQueries1200(x) {
         if(mql1200.matches) {
-            const n = document.querySelectorAll('.phone--row');
+
         } else {
 
         }
