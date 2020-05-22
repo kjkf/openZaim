@@ -25,7 +25,7 @@ $(document).ready( function() {
         $("#dateBirth").mask("##.##.####", {
             autoclear: false,
             placeholder: '_',
-            completed: function(val) {
+            completed: function (val) {
                 const regexp = /^([0]?[1-9]|[1|2][0-9]|[3][0|1])[.-]([0]?[1-9]|[1][0-2])[.-]([0-9]{4}|[0-9]{2})$/;
 
                 if (!regexp.test($("#dateBirth").val())) {
@@ -70,7 +70,7 @@ $(document).ready( function() {
         });
 
         prevBtn.addEventListener('click', e => {
-            if(step <= 1) return;
+            if (step <= 1) return;
             e.preventDefault();
             step = changeStep(step, 'prev');
             prepareValidate(step);
@@ -99,7 +99,7 @@ $(document).ready( function() {
             const currentStepBlock = form.querySelector(`.step[data-step-num="${stepNum}"]`);
             const goalStepBlock = form.querySelector(`.step[data-step-num="${goalStep}"]`);
 
-            const footerStepOne = stepNum === 1 || goalStep === 1 ?  footer.querySelector(`[data-step-num="1"]`) : null;
+            const footerStepOne = stepNum === 1 || goalStep === 1 ? footer.querySelector(`[data-step-num="1"]`) : null;
             const footerStepElse = footer.querySelector(` [data-step-num="2"]`);
             const footerText = footerStepElse.querySelector('.form__footer-text');
 
@@ -153,6 +153,7 @@ $(document).ready( function() {
 
                 }
                 stepProgressbar(goalStep);
+                if (goalStep === 4) checkProgress();
                 currentStepBlock.style.display = 'none';
                 goalStepBlock.style.display = 'block';
                 stepNumSpan.innerHTML = goalStep;
@@ -176,9 +177,9 @@ $(document).ready( function() {
         function prepareValidate(step) {
             const valStep = step - 1;
             const currentValidateFields = validateList[valStep];
-           // console.log(currentValidateFields);
+            // console.log(currentValidateFields);
             let required = document.querySelectorAll('[required]');
-           // console.log(required);
+            // console.log(required);
             if (!currentValidateFields || !required) return;
             required.forEach(field => field.removeAttribute('required'));
             currentValidateFields.forEach(id => {
@@ -187,18 +188,35 @@ $(document).ready( function() {
             });
         }
 
-        /*const inputList = document.querySelectorAll('.form-control');
-        //console.log(inputList);
-        inputList.forEach(input => {
-            input.addEventListener('input', e => {
-                if (input.value !== '') {
-                    input.classList.remove('disabled');
-                } else {
-                    input.classList.add('disabled');
-                }
-            })
-        });*/
+        function checkProgress() {
+            i = 1;
+            const elem = document.querySelector(".green-rect");
+            let width = 28;
+            let id = setInterval(frame, 100);
+            subtitle.innerHTML = 'Проверенно 1024 параметра - 20% осталось';
+            const paramsWithoutStatus = document.querySelectorAll('.ic-status--loader');
+            let paramsWithoutStatusArray = Array.from(paramsWithoutStatus);
 
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                    i = 0;
+                } else {
+                    width++;
+                    elem.style.width = width + "%";
+                    subtitle.innerHTML = `Проверенно 1024 параметра - ${width}% осталось`;
+                    if (paramsWithoutStatusArray.length > 0 && width % 7 === 0) {
+                        const currentParam = paramsWithoutStatusArray.shift();
+                        setCheckStatus(currentParam);
+                    }
+                }
+            }
+        }
+        
+        function setCheckStatus(elem) {
+            elem.classList.remove('ic-status--loader');
+            elem.classList.add('ic-status--valid');
+        }
     }
 });/**/
 
