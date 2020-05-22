@@ -4,23 +4,21 @@
   padding-bottom: 30px
   +laptop-down
     padding: 0
-  //   padding: 20px 0 5px 0
   .container
     padding: 0 30px
     +laptop-down
       min-width: 700px
-      // margin-right: auto
-      // margin-left: auto
       padding: 20px 15px
     +tablet-down
       min-width: 310px
-      // margin-right: auto
-      // margin-left: auto
       padding: 20px 10px
 
   .title
-    //font-size: 25px
     letter-spacing: 0
+    width: 100%
+    text-align: center
+    +laptop-down
+      text-align: left
 
   .paragrfaph
     letter-spacing: 1
@@ -72,11 +70,6 @@
     +tablet-down
       margin-top: 30px
 
-  // .center
-  //   justify-content: center
-  //   align-items: center
-
-
 .link-bar
   display: flex
   flex-direction: column
@@ -84,28 +77,25 @@
   align-items: flex-start
   width: 100%
 
-
-.btn-accordion
-  display: none
-  background-repeat: no-repeat
-  background-size: 25px 25px
-  background-position: right center
-  cursor: pointer
-  //--
-  width: 100%
-  padding: 0
-  //--
-  +laptop-down
-    display: flex
-
-.btn-accordion__show
-  background-image: url("../images/icons/ic-arrow-down.svg")
-.btn-accordion__hide
-  background-image: url("../images/icons/ic-arrow-up.svg")
-
-
-// .testfontbig
+// .btn-accordion
 //   display: flex
-//   font-size: 40px
-//   color: black
-//   font-family: $font-Exo2-Thin
+//   background-repeat: no-repeat
+//   background-size: 25px 25px
+//   background-position: right center
+//   cursor: pointer
+//   width: 100%
+//   padding: 0
+//   +laptop-down
+//     display: flex
+//   +tablet-down
+//     background-position: right bottom
+//     padding-right: 1px
+//
+// .btn-accordion__show
+//   background-image: none
+//   +laptop-down
+//     background-image: url("../images/icons/ic-arrow-down.svg")
+// .btn-accordion__hide
+//   background-image: none
+//   +laptop-down
+//     background-image: url("../images/icons/ic-arrow-up.svg")

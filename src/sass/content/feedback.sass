@@ -1,46 +1,56 @@
 .feedback-block
   width: 100%
   padding-top: 50px
-  padding-bottom: 0px
+  padding-bottom: 40px
   +laptop-down
     padding: 0
   .container
     padding: 0 30px
     +laptop-down
       min-width: 700px
-      // margin-right: auto
-      // margin-left: auto
       padding: 20px 15px
     +tablet-down
       min-width: 310px
-      // margin-right: auto
-      // margin-left: auto
       padding: 20px 10px
-    // max-width: 1530px
-    // padding: 0 40px
-    // +laptop-down
-    //   min-width: 700px
-    //   padding: 20px 40px
-    // +tablet-down
-    //   min-width: 310px
-    //   padding: 20px 10px
-  .col-md-5
-    padding: 0
+
+  .col-12
+    +tablet-down
+      padding: 0
 
   .title
     letter-spacing: 0
-
+    width: 100%
+    text-align: center
+    +laptop-down
+      text-align: left
+  $lh: 1.66
+  $lh_mobile: 1.9
   .paragrfaph
     width: 100%
     margin-bottom: 0
-    line-height: 1.66
+    line-height: $lh
     flex-wrap: wrap
     word-break: break-all
+    margin-left: 40px
     +laptop-down
-      line-height: 1.5
       letter-spacing: -1px
+      margin-left: 50px
+    +tablet-down
+      display: block
+      letter-spacing: 0px
+      margin-left: 0
+      line-height: $lh_mobile
   .bold
-    line-height: 1.66
+    line-height: $lh
+    +tablet-down
+      line-height: $lh_mobile
+
+  .white_space
+    margin-top: 25px
+    +laptop-down
+      margin-top: 0
+    +tablet-down
+      margin-top: 15px
 
   .form-control-label
     width: 100%
@@ -48,8 +58,16 @@
     +tablet-down
       margin-bottom: 10px
 
+  .bubbly-button-green
+    width: 100%
+    max-width: 32%
+    +laptop-down
+      max-width: 80%
+
   textarea
     resize: none
+    +laptop-down
+      height: 100px
 
   &__head
     display: flex
@@ -76,8 +94,7 @@
       margin-top: 20px
     +tablet-down
       margin-top: 30px
-
-  &__row
+  &__text
     display: flex
     flex-direction: row
     justify-content: flex-start
@@ -86,36 +103,50 @@
     width: 100%
     margin-bottom: 40px
     +laptop-down
+      margin-bottom: 15px
+    +tablet-down
       margin-bottom: 20px
+    .paragrfaph
+      width: 100%
+      margin: 0
+      line-height: 1.66
+      +laptop-down
+        width: 100%
+        line-height: 1.5
+      +tablet-down
+        word-break: keep-all
+        //letter-spacing: 1px
+        line-height: 1.49
+
+  &__row
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: flex-start
+    flex-wrap: wrap
+    width: 100%
     +tablet-down
       flex-direction: column
-      margin-bottom: 15px
+      margin-bottom: 0px
 
-  .inside_row
-    margin-bottom: 0px
-    justify-content: space-between
-    +laptop-down
-      flex-direction: column
-      width: 100%
-
-  &__col
+  &__col, .feedback-form
     display: flex
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start
-    margin-right: 25px
     +laptop-down
-      margin-right: 65px
+      margin-right: 0px
     +tablet-down
       margin-right: 0
       margin-bottom: 15px
+      justify-content: center
+      align-items: center
+
     &:last-child
       margin-right: 0
       margin-bottom: 0
 
   &__fields
-    width: 48%
+    width: 49%
     +laptop-down
-      width: 100%
-    +tablet-down
       width: 100%

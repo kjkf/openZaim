@@ -5,6 +5,8 @@
   +laptop-down
     padding-top: 20px
     padding-bottom: 15px
+  +tablet-down
+    padding-bottom: 5px
   .container
     padding: 0 30px
     +laptop-down
@@ -20,6 +22,11 @@
       padding: 0 10px
   .col-md-12
     padding: 0
+  .row
+    +laptop-down
+      padding: 0 30px
+    +tablet-down
+      padding: 0
 
   .paragrfaph
     letter-spacing: 1px
@@ -78,7 +85,6 @@
       padding: 0
 
   &__col
-    //width: 50%
     display: flex
     flex-direction: column
     justify-content: center
@@ -86,20 +92,20 @@
     padding-right: 25px!important
     +laptop-down
       padding-right: 0!important
-    // margin-right: 25px
-    // &:last-child
-    //   margin-right: 0
-    // +laptop-down
-    //   margin-right: 0
+      margin-bottom: 10px
+    +tablet-down
+      margin-bottom: 30px
+      &:last-child
+        margin-bottom: 15px
 
   .white_space
     justify-content: flex-start
     align-items: flex-start
     +laptop-down
-      height: 150px
-      padding-top: 20px
+      height: 130px
+      //padding-top: 20px
       justify-content: space-between
       align-items: flex-start
     +tablet-down
-      padding-top: 10px
+      padding-top: 0px
       height: 180px

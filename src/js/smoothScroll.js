@@ -3,7 +3,7 @@ const menu_links = document.querySelectorAll(".smooth_scroll");
 if (menu_links!== null){
   //----------------------------------------------------------------------------
   const urlHash = location.hash;
-  console.log(urlHash);
+  //console.log(urlHash);
   const windowInner = window.visualViewport ? window.visualViewport.width : window.innerWidth;
   window.addEventListener('DOMContentLoaded', (event) => {
     if (acc !== null && windowInner<=1200) {
@@ -12,11 +12,8 @@ if (menu_links!== null){
     if (urlHash) {
       //setTimeout(() => { window.scrollTo(0, 0) }, 1000);
       const acc = document.getElementById("accordion");
-
       if (acc !== null && windowInner<=1200){
-
         const collapseCount = $('.accordion-collapse').length;
-
         let counter = 0;
         $('.accordion-collapse').on('hidden.bs.collapse', function () {
           if (counter === collapseCount - 1) {
@@ -25,25 +22,21 @@ if (menu_links!== null){
           }
           counter++;
         })
-        //accordionHideAll(btn_acc);
       }else {
         scrollToBlock();
       }
 
       function scrollToBlock(){
+        console.log("etot ot smooth urlhash");
         const anchors = document.querySelectorAll('a[href^="#"]');
         const header = document.querySelector('header').offsetHeight;
         const startPosition = 0;
         const duration = 1500;
         const urlTarget = document.getElementById(urlHash.replace('#', ''));
         const collapsible = urlTarget.querySelector('.accordion-collapse');
-        console.log(urlTarget, collapsible);
-        if (collapsible) collapsible.classList.add('show');
+        if (collapsible && windowInner<=1200) collapsible.classList.add('show');
         const urlPosition = window.pageYOffset + urlTarget.getBoundingClientRect().top - header;
         let start = null;
-        console.log(startPosition, urlPosition);
-        //console.log("urlhash start pos - urlTarget.getBoundingClientRect().top - "+ urlTarget.getBoundingClientRect().top);
-        //console.log("urlPosition - "+ urlPosition)
 
         window.requestAnimationFrame(step);
 
@@ -83,7 +76,7 @@ if (menu_links!== null){
     //console.log('target = '+ target);
     if (page == "" || currloc.search(page)>=0){
       target = target.substring(target.search("#"), target.length);
-      //console.log("target = "+ target);
+      console.log("etot smothhhh = ");
       const targetId = target === "#" ? "header" : target.substring(target.search("#"), target.length);
       const header = document.querySelector('header').offsetHeight;
       const duration = 1500;
@@ -102,7 +95,7 @@ if (menu_links!== null){
         if (progress < duration) window.requestAnimationFrame(step);
       }
     }else{
-      window.location.href = target// window.location(anotherPage)
+      window.location.href = target
     }
   }
 //----------------------------------------------------------------------------
