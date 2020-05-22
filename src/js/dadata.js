@@ -1,8 +1,8 @@
-/*
 $(document).ready( function() {
 // ============ DADATA ==================
-    const applForm = document.querySelector('form[name=applForm]');
+   /* const applForm = document.querySelector('form[name=applForm]');
     const loginForm = document.querySelector('.login-form__form');
+    const feedbackForm = document.querySelector('#form_feedback');
 
     const token = "19d220bd37bd3ed2856f17882140bbbde39ead9d";
 
@@ -119,6 +119,32 @@ $(document).ready( function() {
             onSelectNothing: clearSelected
         });
     }
+    if (feedbackForm) {
+//фио
+        $("#fio").suggestions({
+            token: token,
+            type: "NAME",
+            onSelect: showSelected,
+            onSelectNothing: clearSelected
+        });
+//Емеил
+        $("#email").suggestions({
+            token: token,
+            type: "EMAIL",
+            //!* Вызывается, когда пользователь выбирает одну из подсказок *!/
+            onSelect: function(suggestion) {
+                console.log(suggestion);
+            }
+        });
+
+        $("#email").blur(e => {
+            if ($("#email").val().slice(-9).toLowerCase() === '@gmail.ru') {
+                $("#email").addClass('is-invalid');
+            } else {
+                $("#email").removeClass('is-invalid');
+            }
+        });
+    }
 
     function formatResult(value, currentValue, suggestion) {
         suggestion.value = suggestion.data.code;
@@ -177,5 +203,4 @@ $(document).ready( function() {
                 address.settlement_with_type]);
         }
     }
-});
-*/
+*/});

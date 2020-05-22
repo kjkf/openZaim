@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OpenZaim</title>
+    <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -281,21 +282,27 @@
        </div>
        <div class="feedback-block__row">
          <div class="feedback-block__col col-lg-7 col-md-5 col-12" >
+<<<<<<< HEAD
            <form action="" id="form_feedback" class="feedback-form">
              <div class="feedback-block__row">
+=======
+           <form id="form_feedback" class="needs-validation" novalidate>
+             <div class="feedback-block__row inside_row">
+>>>>>>> c3bec68c68cacdc4f95e50a01be200e4812aa2a5
                <div class="feedback-block__fields">
                  <label class="form-control-label with-ic">
                      <input type="text" class="form-control disabled" placeholder="Ваше имя" required id="fio">
                      <div class="form-control-img">
                          <svg class="ic-svg ic-ufo"><use xlink:href="images/icons/sprite.svg#ic-ufo"/></svg>
-                         <svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>
+                         <svg class="ic-svg ic-female"><use xlink:href="images/icons/sprite.svg#ic-female"/></svg>
+                         <svg class="ic-svg ic-male"><use xlink:href="images/icons/sprite.svg#ic-male"/></svg>
                      </div>
                      <span class="form-control-title">Ваше имя</span>
                  </label>
                </div>
                <div class="feedback-block__fields">
                  <label class="form-control-label with-ic">
-                     <input type="text" class="form-control disabled"  placeholder="Электронная почта" required id="email">
+                     <input type="text" class="form-control disabled"  placeholder="Электронная почта" required id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                      <div class="form-control-img"><svg class="ic-svg"><use xlink:href="images/icons/sprite.svg#ic-at"/></svg></div>
                      <span class="form-control-title">Электронная почта</span>
                  </label>
@@ -305,7 +312,7 @@
                  <textarea name="name" rows="3" cols="80" class="form-control disabled" placeholder="Ваше сообщение" id="message"></textarea>
                  <span class="form-control-title">Ваше сообщение</span>
              </label>
-             <button class="btn bubbly-button bubbly-button-green">Отправить</button>
+             <button type="submit" class="btn bubbly-button bubbly-button-green">Отправить</button>
            </form>
          </div>
          <div class="feedback-block__col col-lg-5 col-md-7 col-12" style="width: 500px">
@@ -392,5 +399,6 @@
 </footer>
 <script src="plugins/tiny-slider.js"></script>
 <script src="main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
 <header class="header header-appl-form">
     <div class="container">
         <div class="logo header__logo">
-            <a href="#" class="logo__link"><img src="../images/icons/logo_white.svg" alt="OPENZAIM" class="logo__img"></a>
+            <img src="../images/icons/logo_white.svg" alt="OPENZAIM" class="logo__img">
         </div>
     </div>
 </header>
@@ -23,7 +23,9 @@
         <h2 class="title">Получение <span class="amonutVal">150 000</span> ₽</h2>
 
         <div class="form-wrapper">
-            <h3 class="form-header">Заявка на получение - <span class="amonutVal">150 000</span> рублей (шаг <span class="stepNum">1</span> из 4) </h3>
+            <h3 class="form-header">
+                <span class="header--first-row">Заявка на получение</span> - <span class="amonutVal">150 000</span> рублей (шаг <span class="stepNum">1</span> из 4)
+            </h3>
             <div class="form-header--sub">
                 <span class="green-rect"></span>
                 <h6 class="subtitle status">+10% к одобрению за добавление номера Вашего мобильного телефона</h6>
@@ -317,14 +319,14 @@
 
                 <div class="step check-data" data-step-num="4">
                     <div class="check-data__in">
-                        <h4 class="title">Данные указанные Вами в анкете</h4>
+                        <h4 class="title">Проводим скориннг полученных данных</h4>
                         <div class="check-row">
                             <div class="check-row-el check-label">Фамилия имя отчество</div>
                             <div class="check-row-el check-value">
-                                <div class="check-row-el__item">Иванов Иван Иванович</div>
+                                <div class="check-row-el__item" id="applicant_fio">Иванов Иван Иванович</div>
                             </div>
                             <div class="check-row-el check-status">
-                                <div class="check-row-el__item d-block">Муж</div>
+                                <div class="check-row-el__item d-block" id="applicant_sex">Муж</div>
                             </div>
                             <div class="check-row-el check-status-ic">
                                 <div class="check-row-el__item">
@@ -335,10 +337,10 @@
                         <div class="check-row">
                             <div class="check-row-el check-label">Дата рождения</div>
                             <div class="check-row-el check-value">
-                                <div class="check-row-el__item">31.12.1990 г.</div>
+                                <div class="check-row-el__item" id="applicant_dateB">31.12.1990 г.</div>
                             </div>
                             <div class="check-row-el check-status">
-                                <div class="check-row-el__item d-block">29 лет</div>
+                                <div class="check-row-el__item d-block" id="applicant_age">29 лет</div>
                             </div>
                             <div class="check-row-el check-status-ic">
                                 <div class="check-row-el__item">
@@ -349,7 +351,7 @@
                         <div class="check-row">
                             <div class="check-row-el check-label">Электронная почта</div>
                             <div class="check-row-el check-value">
-                                <div class="check-row-el__item">test@mail.ru</div>
+                                <div class="check-row-el__item" id="applicant_email">test@mail.ru</div>
                             </div>
                             <div class="check-row-el check-status">
                                 <div class="check-row-el__item">Электронная почта доступна</div>
@@ -363,7 +365,7 @@
                         <div class="check-row">
                             <div class="check-row-el check-label">Телефон</div>
                             <div class="check-row-el check-value">
-                                <div class="check-row-el__item">+7 (904) 207-33-33</div>
+                                <div class="check-row-el__item" id="applicant_phone">+7 (904) 207-33-33</div>
                             </div>
                             <div class="check-row-el check-status">
                                 <div class="check-row-el__item d-block">Теле 2</div>
@@ -433,7 +435,7 @@
                         <div class="check-row">
                             <div class="check-row-el check-label">Проверка паспорта</div>
                             <div class="check-row-el check-value">
-                                <div class="check-row-el__item">8710 422442</div>
+                                <div class="check-row-el__item" id="applicant_passport">8710 422442</div>
                             </div>
                             <div class="check-row-el check-status">
                                 <div class="check-row-el__item">Паспорт в списке утереных не найден</div>
@@ -445,7 +447,7 @@
                         <div class="check-row">
                             <div class="check-row-el check-label">Дата выдачи</div>
                             <div class="check-row-el check-value">
-                                <div class="check-row-el__item">31.12.2010 г.</div>
+                                <div class="check-row-el__item" id="applicant_passportDate">31.12.2010 г.</div>
                             </div>
                             <div class="check-row-el check-status">
                                 <div class="check-row-el__item">Паспорт действителен</div>
@@ -457,7 +459,7 @@
                         <div class="check-row">
                             <div class="check-row-el check-label">Адрес регистрации</div>
                             <div class="check-row-el check-value">
-                                <div class="check-row-el__item">Нижний Новгород, ул.Деловая 24 корп2, кв.58</div>
+                                <div class="check-row-el__item" id="applicant_address">Нижний Новгород, ул.Деловая 24 корп2, кв.58</div>
                             </div>
                             <div class="check-row-el check-status">
                                 <div class="check-row-el__item">Адрес найден</div>

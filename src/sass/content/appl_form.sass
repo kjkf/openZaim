@@ -2,14 +2,14 @@
   background: $body_bg
   padding: calc(100px + #{$header_h}) 0 70px
   +laptop-down
-    padding: calc(20px + #{$header_h_mob}) 0
+    padding: calc(20px + #{$header_h_mob}) 0 8px
   +tablet-down
-    padding: calc(40px + #{$header_h_mob}) 0
+    padding: calc(40px + #{$header_h_mob}) 0 8px
 
   .container
     padding: 0 24px 0 39px
     +laptop-down
-      padding: 0px 9px 0 24px
+      padding: 0px 16px 0 16px
     +tablet-down
       padding: 0 15px
 
@@ -21,9 +21,11 @@
     +tablet-down
       margin-bottom: 34px
 
+
 .form-wrapper
   position: relative
   background: #FFFFFF
+  opacity: .99
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.25)
   border-radius: 10px
   margin-bottom: 30px
@@ -46,11 +48,11 @@
   .form-header--sub
     position: relative
     display: flex
-    padding: 13px 0
+    padding: 15px 0
     //padding-right: 295px
     border-bottom: 1px solid $light-grey
     +laptop-down
-      padding-right: 0
+      padding: 13px 0
       position: relative
     +tablet-down
       padding: 0
@@ -67,7 +69,7 @@
         position: relative
         padding: 6px 0
       +tablet-down
-        padding: 20px 14px
+        padding: 19px 0px
     .green-rect
       display: inline-block
       height: 100%
@@ -86,9 +88,9 @@
     padding: 82px 147px 28px
     position: relative
     +laptop-down
-      padding: 40px 58px 40px
+      padding: 42px 58px 40px
     +tablet-down
-      padding: 70px 10px 40px
+      padding: 69px 5px 40px
 
     &:before
       content: ''
@@ -107,11 +109,12 @@
         bottom: 315px
 
     &[data-step='2']
-      padding-top: 52px
+      padding-top: 49px
       +laptop-down
-        padding-top: 42px
+        padding-top: 41px
       +tablet-down
         padding-top: 28px
+        padding-bottom: 23px
       &:before
         +laptop-down
           bottom: 165px
@@ -119,20 +122,45 @@
           bottom: 275px
 
     &[data-step='3']
+      padding-top: 50px
+      +laptop-down
+        padding-top: 41px
       +tablet-down
         padding-top: 28px
+        padding-bottom: 32px
       &:before
         +laptop-down
           bottom: 120px
         +tablet-down
           bottom: 185px
+      h4.title
+        margin-bottom: 39px
+        +laptop-down
+          margin-bottom: 20px
+        +tablet-down
+          margin-bottom: 43px
+      .address-btns
+        +tablet-down
+          margin-bottom: 30px
+        h4.title
+          +tablet-down
+            margin-bottom: 30px
       .goback
         +laptop-down
           font-size: 32px
           line-height: 51px
+        +tablet-down
+          width: 92px
+      .form-footer [data-step-num="2"]
+        padding-top: 15px
+        +tablet-down
+          padding-top: 6px
+      .form-footer
+        +laptop-down
+          padding-top: 14px
       .form-footer.step-2.laptop
         +tablet-down
-          margin-top: 25px
+          margin-top: 15px
         & .submit-wrapper
           +laptop-down
             align-items: flex-start
@@ -168,8 +196,10 @@
         +laptop-down
           margin-bottom: 23px
       &.row--term
-        margin-bottom: 38px
+        margin-bottom: 37px
         +laptop-down
+          margin-bottom: 22px
+        +tablet-down
           margin-bottom: 23px
       &.row-home
         +laptop-down
@@ -208,6 +238,7 @@
       line-height: 22px
 
   .range .range-output .output
+    top: -24px
     +laptop-down
       padding: 6px 24px
 
@@ -247,7 +278,7 @@
       +laptop-down
         margin-right: 0
       +tablet-down
-        margin-bottom: 30px
+        margin-bottom: 32px
 
     +laptop-down
       font-size: 18px
@@ -374,12 +405,16 @@
 
 .form-footer [data-step-num="2"]
   display: none
-  padding-top: 8px
+  padding-top: 7px
   +laptop-down
     position: relative
+    padding-top: 11px
+  +tablet-down
+    padding-top: 6px
   .form__footer-text
     text-align: center
-    padding: 0 73px 0 45px
+    padding: 0 95px 0 42px
+
 
 .goback
   display: inline-block
@@ -443,8 +478,11 @@
       color: transparent
       image: url("../images/icons/ic-datacheck-err.svg")
 
-.header.header-appl-form .container
-  justify-content: center
+.header.header-appl-form
+  z-index: 4
+  .container
+    justify-content: center
 
-.form-control--error
-  color: red
+.header--first-row
+  +tablet-down
+    padding-left: 15px
