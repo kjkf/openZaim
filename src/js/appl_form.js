@@ -187,24 +187,25 @@ $(document).ready( function() {
                 field.setAttribute('required', '')
             });
         }
-
+// эти функции только фикция для отображения функционала прогрессбара
         function checkProgress() {
-            i = 1;
             const elem = document.querySelector(".green-rect");
-            let width = 28;
+            let width = 0;
+            const allParams = 1280; //случайное число; общее количество параметров для проверки
+            let checkedParams;
             let id = setInterval(frame, 100);
-            subtitle.innerHTML = 'Проверенно 1024 параметра - 20% осталось';
+            //subtitle.innerHTML = 'Проверенно 1024 параметра - 20% осталось';
             const paramsWithoutStatus = document.querySelectorAll('.ic-status--loader');
             let paramsWithoutStatusArray = Array.from(paramsWithoutStatus);
 
             function frame() {
                 if (width >= 100) {
                     clearInterval(id);
-                    i = 0;
                 } else {
                     width++;
+                    checkedParams = Math.round(allParams * width / 100);
                     elem.style.width = width + "%";
-                    subtitle.innerHTML = `Проверенно 1024 параметра - ${width}% осталось`;
+                    subtitle.innerHTML = `Проверенно ${checkedParams} параметра - ${100 - width}% осталось`;
                     if (paramsWithoutStatusArray.length > 0 && width % 7 === 0) {
                         const currentParam = paramsWithoutStatusArray.shift();
                         setCheckStatus(currentParam);
