@@ -178,6 +178,28 @@ h4
 	padding: 0px
 	+bg-image(41px, 28px, transparent, "../images/icons/ic-gamburg.png", contain)
 
+.btn-accordion
+  display: flex
+  background-repeat: no-repeat
+  background-size: 25px 25px
+  background-position: right center
+  cursor: pointer
+  width: 100%
+  padding: 0
+  +laptop-down
+    display: flex
+  +tablet-down
+    background-position: right bottom
+    padding-right: 1px
+
+.btn-accordion__show
+  background-image: none
+  +laptop-down
+    background-image: url("../images/icons/ic-arrow-down.svg")
+.btn-accordion__hide
+  background-image: none
+  +laptop-down
+    background-image: url("../images/icons/ic-arrow-up.svg")
 
 .contacts
 	&__phone
@@ -281,4 +303,3 @@ h4
 		background-image: url("../images/icons/ic-datacheck-ok.svg")
 	&--loader
 		background-image: url("../images/icons/ic-loader.svg")
-
