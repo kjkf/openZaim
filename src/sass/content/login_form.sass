@@ -16,12 +16,11 @@
     padding-top: 35px
     padding-bottom: 22px
     +laptop-down
-      padding-top: 22px
-      padding-bottom: 48px
+      padding: 22px 15px 32px
     +tablet-down
       padding-left: 0px
       padding-right: 0px
-      padding-bottom: 20px
+      padding-bottom: 22px
 
   .msg
     margin-bottom: 62px
@@ -45,10 +44,11 @@
     +laptop-down
       margin: 0px 15px 20px
     +tablet-down
-      margin-left: 0px
-      margin-right: 0px
+      margin-left: -5px
+      margin-right: -5px
 
   h3.title
+    letter-spacing: 0.02px
     +laptop-down
       padding: 20px 70px 20px
     +tablet-down
@@ -58,6 +58,10 @@
   &__footer
     +tablet-down
       margin: 0px 20px
+
+    .btn
+      +laptop-down
+        max-width: 226px
 
 .modal-content
   background: #FFFFFF
@@ -73,9 +77,22 @@
       line-height: 30px
       margin-bottom: 30px
 
+  .form-group
+    +tablet-down
+      margin-left: -5px
+      margin-right: -5px
+
+  .modal-footer
+    .form-group
+      height: 100%
+
   +tablet
     max-width: 572px
   +laptop
     max-width: 618px
   +phonemin-down
     max-width: 300px
+
+.g-recaptcha
+  +tablet-down
+    margin-bottom: 30px
