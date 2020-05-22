@@ -21,6 +21,15 @@
     +tablet-down
       margin-bottom: 34px
 
+  .check-data__in
+    .check-label
+      +laptop-down
+        font-size: 16px
+    .check-value
+      +laptop-down
+        font-size: 16px
+        font-family: Exo2-Light
+
 
 .form-wrapper
   position: relative
@@ -169,14 +178,22 @@
 
     &[data-step='4']
       padding-top: 53px
+      padding-bottom: 46px
       +laptop-down
         padding-top: 40px
+        padding-bottom: 20px
+      +tablet-down
+        padding-top: 29px
+        padding-bottom: 0
       &:before
         display: none
       .bold
         +laptop-down
           font-size: 16px
           line-height: 26px
+      .check-data .check-row
+        +tablet-down
+          margin-bottom: 15px
 
 
     .row
@@ -438,7 +455,11 @@
     text-align: right
     padding-left: 0
   h4.title
-    margin-bottom: 30px
+    margin-bottom: 26px
+    +laptop-down
+      margin-bottom: 18px
+    +tablet-down
+      margin-bottom: 38px
   .row
     flex-direction: row
     +laptop-down
