@@ -1,4 +1,4 @@
-const methods_block = document.getElementById("methods-block");
+/*const methods_block = document.getElementById("methods-block");
 if (methods_block !== null){
   const blocks = document.querySelectorAll(".getmethods-block");
 
@@ -10,4 +10,4 @@ if (methods_block !== null){
     });
   }
 
-}
+}*/
