@@ -1,20 +1,21 @@
 .my-form
+  padding-bottom: 60px
   +laptop-down
-    padding: calc(20px + #{$header_h_mob}) 0px 40px
+    padding: calc(20px + #{$header_h_mob}) 0px 15px
   +tablet-down
     padding-top: calc(40px + #{$header_h_mob})
-    padding-bottom: 30px
+    padding-bottom: 0px
 
   .form-wrapper
     margin: 0px 15px 40px
     +laptop-down
-      margin: 0px 0px 40px
+      margin: 0px 0px 25px
     +tablet-down
-      margin-bottom: 30px
+      margin-bottom: 40px
 
   .form-wrapper .form-header
     +laptop-down
-      padding: 21px 0 20px
+      padding: 21px 0 18px
 
   .wrapper
     flex-direction: column
@@ -62,7 +63,7 @@
     +laptop-down
       padding: 35px 60px 38px
     +tablet-down
-      padding: 27px 20px 30px
+      padding: 30px 20px 30px
       display: flex
       flex-direction: column
       align-items: center
@@ -105,7 +106,7 @@
       padding: 20px 40px
     +tablet-down
       order: 4
-      padding: 15px 40px
+      padding: 15px 18px
 
 .company-name
   color: $green
@@ -139,6 +140,12 @@
       min-height: 534px
     +phonemin-down
       min-height: auto
+  h2.title
+    margin-bottom: 130px
+    +laptop-down
+      margin-bottom: 88px
+    +tablet-down
+      margin-bottom: 0px
 
 .settings
   .tab-pane__in
@@ -149,11 +156,13 @@
     +laptop-down
       padding-left: 60px
       padding-right: 60px
+      padding-top: 38px
       min-height: 716px
     +tablet-down
       padding-left: 10px
       padding-right: 10px
       padding-bottom: 0
+      padding-top: 30px
   &__top
     display: flex
     justify-content: space-between
@@ -296,3 +305,11 @@
     +tablet-down
       padding-left: 10px
       padding-right: 10px
+      padding-bottom: 11px
+  .check-data
+    h4.title
+      +tablet-down
+        text-align: center
+    .check-row
+      +tablet-down
+        margin-bottom: 17px

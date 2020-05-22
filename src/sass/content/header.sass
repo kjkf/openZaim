@@ -119,10 +119,24 @@
 
 .header-person-date
   .header__menu
-    display: none
+    .menu, .contacts
+      display: none
   .btn-exit
     display: block
+    min-width: 270px
     +laptop-down
       font-size: 18px
       line-height: 22px
       padding: 4px 23px
+      margin-bottom: 0px
+      min-width: 100px
+    +tablet-down
+      padding: 14px 20px
+      margin-bottom: 20px
+      font-size: 24px
+
+  //.btn-gamburg
+    +laptop-down
+      display: none
+    +tablet-down
+      display: block

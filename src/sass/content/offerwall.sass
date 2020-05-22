@@ -1,6 +1,9 @@
-
 .my-form
-  .offer-bl
+  //.offer-bl-wrap
+    padding: 0px 15px
+    +laptop-down
+      padding: 0px
+  //.offer-bl
     margin: 0px 15px 40px
     +laptop-down
       margin-left: 0px
@@ -17,6 +20,7 @@
       +tablet-down
         margin-bottom: 10px
 
+
 .offer-bl
   display: flex
   flex-direction: column
@@ -28,13 +32,17 @@
   padding: 0px 30px 50px
   cursor: pointer
   transition: all .2s ease-in-out
+  margin-bottom: 40px
   +laptop-down
     max-width: 340px
     width: 340px
     padding-left: 10px
     padding-right: 10px
+    padding-bottom: 18px
+    margin-bottom: 20px
   +tablet-down
-
+    padding-bottom: 30px
+    margin-bottom: 40px
   +phone-down
     width: 100%
 
@@ -133,16 +141,19 @@
 .offer-bl-wrap
   display: flex
   flex-direction: column
+  padding: 0px 15px
   +laptop-down
     flex-direction: row
     justify-content: space-between
     flex-wrap: wrap
+    padding: 0px
   +tablet-down
     flex-direction: column
     justify-content: center
-
+    padding: 0px
   +phone-down
     margin: 0 -10px
+
 
 .offerwall
   padding-bottom: 60px
@@ -150,13 +161,6 @@
     padding-bottom: 15px
   +tablet-down
     padding-bottom: 0px
-
-  .offer-bl-wrap
-    padding: 0px 15px
-    +laptop-down
-      padding: 0px
-    +tablet-down
-      padding: 0px
 
   h2.title
     padding: 0px 260px
@@ -169,7 +173,14 @@
       padding: 0px
       margin-bottom: 35px
 
-  .offer-bl
+  //.offer-bl-wrap
+    padding: 0px 15px
+    +laptop-down
+      padding: 0px
+    +tablet-down
+      padding: 0px
+
+  //.offer-bl
     margin-bottom: 40px
     //&:last-child
       margin-bottom: 0px
