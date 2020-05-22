@@ -3,7 +3,7 @@
 
   .container
     +laptop-down
-      padding: 0 22px 0 39px
+      padding: 0 39px 0 39px
     +tablet-down
       padding: 0
 
@@ -11,6 +11,11 @@
     padding-bottom: 23px
     position: relative
     margin-bottom: 60px
+    +laptop-down
+      margin-bottom: 31px
+    +tablet-down
+      padding-bottom: 19px
+      margin-bottom: 30px
   .form-footer
     position: relative
     padding: 0 147px
@@ -608,6 +613,8 @@
 
 .card-list 
   margin-bottom: -130px
+  +tablet-down
+    padding: 0 10px
 
   @media screen and (max-width: 480px) 
     margin-bottom: -120px
@@ -708,4 +715,3 @@
   opacity: 0
   transform: translateX(-10px) rotate(45deg)
   pointer-events: none
-
