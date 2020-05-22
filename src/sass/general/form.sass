@@ -85,15 +85,11 @@
 
   & ~ .form-control-img
     fill: $input_col_valid
-    //.ic-ufo
-      display: none
-    //.ic-male
-      display: block
+
   & ~ .form-control-title
     color: $input_col_valid
 
-.form-control.is-valid.female,
-.was-validated .form-control.female:valid
+.form-control.female
   & ~ .form-control-img
     .ic-ufo
       display: none
@@ -102,8 +98,7 @@
     .ic-female
       display: block
 
-.form-control.is-valid.male,
-.was-validated .form-control.male:valid
+.form-control.male
   & ~ .form-control-img
     .ic-ufo
       display: none
