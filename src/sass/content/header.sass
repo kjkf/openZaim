@@ -46,18 +46,7 @@
       display: flex
       +laptop-down
         display: none
-        //opacity: 0
-        //display: flex
-        flex-direction: column
-        align-items: center
-        position: absolute
-        top: 50px
-        left: 0px
-        background-color: $light-black
-        z-index: 1
-        width: 100%
-        padding: 25px 25px 15px
-        border-radius: 0px 0px 10px 10px
+
     .menu
       margin-right: 140px
       +laptop_1-down
@@ -94,6 +83,17 @@
         //opacity: 1
         display: flex
         transition: opacity .5s
+
+        flex-direction: column
+        align-items: center
+        position: absolute
+        top: 50px
+        left: 0px
+        background-color: $light-black
+        z-index: 1
+        width: 100%
+        padding: 25px 25px 15px
+        border-radius: 0px 0px 10px 10px
       .btn-close
         display: inline-block
       .btn-gamburg
@@ -135,7 +135,14 @@
       margin-bottom: 20px
       font-size: 24px
 
-  //.btn-gamburg
+  .menu-wrap
+    +laptop-down
+      position: static
+      display: flex
+    +tablet-down
+      position: absolute
+      display: none
+  .btn-gamburg
     +laptop-down
       display: none
     +tablet-down

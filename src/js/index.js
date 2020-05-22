@@ -118,4 +118,10 @@ $(document).ready( function() {
 
     }, false);
 
+    $("a[id != 'my_offer-tab']").on('click', function (e) {
+        $('.offer-bl-wrap').hide();
+    });
+    $("#my_offer-tab").on('click', function (e) {
+        $('.offer-bl-wrap').show();
+    });
 });
